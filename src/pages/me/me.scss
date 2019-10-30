@@ -1,0 +1,33 @@
+@import "../../styles/commons/constants.scss";
+
+.me-main {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 30px;
+  margin: 0;
+
+  @media screen and (max-width: 1000px) {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    text-align: justify;
+  }
+}
+
+.me-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.me-catchphrase {
+  font-size: 32px;
+  text-align: center;
+  color: #c6a57a;
+  margin-bottom: 20px;
+}
