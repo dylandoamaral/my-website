@@ -1,0 +1,44 @@
+@font-face {
+  font-family: cormorant;
+  src: url("../assets/fonts/cormorant_garamond/CormorantGaramond-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+
+  font-family: cormorant;
+  background-color: #ECECEC;
+}
+
+a {
+  color: #C6A57A;
+}
+
+p {
+  color: #222222;
+  font-family: cormorant;
+  font-size: 20px;
+  line-height: 1.6em;
+}
+
+h1 {
+  margin: 0;
+  color: #C6A57A;
+  font-size: 60px;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 0;
+  color: #C6A57A;
+  font-size: 40px;
+  font-weight: normal;
+}
