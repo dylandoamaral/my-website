@@ -1,7 +1,7 @@
 import React from "react"
 
 import {Footer, FooterLink} from './footer.style';
-import {Span} from '../global.style';
+import {Span} from '../../styles/global.style';
 
 import TwitterIcon from "../../assets/images/icons/twitter.svg";
 import LinkedinIcon from "../../assets/images/icons/linkedin.svg";

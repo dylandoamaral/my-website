@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout/layout"
 
-import { Wrapper, TitleWrapper, Name, Job } from "./index.style"
+import { Wrapper, TitleWrapper, Name, Job } from "../styles/index.style"
 import Citation from "../components/citation/citation"
 
 const Title = () => (

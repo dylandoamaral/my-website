@@ -24,12 +24,12 @@ const liseretSlideLeft = keyframes`
 export const Canvas = styled.canvas`
     position: absolute;
     top: 0;
-    left: 108px;
+    left: 130px;
 
     animation: ${liseretSlideTop} 0.6s ease-out;
 
     @media(max-width: ${resolutions.large}) {
-        left: 44px;
+        left: 80px;
     }
 
     @media(max-width: ${resolutions.medium}) {

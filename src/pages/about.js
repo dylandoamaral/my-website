@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
 
-import { Wrapper, Picture, Catchphrase } from "./about.style"
+import { Wrapper, Picture, Catchphrase } from "../styles/about.style"
 
 export default ({ data }) => (
         <Layout>

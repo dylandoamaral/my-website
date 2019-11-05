@@ -4,7 +4,7 @@ import resolutions from '../../configurations/resolutions.json';
 
 export const Text = styled.span`
     text-align: center;
-    padding: 0 160px;
+    padding: 0 40px;
     opacity: 1;
     position: relative;
     min-height: 243.2px;
@@ -14,7 +14,7 @@ export const Text = styled.span`
     font-size: 50px;
 
     @media (max-width: ${resolutions.large}) {
-        padding: 0 80px;
+        padding: 0 20px;
         font-size: 45px;
     }
 

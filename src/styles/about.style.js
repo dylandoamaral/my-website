@@ -8,16 +8,16 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    padding-left: 130px;
-    padding-right: 130px;
+    padding-left: 90px;
+    padding-right: 90px;
     padding-top: 30px;
     margin: 0;
 
     text-align: justify;
 
     @media (max-width: ${resolutions.large}) {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     @media (max-width: ${resolutions.medium}) {

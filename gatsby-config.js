@@ -6,14 +6,9 @@
 
 module.exports = {
   plugins: [
+     `gatsby-plugin-styled-components`,
     {
-      resolve: "gatsby-plugin-styled-components",
-      options: {
-        // Add any options here
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
           include: /assets/
@@ -33,6 +28,21 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`
+    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/pages/articles`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-images`
+        ],
+      },
+    },
   ],
 }
