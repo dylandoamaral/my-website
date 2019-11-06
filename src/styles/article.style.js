@@ -32,8 +32,23 @@ export const Content = styled.div`
         text-align: justify;
     }
 
+    pre {
+        background-color: ${colors.dark};
+        padding: 20px 20px;
+        margin: 0 40px;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        font-family: cormorant;
+
+        @media (max-width: ${resolutions.medium}) {
+            margin: 0;
+        }
+    }
+
     .gatsby-resp-image-wrapper {
         max-width: 90% !important;
+        margin: 20px auto;
 
         @media (max-width: ${resolutions.medium}) {
             max-width: 100% !important;

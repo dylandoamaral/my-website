@@ -1,7 +1,7 @@
 ---
-path: "/articles/la_naissance_de_mon_premier_site"
+path: "/articles/la_naissance_de_mon_premier_sitesss"
 date: "2019-11-05"
-title: "La naissance de mon premier site"
+title: "La naissance de mon premier sitesss"
 description: "This is the description of the website but it's just a test"
 featuredImage: "feature.jpg"
 ---

@@ -4,25 +4,41 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/layout"
 import { Title, Feature, Content } from "../styles/article.style"
 
+import rehypeReact from "rehype-react"
+import Caption from "../components/caption/caption"
+import Aside from "../components/aside/aside"
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "thumb-caption": Caption,
+                "aside-element": Aside },
+}).Compiler
+
 export default function Template({
     data,
 }) {
     const { markdownRemark } = data
-    const { frontmatter, html } = markdownRemark
+    const { frontmatter, htmlAst } = markdownRemark
     return (
         <Layout>
             <Title>{frontmatter.title}</Title>
             <Feature fixed={frontmatter.featuredImage.childImageSharp.fixed} alt="feature image" />
-            <Content
-                dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <Content>{renderAst(htmlAst)}</Content>   
         </Layout>
     )
 }
+
+/**
+  <Content
+    dangerouslySetInnerHTML={{ __html: html }}
+  />
+ */
+
+
 export const articleQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      htmlAst
       frontmatter {
         path
         title
