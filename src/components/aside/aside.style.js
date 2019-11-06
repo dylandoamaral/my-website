@@ -30,4 +30,8 @@ export const Wrapper = styled.div`
   .gatsby-resp-image-wrapper {
       max-width: 100% !important;
   }
+
+  .gatsby-resp-image-image {
+      box-shadow: none !important;
+  }
 `;

@@ -34,6 +34,8 @@ export const Wrapper = styled.article`
 `;
 
 export const Content = styled.div`
+    max-lines: 7;
+
     width: 100%;
     height: 100%;
     display: flex;

@@ -7,11 +7,13 @@ import { Title, Feature, Content } from "../styles/article.style"
 import rehypeReact from "rehype-react"
 import Caption from "../components/caption/caption"
 import Aside from "../components/aside/aside"
+import Game from "../components/game/game"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: { "thumb-caption": Caption,
-                "aside-element": Aside },
+                "aside-element": Aside,
+                "fancy-demonstration": Game},
 }).Compiler
 
 export default function Template({

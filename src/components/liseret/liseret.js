@@ -16,11 +16,6 @@ class Liseret extends React.Component {
         this.size = 30;
 
         this.resize = this.resize.bind(this);
-
-        let body = document.body, html = document.documentElement;
-        console.log(`
-            ${window.innerHeight},\n${body.offsetHeight},\n${html.clientHeight},\n${html.scrollHeight},\n ${html.offsetHeight},\n\n
-        `)
     }
 
     componentDidMount() {
