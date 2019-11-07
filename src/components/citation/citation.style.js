@@ -11,11 +11,11 @@ export const Text = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
+    font-size: 40px;
 
     @media (max-width: ${resolutions.large}) {
         padding: 0 20px;
-        font-size: 45px;
+        font-size: 40px;
     }
 
     @media (max-width:${resolutions.medium}) {

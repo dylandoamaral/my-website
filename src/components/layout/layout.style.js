@@ -9,7 +9,7 @@ export const Layout = styled.div`
   height: 100%;
 
   @media screen and (max-width: ${resolutions.large}) {
-    margin: 0 240px;
+    margin: 0 220px;
   }
 
   @media screen and (max-width: ${resolutions.medium}) {

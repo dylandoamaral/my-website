@@ -14,7 +14,7 @@ class Articles extends React.Component {
         return (
             <Layout>
                 <Preface>
-                    <h2>Mes articles</h2>
+                    <h1>Mes articles</h1>
                     <p>Dans cette section, j'écris des articles sur des choses qui m'amusent,
                     qui me divertissent toujours en rapport avec ma passion, la programmation.</p>
                 </Preface>

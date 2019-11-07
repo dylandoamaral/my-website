@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
   border-radius: 10px;
   border-top: 10px solid #b8daff;
   padding: 10px;
-  text-align: justify;
 `;
 
 export const Emoji = styled.span`

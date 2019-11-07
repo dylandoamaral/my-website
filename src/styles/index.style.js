@@ -25,6 +25,7 @@ export const TitleWrapper = styled.div`
 
 export const Name = styled.span`
   font-size: 80px;
+  font-family: cormorant;
 
   @media (max-width: ${resolutions.medium}) {
     font-size: 60px;
@@ -37,6 +38,7 @@ export const Name = styled.span`
 
 export const Job = styled.span`
     margin: -24px 0 0px 200px;
+    font-family: cormorant;
     font-size: 60px;
     color: ${colors.primary};
 

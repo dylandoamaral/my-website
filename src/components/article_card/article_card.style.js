@@ -15,7 +15,7 @@ export const Wrapper = styled.article`
     margin: 26px 0;
 
     width: 100%;
-    height: 400px;
+    height: 340px;
 
     display: flex;
     flex-direction: row;
@@ -86,7 +86,7 @@ export const Date = styled.span`
 `;
 
 export const Feature = styled(Img)`
-    width: 120% !important;
+    width: 130% !important;
     height: 100% !important;
 
     @media (max-width: ${resolutions.medium}) {

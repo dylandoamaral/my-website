@@ -1,3 +1,5 @@
+/* Some stuff come from https://github.com/csstools/sanitize.css/blob/master/sanitize.css */
+
 @font-face {
   font-family: cormorant;
   src: url("../assets/fonts/cormorant_garamond/CormorantGaramond-Regular.ttf") format("truetype");
@@ -9,37 +11,95 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
+html {
+  cursor: default;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-word;
 
-  font-family: cormorant;
-  background-color: #ECECEC;
-}
-
-a {
-  color: #C6A57A;
-}
-
-p {
+  background-color: #ececec;
   color: #222222;
-  font-family: cormorant;
-  font-size: 20px;
-  line-height: 1.6em;
+
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system, /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
+/* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell, /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
+/* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji", /* Windows emoji */ "Segoe UI Symbol",
+/* Linux emoji */ "Noto Color Emoji";
+
+}
+
+body {
+  margin: 0;
 }
 
 h1 {
   margin: 0;
-  color: #C6A57A;
-  font-size: 60px;
-  font-weight: normal;
+
+  color: #c6a57a;
+  font-size: 3em;
+  font-weight: 400;
 }
 
 h2 {
-  margin: 0;
-  color: #C6A57A;
-  font-size: 40px;
-  font-weight: normal;
+  margin: 0.5em 0;
+  color: #c6a57a;
+  font-size: 1.5em;
   line-height: 1em;
+  font-weight: 450;
+}
+
+p {
+  text-align: justify;
+
+  color: #222222;
+  font-size: 1.05em;
+  font-weight: 400;
+}
+
+a {
+  color: #c6a57a;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  line-height: 1.5;
+
+  font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system, /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
+    /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell, /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji", /* Windows emoji */ "Segoe UI Emoji", /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family:
+    /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas, /* Android 4+ */ Roboto Mono,
+    /* Ubuntu 10.10+ */ Ubuntu Monospace, /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
+    /* Linux/OpenOffice fallback */ Liberation Mono, /* fallback */ monospace;
 }

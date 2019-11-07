@@ -16,22 +16,6 @@ export const Feature = styled(Img)`
 `;
 
 export const Content = styled.div`
-    h1 {
-        color: ${colors.dark};
-        margin: 0;
-        font-size: 40px;
-        font-weight: normal;
-    }
-
-    h2 {
-        color: ${colors.dark};
-        font-size: 30px;
-    }
-
-    p {
-        text-align: justify;
-    }
-
     pre {
         background-color: ${colors.dark};
         padding: 20px 20px;

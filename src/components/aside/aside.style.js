@@ -6,14 +6,13 @@ export const Wrapper = styled.div`
   max-width: 360px;
   position: absolute;
   right: 0;
-  text-align: justify;
   font-size: 16px;
 
   padding-left: 30px;
   padding-right: 60px;
 
   @media screen and (max-width: ${resolutions.large}) {
-    max-width: 240px;
+    max-width: 220px;
     padding-right: 20px;
   }
 

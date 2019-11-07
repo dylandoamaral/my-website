@@ -32,7 +32,6 @@ class Enemy{
         this.x = this.w + Math.random() * (WIDTH - this.w * 2);
         this.y = 0 - this.w;
         this.speed*=1.03;
-        console.log(this.speed);
     }
 
     isClicked(xMouse, yMouse){
@@ -79,7 +78,6 @@ export default class Game extends React.Component {
             }else {
                 this.state.ennemies.forEach(ennemy => {
                     if(ennemy.isClicked(x, y)){
-                        console.log("click");
                         ennemy.restart();
                         this.setState({
                             score: this.state.score + 1
@@ -135,12 +133,12 @@ export default class Game extends React.Component {
         this.ctx.fillRect(WIDTH / 2 - BUTTON_WIDTH / 2, HEIGHT / 2 - BUTTON_HEIGHT / 2, BUTTON_WIDTH, BUTTON_HEIGHT);
 
         this.ctx.fillStyle = colors.dark;
-        this.ctx.font = "60px Arial";
+        this.ctx.font = "60px sans-serif";
         this.ctx.textAlign = "center";
         this.ctx.fillText("Start", WIDTH / 2, HEIGHT / 2 + 16);
 
         this.ctx.fillStyle = colors.dark;
-        this.ctx.font = "40px Arial";
+        this.ctx.font = "40px sans-serif";
         this.ctx.textAlign = "center";
         this.ctx.fillText("Max score : " + this.state.maxScore, WIDTH / 2, 1 * HEIGHT / 2 + 100);
     }
@@ -154,7 +152,7 @@ export default class Game extends React.Component {
         });
 
         this.ctx.fillStyle = colors.dark;
-        this.ctx.font = "60px Arial";
+        this.ctx.font = "60px sans-serif";
         this.ctx.textAlign = "center";
         this.ctx.fillText(this.state.score, WIDTH / 2, 100);
     }

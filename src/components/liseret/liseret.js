@@ -3,6 +3,7 @@ import React from "react"
 import { Canvas } from "./liseret.style"
 
 import resolutions from '../../configurations/resolutions.json';
+import colors from '../../configurations/colors.json';
 
 class Liseret extends React.Component {
     constructor(props) {
@@ -73,14 +74,14 @@ class Liseret extends React.Component {
                     ctx.lineTo(this.size, (i * this.size + (i + 1) * this.size) / 2);
                     ctx.lineTo(0, (i + 1) * this.size);
                     ctx.closePath();
-                    ctx.fillStyle = "#222222";
+                    ctx.fillStyle = colors.dark;
                 } else {
                     ctx.beginPath();
                     ctx.moveTo(this.size, i * this.size);
                     ctx.lineTo(0, (i * this.size + (i + 1) * this.size) / 2);
                     ctx.lineTo(this.size, (i + 1) * this.size);
                     ctx.closePath();
-                    ctx.fillStyle = "#C6A57A";
+                    ctx.fillStyle = colors.primary;
                 }
                 ctx.fill();
             }
