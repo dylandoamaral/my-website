@@ -22,28 +22,31 @@ export const Wrapper = styled.article`
 
     @media (max-width: ${resolutions.medium}) {
         text-align: center;
+        flex-direction: column-reverse;
+        height: 600px;
     }
 
-    @media (min-width: ${resolutions.medium}) {
-        transition: transform 0.3s;
-
-        :hover {
-        transform: translateX(10px);
-        }
-    }
 `;
 
 export const Content = styled.div`
-    max-lines: 7;
-
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 10px;
+
+    @media (max-width: ${resolutions.medium}) {
+        height: auto;
+    }
 `;
 
 export const Description = styled.p`
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 7; /* number of lines to show */
+
     @media screen and (max-width: ${resolutions.medium}) {
       order: 2;
     }
@@ -85,4 +88,8 @@ export const Date = styled.span`
 export const Feature = styled(Img)`
     width: 120% !important;
     height: 100% !important;
+
+    @media (max-width: ${resolutions.medium}) {
+        width: 100% !important;
+    }
 `;

@@ -4,6 +4,9 @@ date: "2019-11-05"
 title: "La naissance de mon premier site"
 description: "Le voici enfin, mon premier projet un minimum finis. Après des dizaines de projets abandonnés, j'arrive enfin à finir quelque chose et ce quelque chose c'est mon site! Quoi de mieux comme premier article que de parler de ce site qui m'a occupé un peu de mon temps libre."
 featuredImage: "feature.jpg"
+tags:
+  - gatsby
+  - website
 ---
 
 ***On se sent fière quand on termine un objectif que l'on s'était fixé, en tout cas, c'est mon cas actuellement. Ce site est une petite victoire sur ma tendance à ne jamais être satisfait de par mon côté perfectionniste.***

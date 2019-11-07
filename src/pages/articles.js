@@ -25,6 +25,7 @@ class Articles extends React.Component {
                         description={article.node.frontmatter.description}
                         date={article.node.frontmatter.date}
                         featuredImage={article.node.frontmatter.featuredImage.childImageSharp.fixed}
+                        tags={article.node.frontmatter.tags}
                     />
                 ))}
             </Layout>
@@ -54,6 +55,7 @@ export const articleQuery = graphql`
                   }
                 }
             }
+            tags
           }
         }
       }
