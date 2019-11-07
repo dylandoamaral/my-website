@@ -13,7 +13,7 @@ class Enemy{
     constructor(w){
         this.w = w;
         this.restart();
-        this.speed = 5;
+        this.speed = 8;
         this.fail = false;
     }
 
@@ -31,7 +31,7 @@ class Enemy{
     restart(){
         this.x = this.w + Math.random() * (WIDTH - this.w * 2);
         this.y = 0 - this.w;
-        this.speed*=1.01;
+        this.speed*=1.03;
         console.log(this.speed);
     }
 

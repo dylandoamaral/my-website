@@ -8,12 +8,16 @@ import rehypeReact from "rehype-react"
 import Caption from "../components/caption/caption"
 import Aside from "../components/aside/aside"
 import Game from "../components/game/game"
+import Horizontal from "../components/horizontal/horizontal"
+import Advice from "../components/callout/advice/advice"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: { "thumb-caption": Caption,
                 "aside-element": Aside,
-                "fancy-demonstration": Game},
+                "fancy-demonstration": Game,
+                "horizontal-element": Horizontal,
+                "callout-advice": Advice},
 }).Compiler
 
 export default function Template({
