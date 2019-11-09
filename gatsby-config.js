@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const gatsby_remark_image_wrapper = `
+    margin: 20px auto;
+  `
+
 module.exports = {
   plugins: [
     {
@@ -18,10 +22,6 @@ module.exports = {
         respectDNT: true,
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "auto",
       },
     },
     `gatsby-plugin-styled-components`,
@@ -58,7 +58,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-images`
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              wrapperStyle: gatsby_remark_image_wrapper
+            },
+          },
         ],
       },
     },

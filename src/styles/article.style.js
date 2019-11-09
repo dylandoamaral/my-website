@@ -29,13 +29,4 @@ export const Content = styled.div`
             margin: 0;
         }
     }
-
-    .gatsby-resp-image-wrapper {
-        max-width: 90% !important;
-        margin: 20px auto;
-
-        @media (max-width: ${resolutions.medium}) {
-            max-width: 100% !important;
-        }
-    }
 `;
