@@ -9,7 +9,7 @@ import Caption from "../components/caption/caption"
 import Aside from "../components/aside/aside"
 import Game from "../components/game/game"
 import Horizontal from "../components/horizontal/horizontal"
-import Advice from "../components/callout/advice/advice"
+import Callout from "../components/callout/callout"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -17,7 +17,7 @@ const renderAst = new rehypeReact({
                 "aside-element": Aside,
                 "fancy-demonstration": Game,
                 "horizontal-element": Horizontal,
-                "callout-advice": Advice},
+                "callout-element": Callout},
 }).Compiler
 
 export default function Template({

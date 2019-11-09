@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 
   @media screen and (max-width: ${resolutions.medium}) {
     position: relative;
-    max-width: 50%;
+    max-width: 75%;
     right: 0;
     left: 0;
     padding: 0;

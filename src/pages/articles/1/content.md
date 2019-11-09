@@ -16,7 +16,7 @@ Bon la vérité, c'est que ce n'est pas mon premier site internet, le premier c'
 ##Pourquoi j'ai décidé de faire ce site
 
 <aside-element>
-    <callout-advice>Un petit conseil à tous ceux qui sont encore étudiants, il faut vraiment essayer de se créer un portfolio parce que rien de mieux que des preuves pour faire part de votre savoir-faire.</callout-advice>
+    <callout-element type="d">Un petit conseil à tous ceux qui sont encore étudiants, il faut vraiment essayer de se créer un portfolio parce que rien de mieux que des preuves pour faire part de votre savoir-faire.</callout-element>
 </aside-element>
 
 La réponse courte : parce que j'en avais envie tout simplement, en soi n'y a pas vraiment de réponse longue. J'avais envie d'avoir un espace dans lequel je pourrais partager mes projets et autres. Quelque chose qui me représente vraiment et mon propre site était parfait pour cela. Cela me sert aussi de portfolio et renforce ma crédibilité, comme je les dis ci-dessus, un problème que j'ai, c'est mon incapacité à finir tout ce que j'entreprends, rien n'est jamais assez fini selon moi et j'en suis même venu à mettre des centaines d'heures de travails à la poubelle sur un coup de tête. Je touche vraiment à beaucoup de domaines de la programmation, mais comment en témoigner si je n'ai rien pour le prouver, c'est pour ça que ce site est né et que des articles vont suivre, je me considère comme un bricoleur numérique qui fait ses trucs dans son garage et surtout dans son coin. Il est temps pour moi de sortir un peu de ce garage !
