@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
     @media (max-width: ${resolutions.medium}) {
         min-height: calc(100vh - 250px);
     }
+
+    @media (max-width:${resolutions.little}) {
+      min-height: calc(100vh - 330px);
+    }
 `;
 
 export const TitleWrapper = styled.div`

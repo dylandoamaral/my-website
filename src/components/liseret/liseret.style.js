@@ -38,4 +38,8 @@ export const Canvas = styled.canvas`
         left: 0;
         top: 110px;
     }
+
+    @media (max-width:${resolutions.little}) {
+      top: 125px;
+    }
 `;

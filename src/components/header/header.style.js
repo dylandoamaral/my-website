@@ -19,6 +19,7 @@ export const Header = styled.header`
 
   @media (max-width:${resolutions.little}) {
     flex-direction: column;
+    padding-bottom: 150px;
   }
 `;
 
