@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import resolutions from '../../configurations/resolutions.json';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.aside`
   max-width: 360px;
   position: absolute;
   right: 0;
@@ -24,13 +24,5 @@ export const Wrapper = styled.div`
     padding: 0;
     margin: 20px auto;
 
-  }
-
-  .gatsby-resp-image-wrapper {
-      max-width: 100% !important;
-  }
-
-  .gatsby-resp-image-image {
-      box-shadow: none !important;
   }
 `;

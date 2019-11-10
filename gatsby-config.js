@@ -61,7 +61,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              wrapperStyle: gatsby_remark_image_wrapper
+              wrapperStyle: gatsby_remark_image_wrapper,
+              backgroundColor: "none"
             },
           },
         ],

@@ -2,22 +2,26 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
-import { Title, Feature, Content } from "../styles/article.style"
+import { Title, Feature, Content, H1 } from "../styles/article.style"
 
 import rehypeReact from "rehype-react"
-import Caption from "../components/caption/caption"
 import Aside from "../components/aside/aside"
-import Game from "../components/game/game"
 import Horizontal from "../components/horizontal/horizontal"
 import Callout from "../components/callout/callout"
+import Caption from "../components/caption/caption"
+import Game from "../components/game/game"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "thumb-caption": Caption,
+  components: {
                 "aside-element": Aside,
-                "fancy-demonstration": Game,
                 "horizontal-element": Horizontal,
-                "callout-element": Callout},
+                "callout-element": Callout,
+                "thumb-caption": Caption,
+
+                h1: H1,
+
+                "fancy-demonstration": Game},
 }).Compiler
 
 export default function Template({

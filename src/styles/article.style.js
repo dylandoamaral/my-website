@@ -30,3 +30,7 @@ export const Content = styled.div`
         }
     }
 `;
+
+export const H1 = styled.h2`
+    margin: 1.5em 0 0.5em 0;
+`
