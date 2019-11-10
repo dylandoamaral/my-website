@@ -24,7 +24,19 @@ module.exports = {
         pageTransitionDelay: 0,
       },
     },
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `dylandoamaral`,
+        short_name: `dylandoamaral`,
+        start_url: `/`,
+        background_color: `#ECECEC`,
+        theme_color: `#ECECEC`,
+        display: `standalone`,
+        icon: `src/assets/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {

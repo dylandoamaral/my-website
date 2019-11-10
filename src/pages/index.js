@@ -1,4 +1,6 @@
 import React from "react"
+import { Helmet } from "react-helmet"
+
 import Layout from "../components/layout/layout"
 
 import { Wrapper, TitleWrapper, Name, Job } from "../styles/index.style"
@@ -13,6 +15,7 @@ const Title = () => (
 
 export default () => (
     <Layout>
+        <Helmet title="Dylan Do Amaral" defer={false} />
         <Wrapper>
             <Title />
             <Citation />

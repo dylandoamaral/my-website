@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout/layout"
 import { Title, Feature, Content, H1 } from "../styles/article.style"
@@ -31,6 +32,7 @@ export default function Template({
     const { frontmatter, htmlAst } = markdownRemark
     return (
         <Layout>
+            <Helmet title={frontmatter.title + " | Dylan Do Amaral"} defer={false} />
             <Title>{frontmatter.title}</Title>
             <Feature fixed={frontmatter.featuredImage.childImageSharp.fixed} alt="feature image" />
             <Content>{renderAst(htmlAst)}</Content>   

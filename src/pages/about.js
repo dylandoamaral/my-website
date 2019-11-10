@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Layout from "../components/layout/layout"
@@ -9,6 +10,7 @@ import { Wrapper, Picture, Catchphrase } from "../styles/about.style"
 
 export default ({ data }) => (
         <Layout>
+          <Helmet title="About me | Dylan Do Amaral" defer={false} />
           <Wrapper>
             <Picture fixed={data.owl.childImageSharp.fixed} alt="owl"/>
             <Catchphrase>Coucou c'est moi,</Catchphrase>
