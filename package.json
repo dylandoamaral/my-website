@@ -1,6 +1,6 @@
 {
-  "name": "dylandoamaral.com",
-  "private": true,
+  "name": "dylandoamaral.me",
+  "private": false,
   "version": "1.0.0",
   "description": "Dylan Do amaral's website",
   "license": "MIT",
@@ -38,12 +38,5 @@
   },
   "devDependencies": {
     "prettier": "^1.18.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

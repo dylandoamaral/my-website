@@ -17,7 +17,7 @@ class Articles extends React.Component {
 
     return (
       <Layout>
-        <Helmet title="Articles | Dylan Do Amaral" defer={false} />
+        <Helmet title="Mes articles | Dylan Do Amaral" defer={false} />
         <Preface>
           <h1>Mes articles</h1>
           <p>Dans cette section, j'écris des articles sur des choses qui m'amusent,
