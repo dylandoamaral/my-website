@@ -46,10 +46,6 @@ export const Description = styled.p`
    display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 7; /* number of lines to show */
-
-    @media screen and (max-width: ${resolutions.medium}) {
-      order: 2;
-    }
 `;
 
 export const Footer = styled.div`
@@ -57,23 +53,14 @@ export const Footer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-    
-    @media (max-width: ${resolutions.medium}) {
-        order: 1;
-        flex-direction: column;
-        justify-content: center;
-    }
 `;
 
 export const Themes = styled.div`
-    @media (max-width: ${resolutions.medium}) {
-        order: 2;
-    }
+    overflow: hidden;
 `;
 
-export const Theme = styled.div`
-    height: 30px;
-    width: auto;
+export const Theme = styled(Img)`
+    margin-right: 10px;
 `;
 
 export const Date = styled.span`

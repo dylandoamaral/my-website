@@ -7,35 +7,47 @@ import { Preface } from "../styles/articles.style"
 import { Line } from "../styles/global.style"
 import ArticleCard from "../components/article_card/article_card"
 
-class Articles extends React.Component {
-    render() {
-        const articles = this.props.data.allMarkdownRemark.edges
+import { addUniqueIdToArray } from "../utils/array"
 
-        return (
-            <Layout>
-                <Preface>
-                    <h1>Mes articles</h1>
-                    <p>Dans cette section, j'écris des articles sur des choses qui m'amusent,
+class Articles extends React.Component {
+  render() {
+    const articles = this.props.data.allMarkdownRemark.edges;
+    const themes = this.props.data.themes.edges;
+
+    return (
+      <Layout>
+        <Preface>
+          <h1>Mes articles</h1>
+          <p>Dans cette section, j'écris des articles sur des choses qui m'amusent,
                     qui me divertissent toujours en rapport avec ma passion, la programmation.</p>
-                </Preface>
-                <Line />
-                {articles.map(article => (
-                    <ArticleCard title={article.node.frontmatter.title}
-                        path={article.node.frontmatter.path}
-                        description={article.node.frontmatter.description}
-                        date={article.node.frontmatter.date}
-                        featuredImage={article.node.frontmatter.featuredImage.childImageSharp.fixed}
-                        tags={article.node.frontmatter.tags}
-                    />
-                ))}
-            </Layout>
-        )
-    }
+        </Preface>
+        <Line />
+        {addUniqueIdToArray(articles).map(article => {
+          return (
+            <ArticleCard 
+              title={article.value.node.frontmatter.title}
+              key={article.uniqueId}
+              path={article.value.node.frontmatter.path}
+              description={article.value.node.frontmatter.description}
+              date={article.value.node.frontmatter.date}
+              featuredImage={article.value.node.frontmatter.featuredImage.childImageSharp.fixed}
+              themesImage={addUniqueIdToArray(themes)
+                .filter(theme => article.value.node.frontmatter.tags.includes(theme.value.node.name))
+                .map(theme => { 
+                  return {uniqueId: theme.uniqueId, value: theme.value.node.childImageSharp.fixed}
+                })}
+            />
+          )
+        }
+        )}
+      </Layout>
+    )
+  }
 }
 
 export default Articles;
 
-export const articleQuery = graphql`
+export const articlesQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 2000
@@ -56,6 +68,19 @@ export const articleQuery = graphql`
                 }
             }
             tags
+          }
+        }
+      }
+    }
+
+    themes: allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "themes"}}) {
+      edges {
+        node {
+          name,
+          childImageSharp {
+            fixed(width: 20, height: 20) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }

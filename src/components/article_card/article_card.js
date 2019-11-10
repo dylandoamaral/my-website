@@ -1,10 +1,9 @@
 import React from "react"
 
-import { Click, Wrapper, Content, Description, Footer, Themes, Date, Feature } from "./article_card.style"
+import { Click, Wrapper, Content, Description, Footer, Themes, Theme, Date, Feature } from "./article_card.style"
 
 class ArticleCard extends React.Component {
     render() {
-        console.log(this.props.tags)
         return (
             <Click to={this.props.path}>
                 <Wrapper>
@@ -13,7 +12,11 @@ class ArticleCard extends React.Component {
                         <Description>{this.props.description}</Description>
                         <Footer>
                             <Themes>
-                                <span>{this.props.tags.map(tag => tag + " ")}</span>
+                                {this.props.themesImage.map(theme => 
+                                    (
+                                        <Theme fixed={theme.value} key={theme.uniqueId}/>
+                                    )
+                                )}
                             </Themes>
                             <Date>{this.props.date}</Date>
                         </Footer>
