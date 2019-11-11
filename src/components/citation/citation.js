@@ -1,7 +1,7 @@
 import React from "react"
 import posed from "react-pose"
 
-import { Text } from "./citation.style"
+import { Text, Quote } from "./citation.style"
 import json from "./citation.json"
 
 import resolutions from "../../configurations/resolutions.json"
@@ -103,7 +103,7 @@ class Citation extends React.Component {
     render() {
         return (
             <AnimateText pose={this.state.animation}>
-                {this.state.citation}
+                <Quote>{this.state.citation}</Quote>
             </AnimateText>
         )
     }
