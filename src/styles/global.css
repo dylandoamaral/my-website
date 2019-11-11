@@ -44,6 +44,8 @@ h1 {
     color: #c6a57a;
     font-size: 3em;
     font-weight: 400;
+
+    font-family: Optima;
 }
 
 h2 {
@@ -51,7 +53,9 @@ h2 {
     color: #c6a57a;
     font-size: 1.5em;
     line-height: 1em;
-    font-weight: 450;
+    font-weight: 500;
+
+    font-family: Optima;
 }
 
 p {

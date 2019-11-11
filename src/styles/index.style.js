@@ -28,7 +28,7 @@ export const TitleWrapper = styled.div`
 
 export const Name = styled.span`
     font-size: 80px;
-    font-family: cormorant;
+    font-family: Optima;
 
     @media (max-width: ${resolutions.medium}) {
         font-size: 60px;
@@ -40,18 +40,18 @@ export const Name = styled.span`
 `
 
 export const Job = styled.span`
-    margin: -24px 0 0px 200px;
-    font-family: cormorant;
+    margin: -24px 0 0px 215px;
+    font-family: Optima;
     font-size: 60px;
     color: ${colors.primary};
 
     @media (max-width: ${resolutions.medium}) {
         font-size: 45px;
-        margin: -15px 0 0px 150px;
+        margin: -15px 0 0px 160px;
     }
 
     @media (max-width: ${resolutions.little}) {
         font-size: 30px;
-        margin: -10px 0 0px 100px;
+        margin: -10px 0 0px 105px;
     }
 `
