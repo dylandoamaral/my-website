@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout/layout"
 
-import { Preface } from "../styles/articles.style"
+import { Preface, Cards } from "../styles/articles.style"
 import { Line } from "../styles/global.style"
 import ArticleCard from "../components/article_card/article_card"
 
@@ -27,37 +27,40 @@ class Articles extends React.Component {
                     </p>
                 </Preface>
                 <Line />
-                {addUniqueIdToArray(articles).map(article => {
-                    return (
-                        <ArticleCard
-                            title={article.value.node.frontmatter.title}
-                            key={article.uniqueId}
-                            path={article.value.node.frontmatter.path}
-                            description={
-                                article.value.node.frontmatter.description
-                            }
-                            date={article.value.node.frontmatter.date}
-                            featuredImage={
-                                article.value.node.frontmatter.featuredImage
-                                    .childImageSharp.fixed
-                            }
-                            themesImage={addUniqueIdToArray(themes)
-                                .filter(theme =>
-                                    article.value.node.frontmatter.tags.includes(
-                                        theme.value.node.name
+                <Cards>
+                    {addUniqueIdToArray(articles).map(article => {
+                        return (
+                            <ArticleCard
+                                first={article.value === articles[0]}
+                                title={article.value.node.frontmatter.title}
+                                key={article.uniqueId}
+                                path={article.value.node.frontmatter.path}
+                                description={
+                                    article.value.node.frontmatter.description
+                                }
+                                date={article.value.node.frontmatter.date}
+                                featuredImage={
+                                    article.value.node.frontmatter.featuredImage
+                                        .childImageSharp.fixed
+                                }
+                                themesImage={addUniqueIdToArray(themes)
+                                    .filter(theme =>
+                                        article.value.node.frontmatter.tags.includes(
+                                            theme.value.node.name
+                                        )
                                     )
-                                )
-                                .map(theme => {
-                                    return {
-                                        uniqueId: theme.uniqueId,
-                                        value:
-                                            theme.value.node.childImageSharp
-                                                .fixed,
-                                    }
-                                })}
-                        />
-                    )
-                })}
+                                    .map(theme => {
+                                        return {
+                                            uniqueId: theme.uniqueId,
+                                            value:
+                                                theme.value.node.childImageSharp
+                                                    .fixed,
+                                        }
+                                    })}
+                            />
+                        )
+                    })}
+                </Cards>
             </Layout>
         )
     }

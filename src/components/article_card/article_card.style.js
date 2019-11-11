@@ -3,55 +3,56 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 import colors from "../../configurations/colors.json"
-import resolutions from "../../configurations/resolutions.json"
 
 export const Click = styled(Link)`
     text-decoration: none;
+
+    flex: ${props => (props.first ? "1 1 100%" : "1 1 250px")};
+    @media (max-width: 600px) {
+        flex: 1 1 250px;
+    }
 `
 
 export const Wrapper = styled.article`
+    margin: 10px;
+
     background-color: white;
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
-    margin: 26px 0;
-
-    width: 100%;
-    height: 340px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: ${props => (props.first ? "row" : "column-reverse")};
 
-    @media (max-width: ${resolutions.medium}) {
-        text-align: center;
+    height: ${props => (props.first ? "340px" : "500px")};
+
+    @media (max-width: 600px) {
         flex-direction: column-reverse;
-        height: 600px;
+        height: 500px;
     }
 `
 
 export const Content = styled.div`
     width: 100%;
     height: 100%;
+
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
 
-    @media (max-width: ${resolutions.medium}) {
-        height: auto;
-    }
+    padding: 10px;
 `
 
-export const Description = styled.p`
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7; /* number of lines to show */
+export const Title = styled.h2`
+    margin: 0 20px;
+    font-size: 32px;
+    text-align: center;
 `
 
 export const Footer = styled.div`
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-top: auto;
+    justify-content: space-between;
 `
 
 export const Themes = styled.div`
@@ -65,17 +66,9 @@ export const Theme = styled(Img)`
 export const Date = styled.span`
     opacity: 0.33;
     color: ${colors.dark};
-
-    @media screen and (max-width: ${resolutions.medium}) {
-        order: 1;
-    }
 `
 
 export const Feature = styled(Img)`
-    width: 130% !important;
+    width: 100% !important;
     height: 100% !important;
-
-    @media (max-width: ${resolutions.medium}) {
-        width: 100% !important;
-    }
 `

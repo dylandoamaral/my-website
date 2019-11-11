@@ -4,7 +4,7 @@ import {
     Click,
     Wrapper,
     Content,
-    Description,
+    Title,
     Footer,
     Themes,
     Theme,
@@ -15,12 +15,12 @@ import {
 class ArticleCard extends React.Component {
     render() {
         return (
-            <Click to={this.props.path}>
-                <Wrapper>
+            <Click first={this.props.first} to={this.props.path}>
+                <Wrapper first={this.props.first}>
                     <Content>
-                        <h2>{this.props.title}</h2>
-                        <Description>{this.props.description}</Description>
+                        <Title>{this.props.title}</Title>
                         <Footer>
+                            <Date>{this.props.date}</Date>
                             <Themes>
                                 {this.props.themesImage.map(theme => (
                                     <Theme
@@ -29,7 +29,6 @@ class ArticleCard extends React.Component {
                                     />
                                 ))}
                             </Themes>
-                            <Date>{this.props.date}</Date>
                         </Footer>
                     </Content>
                     <Feature
