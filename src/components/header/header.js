@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Header, Logo, Navlink } from './header.style';
+import { Header, Logo, Navlink } from "./header.style"
 
 export default () => (
     <Header>

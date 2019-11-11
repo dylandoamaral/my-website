@@ -13,29 +13,34 @@ import Caption from "../components/caption/caption"
 import Game from "../components/game/game"
 
 const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {
-                "aside-element": Aside,
-                "horizontal-element": Horizontal,
-                "callout-element": Callout,
-                "thumb-caption": Caption,
+    createElement: React.createElement,
+    components: {
+        "aside-element": Aside,
+        "horizontal-element": Horizontal,
+        "callout-element": Callout,
+        "thumb-caption": Caption,
 
-                h1: H1,
+        h1: H1,
 
-                "fancy-demonstration": Game},
+        "fancy-demonstration": Game,
+    },
 }).Compiler
 
-export default function Template({
-    data,
-}) {
+export default function Template({ data }) {
     const { markdownRemark } = data
     const { frontmatter, htmlAst } = markdownRemark
     return (
         <Layout>
-            <Helmet title={frontmatter.title + " | Dylan Do Amaral"} defer={false} />
+            <Helmet
+                title={frontmatter.title + " | Dylan Do Amaral"}
+                defer={false}
+            />
             <Title>{frontmatter.title}</Title>
-            <Feature fixed={frontmatter.featuredImage.childImageSharp.fixed} alt="feature image" />
-            <Content>{renderAst(htmlAst)}</Content>   
+            <Feature
+                fixed={frontmatter.featuredImage.childImageSharp.fixed}
+                alt="feature image"
+            />
+            <Content>{renderAst(htmlAst)}</Content>
         </Layout>
     )
 }
@@ -46,24 +51,23 @@ export default function Template({
   />
  */
 
-
 export const articleQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      htmlAst
-      frontmatter {
-        path
-        title
-        description
-        date(formatString: "DD/MM/YYYY")
-        featuredImage {
-            childImageSharp {
-                fixed(width: 2000) {
-                ...GatsbyImageSharpFixed
-              }
+    query($path: String!) {
+        markdownRemark(frontmatter: { path: { eq: $path } }) {
+            htmlAst
+            frontmatter {
+                path
+                title
+                description
+                date(formatString: "DD/MM/YYYY")
+                featuredImage {
+                    childImageSharp {
+                        fixed(width: 2000) {
+                            ...GatsbyImageSharpFixed
+                        }
+                    }
+                }
             }
         }
-      }
     }
-  }
 `

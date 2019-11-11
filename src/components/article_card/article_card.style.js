@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import colors from '../../configurations/colors.json';
-import resolutions from '../../configurations/resolutions.json';
+import colors from "../../configurations/colors.json"
+import resolutions from "../../configurations/resolutions.json"
 
 export const Click = styled(Link)`
     text-decoration: none;
-`;
+`
 
 export const Wrapper = styled.article`
     background-color: white;
@@ -25,8 +25,7 @@ export const Wrapper = styled.article`
         flex-direction: column-reverse;
         height: 600px;
     }
-
-`;
+`
 
 export const Content = styled.div`
     width: 100%;
@@ -38,30 +37,30 @@ export const Content = styled.div`
     @media (max-width: ${resolutions.medium}) {
         height: auto;
     }
-`;
+`
 
 export const Description = styled.p`
     overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 7; /* number of lines to show */
-`;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7; /* number of lines to show */
+`
 
 export const Footer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
-`;
+`
 
 export const Themes = styled.div`
     overflow: hidden;
-`;
+`
 
 export const Theme = styled(Img)`
     margin-right: 10px;
-`;
+`
 
 export const Date = styled.span`
     opacity: 0.33;
@@ -70,7 +69,7 @@ export const Date = styled.span`
     @media screen and (max-width: ${resolutions.medium}) {
         order: 1;
     }
-`;
+`
 
 export const Feature = styled(Img)`
     width: 130% !important;
@@ -79,4 +78,4 @@ export const Feature = styled(Img)`
     @media (max-width: ${resolutions.medium}) {
         width: 100% !important;
     }
-`;
+`

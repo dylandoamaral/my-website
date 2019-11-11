@@ -9,76 +9,78 @@ const gatsby_remark_image_wrapper = `
   `
 
 module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-151934237-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `dylandoamaral`,
-        short_name: `dylandoamaral`,
-        start_url: `/`,
-        background_color: `#ECECEC`,
-        theme_color: `#ECECEC`,
-        display: `standalone`,
-        icon: `src/assets/images/icon.png`,
-      },
-    },
-    `gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-react-svg`,
-      options: {
-        rule: {
-          include: /assets/
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-page-transitions',
-      options: {
-        transitionTime: 750
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
-    `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `articles`,
-        path: `${__dirname}/src/pages/articles`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
+    plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
             options: {
-              wrapperStyle: gatsby_remark_image_wrapper,
-              backgroundColor: "none"
+                trackingId: "UA-151934237-1",
+                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                head: false,
+                // Setting this parameter is optional
+                anonymize: true,
+                // Setting this parameter is also optional
+                respectDNT: true,
+                // Delays sending pageview hits on route update (in milliseconds)
+                pageTransitionDelay: 0,
             },
-          },
-        ],
-      },
-    },
-  ],
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `dylandoamaral`,
+                short_name: `dylandoamaral`,
+                start_url: `/`,
+                background_color: `#ECECEC`,
+                theme_color: `#ECECEC`,
+                display: `standalone`,
+                icon: `src/assets/images/icon.png`,
+            },
+        },
+        `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-styled-components`,
+        {
+            resolve: `gatsby-plugin-react-svg`,
+            options: {
+                rule: {
+                    include: /assets/,
+                },
+            },
+        },
+        {
+            resolve: "gatsby-plugin-page-transitions",
+            options: {
+                transitionTime: 750,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `images`,
+                path: `${__dirname}/src/assets/images`,
+            },
+        },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `articles`,
+                path: `${__dirname}/src/pages/articles`,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            wrapperStyle: gatsby_remark_image_wrapper,
+                            backgroundColor: "none",
+                        },
+                    },
+                ],
+            },
+        },
+    ],
 }

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import resolutions from '../../configurations/resolutions.json';
+import resolutions from "../../configurations/resolutions.json"
 
 export const Text = styled.span`
     text-align: center;
@@ -18,12 +18,12 @@ export const Text = styled.span`
         font-size: 40px;
     }
 
-    @media (max-width:${resolutions.medium}) {
+    @media (max-width: ${resolutions.medium}) {
         padding: 0 50px;
         font-size: 30px;
     }
 
-    @media (max-width:${resolutions.little}) {
+    @media (max-width: ${resolutions.little}) {
         padding: 0 20px;
     }
-`;
+`

@@ -1,22 +1,22 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
-import resolutions from '../../configurations/resolutions.json';
+import resolutions from "../../configurations/resolutions.json"
 
 export const Layout = styled.div`
-  padding: 0;
-  margin: 0 360px;
-  
-  height: 100%;
+    padding: 0;
+    margin: 0 360px;
 
-  @media screen and (max-width: ${resolutions.large}) {
-    margin: 0 220px;
-  }
+    height: 100%;
 
-  @media screen and (max-width: ${resolutions.medium}) {
-    margin: 0 32px;
-  }
+    @media screen and (max-width: ${resolutions.large}) {
+        margin: 0 220px;
+    }
 
-  @media screen and (max-width: ${resolutions.little}) {
-    margin: 0 10px;
-  }
+    @media screen and (max-width: ${resolutions.medium}) {
+        margin: 0 32px;
+    }
+
+    @media screen and (max-width: ${resolutions.little}) {
+        margin: 0 10px;
+    }
 `

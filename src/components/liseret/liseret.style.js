@@ -1,6 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components"
 
-import resolutions from '../../configurations/resolutions.json';
+import resolutions from "../../configurations/resolutions.json"
 
 const liseretSlideTop = keyframes`
     from {
@@ -9,7 +9,7 @@ const liseretSlideTop = keyframes`
     to {
       transform: translateY(0);
     }
-`;
+`
 
 const liseretSlideLeft = keyframes`
     from {
@@ -19,7 +19,7 @@ const liseretSlideLeft = keyframes`
       transform: translateX(0);
     }
   }
-`;
+`
 
 export const Canvas = styled.canvas`
     position: absolute;
@@ -28,18 +28,18 @@ export const Canvas = styled.canvas`
 
     animation: ${liseretSlideTop} 0.6s ease-out;
 
-    @media(max-width: ${resolutions.large}) {
+    @media (max-width: ${resolutions.large}) {
         left: 80px;
     }
 
-    @media(max-width: ${resolutions.medium}) {
+    @media (max-width: ${resolutions.medium}) {
         animation: ${liseretSlideLeft} 0.6s ease-out;
 
         left: 0;
         top: 110px;
     }
 
-    @media (max-width:${resolutions.little}) {
-      top: 125px;
+    @media (max-width: ${resolutions.little}) {
+        top: 125px;
     }
-`;
+`
