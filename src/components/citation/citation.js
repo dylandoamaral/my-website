@@ -46,7 +46,7 @@ class Citation extends React.Component {
         this.length = json.citations.length
 
         this.state = {
-            citation: json.citations[Math.floor(Math.random() * this.length)],
+            citation: json.citations[0],
             animation: "center",
         }
     }

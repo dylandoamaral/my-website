@@ -13,8 +13,6 @@ export const Wrapper = styled.div`
     padding-top: 30px;
     margin: 0;
 
-    text-align: justify;
-
     @media (max-width: ${resolutions.large}) {
         padding-left: 40px;
         padding-right: 40px;
