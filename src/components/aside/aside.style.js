@@ -11,14 +11,14 @@ export const Wrapper = styled.aside`
     padding-left: 30px;
     padding-right: 60px;
 
-    @media screen and (max-width: ${resolutions.large}) {
-        max-width: 220px;
+    ${resolutions.medias.desktop}{
+        max-width: 300px;
         padding-right: 20px;
     }
 
-    @media screen and (max-width: ${resolutions.medium}) {
+    ${resolutions.medias.tablet_landscape}{
         position: relative;
-        max-width: 75%;
+        max-width: 400px;
         right: 0;
         left: 0;
         padding: 0;

@@ -1,7 +1,7 @@
 import React from "react"
 import posed from "react-pose"
 
-import { Text, Quote } from "./citation.style"
+import { Wrapper, Border, Quote } from "./citation.style"
 import json from "./citation.json"
 
 import resolutions from "../../configurations/resolutions.json"
@@ -9,6 +9,7 @@ import resolutions from "../../configurations/resolutions.json"
 const animationDuration = 1000
 const animationInterval = 8000
 
+/* 
 const AnimateText = posed(Text)({
     right: {
         opacity: 0,
@@ -39,7 +40,7 @@ const AnimateText = posed(Text)({
         transition: { duration: 0 },
     },
 })
-
+*/
 class Citation extends React.Component {
     constructor(props) {
         super(props)
@@ -47,10 +48,10 @@ class Citation extends React.Component {
 
         this.state = {
             citation: json.citations[0],
-            animation: "center",
+            //animation: "center",
         }
     }
-
+/*
     componentDidMount() {
         this.timer = setInterval(() => this.animate(), animationInterval)
     }
@@ -100,11 +101,18 @@ class Citation extends React.Component {
         }, animationDuration + 100)
     }
 
-    render() {
-        return (
-            <AnimateText pose={this.state.animation}>
+     <AnimateText pose={this.state.animation}>
                 <Quote>{this.state.citation}</Quote>
             </AnimateText>
+     */
+
+    render() {
+        return (
+            <Wrapper>
+                <Border>
+                    <Quote>{this.state.citation}</Quote>
+                </Border>
+            </Wrapper>
         )
     }
 }

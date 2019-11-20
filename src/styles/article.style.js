@@ -16,6 +16,16 @@ export const Feature = styled(Img)`
 `
 
 export const Content = styled.div`
+    margin: 0 180px;
+
+    ${resolutions.medias.desktop}{
+        margin: 0 160px;
+    }
+
+    ${resolutions.medias.tablet_landscape}{
+        margin: 0 0;
+    }
+
     pre {
         background-color: ${colors.dark};
         padding: 20px 20px;

@@ -30,7 +30,7 @@ export default function Template({ data }) {
     const { markdownRemark } = data
     const { frontmatter, htmlAst } = markdownRemark
     return (
-        <Layout>
+        <Layout page="articles">
             <Helmet
                 title={frontmatter.title + " | Dylan Do Amaral"}
                 defer={false}

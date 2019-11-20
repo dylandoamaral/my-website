@@ -4,19 +4,17 @@ import resolutions from "../../configurations/resolutions.json"
 
 export const Layout = styled.div`
     padding: 0;
-    margin: 0 360px;
+    margin: 0 170px;
 
-    height: 100%;
-
-    @media screen and (max-width: ${resolutions.large}) {
-        margin: 0 220px;
+    ${resolutions.medias.desktop} {
+        margin: 0 150px;
     }
 
-    @media screen and (max-width: ${resolutions.medium}) {
-        margin: 0 32px;
+    ${resolutions.medias.tablet_landscape} {
+        margin: 0 80px;
     }
 
-    @media screen and (max-width: ${resolutions.little}) {
-        margin: 0 10px;
+    ${resolutions.medias.tablet_portrait} {
+        margin: 0 20px;
     }
 `

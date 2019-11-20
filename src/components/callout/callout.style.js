@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media (max-width: ${resolutions.medium}) {
+    ${resolutions.medias.tablet_landscape} {
         border-top: none;
         border-left: 10px solid ${props => props.border};
 
@@ -30,7 +30,7 @@ export const Emoji = styled.span`
     display: block;
     padding-bottom: 10px;
 
-    @media (max-width: ${resolutions.medium}) {
+    ${resolutions.medias.tablet_landscape} {
         padding-right: 10px;
         padding-bottom: 0px;
     }

@@ -9,7 +9,7 @@ import CV from "../assets/documents/cv.pdf"
 import { Wrapper, Picture, Catchphrase } from "../styles/about.style"
 
 export default ({ data }) => (
-    <Layout>
+    <Layout page="about">
         <Helmet title="À propos de moi | Dylan Do Amaral" defer={false} />
         <Wrapper>
             <Picture fixed={data.owl.childImageSharp.fixed} alt="owl" />

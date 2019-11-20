@@ -7,6 +7,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: futura;
+    src: url("../assets/fonts/futura/futuraMedium.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -40,22 +49,10 @@ body {
 
 h1 {
     margin: 0;
-
-    color: #c6a57a;
-    font-size: 3em;
-    font-weight: 400;
-
-    font-family: Optima;
 }
 
 h2 {
     margin: 0.5em 0;
-    color: #c6a57a;
-    font-size: 1.5em;
-    line-height: 1em;
-    font-weight: 500;
-
-    font-family: Optima;
 }
 
 p {
@@ -65,7 +62,7 @@ p {
 }
 
 a {
-    color: #c6a57a;
+    color: #FDBF4E;
 }
 
 pre {

@@ -1,8 +1,10 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+
 import Img from "gatsby-image"
 
 import colors from "../../configurations/colors.json"
+import { H2 } from "../../styles/global.style"
 
 export const Click = styled(Link)`
     text-decoration: none;
@@ -42,7 +44,7 @@ export const Content = styled.div`
     padding: 10px;
 `
 
-export const Title = styled.h2`
+export const Title = styled(H2)`
     margin: 0 20px;
     font-size: 32px;
     text-align: center;

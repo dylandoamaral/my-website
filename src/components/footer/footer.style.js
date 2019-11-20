@@ -1,13 +1,19 @@
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
+import resolutions from "../../configurations/resolutions.json"
+
 export const Footer = styled.footer`
     height: 100px;
-    padding: 20px;
+    padding: 20px 0;
 
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+
+    ${resolutions.medias.phone} {
+        flex-direction: column;
+    }
 `
 
 export const FooterLink = styled(OutboundLink)`

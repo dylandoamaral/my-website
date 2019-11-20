@@ -1,5 +1,13 @@
 {
-    "little": "500px",
-    "medium": "1000px",
-    "large": "1300px"
+    "little": "600px",
+    "medium": "900px",
+    "large": "1200px",
+    "extra": "1800px",
+
+    "medias": {
+        "phone": "@media (max-width: 600px)",
+        "tablet_portrait": "@media (max-width: 900px)",
+        "tablet_landscape": "@media (max-width: 1200px)",
+        "desktop": "@media (max-width: 1800px)"
+    }
 }

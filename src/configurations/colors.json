@@ -1,5 +1,6 @@
 {
     "dark": "#222222",
-    "light": "#ECECEC",
-    "primary": "#C6A57A"
+    "light": "#E8E8E8",
+    "primary": "#FDBF4E",
+    "secondary": "#284739"
 }

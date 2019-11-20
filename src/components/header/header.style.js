@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import colors from "../../configurations/colors.json"
 import resolutions from "../../configurations/resolutions.json"
+import fonts from "../../configurations/fonts.json"
 
 export const Header = styled.header`
     padding: 20px 0;
@@ -26,7 +27,7 @@ export const Header = styled.header`
 export const Logo = styled(Link)`
     text-decoration: none;
     font-family: "salute_riches";
-    font-size: 20px;
+    font-size: ${fonts.sizes.normal};
     color: ${colors.light};
     padding: 2px 5px;
     background-color: ${colors.dark};
@@ -46,8 +47,8 @@ export const Navlink = styled(Link)`
     margin-left: 30px;
 
     text-decoration: none;
-    font-size: 20px;
-    color: ${colors.dark};
+    font-size: ${fonts.sizes.normal};
+    color: ${props => (props.on === "true" ? colors.primary : colors.dark)};
 
     :hover {
         color: ${colors.primary};
