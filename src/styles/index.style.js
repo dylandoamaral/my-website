@@ -19,6 +19,7 @@ export const Showcase = styled.div`
 
     ${resolutions.medias.phone} {
         margin: 0 -20px;
+        height: 600px;
     }
 `
 
