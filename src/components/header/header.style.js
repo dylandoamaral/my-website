@@ -15,12 +15,11 @@ export const Header = styled.header`
 
     @media (max-width: ${resolutions.medium}) {
         padding-bottom: 70px;
-        height: 150px;
+        height: 100px;
     }
 
     @media (max-width: ${resolutions.little}) {
         flex-direction: column;
-        padding-bottom: 150px;
     }
 `
 

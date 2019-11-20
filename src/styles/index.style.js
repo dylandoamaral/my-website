@@ -19,7 +19,6 @@ export const Showcase = styled.div`
 
     ${resolutions.medias.phone} {
         margin: 0 -20px;
-        min-height: 750px;
     }
 `
 
@@ -29,6 +28,7 @@ export const Name = styled.h1`
     color: ${colors.dark};
     
     ${resolutions.medias.phone} {
+        font-size: 50px;
         margin-left: 20px;
     }
 `
@@ -63,8 +63,8 @@ export const Image = styled.img`
     }
 
     ${resolutions.medias.phone} {
-        height: 85%;
-        right: -150px;
+        height: 75%;
+        right: -170px;
     }
 `
 
