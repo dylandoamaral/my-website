@@ -1,13 +1,13 @@
 import React from "react"
-import posed from "react-pose"
+//import posed from "react-pose"
 
 import { Wrapper, Border, Quote } from "./citation.style"
 import json from "./citation.json"
 
-import resolutions from "../../configurations/resolutions.json"
+//import resolutions from "../../configurations/resolutions.json"
 
-const animationDuration = 1000
-const animationInterval = 8000
+//const animationDuration = 1000
+//const animationInterval = 8000
 
 /* 
 const AnimateText = posed(Text)({
