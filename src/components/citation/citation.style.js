@@ -52,6 +52,10 @@ export const Quote = styled.p`
     color: white;
     font-size: ${fonts.sizes.big};
 
+    ${resolutions.medias.phone} {
+        font-size: ${fonts.sizes.normal};
+    }
+
     ::after{
         content: '|';
     }

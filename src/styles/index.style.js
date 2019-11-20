@@ -64,7 +64,7 @@ export const Image = styled.img`
 
     ${resolutions.medias.phone} {
         height: 75%;
-        right: -170px;
+        right: -140px;
     }
 `
 
