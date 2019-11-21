@@ -12,6 +12,7 @@ export const Wrapper = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 `
 
 export const Logo = styled(Link)`
@@ -36,15 +37,21 @@ export const Navigation = styled.nav`
     }
 `
 
+//        transform: ${props => props.isToggle === "true" ? "translateY(0px)" : "translateY(-188.8px)"};
+
 export const BurgerNavigation = styled.nav`
     display: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
     margin: 0 -20px 20px -20px;
 
     ${resolutions.medias.phone} {
-        display: ${props => props.isToggle === "true" ? "flex" : "none"};
+        display: flex;
+        height: ${props => props.isToggle === "true" ? "189px" : "0px"};
+        overflow: hidden;
         flex-direction: column;
         align-items: center;
+
+        transition: height 0.5s ease-out;
     }
 `
 
@@ -73,9 +80,8 @@ export const BurgerNavlink = styled(Link)`
 `
 
 export const BurgerSeparation = styled.hr`
-    width: 70%;
-    border: none;
-    height: 1px;
+    width: 75%;
+    border: 1px solid ${colors.dark};
     background-color: ${colors.dark};
     opacity: 0.15;
 `
