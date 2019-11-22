@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout/layout"
 
-import { Preface, Cards } from "../styles/articles.style"
+import { Wrapper, Preface, Cards } from "../styles/articles.style"
 import { H1, P, Line } from "../styles/global.style"
 import ArticleCard from "../components/article_card/article_card"
 
@@ -17,6 +17,7 @@ class Articles extends React.Component {
 
         return (
             <Layout page="articles">
+                <Wrapper>
                 <Helmet title="Mes articles | Dylan Do Amaral" defer={false} />
                 <Preface>
                     <H1>Mes articles</H1>
@@ -61,6 +62,7 @@ class Articles extends React.Component {
                         )
                     })}
                 </Cards>
+                </Wrapper>
             </Layout>
         )
     }

@@ -3,6 +3,7 @@ import Img from "gatsby-image"
 
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
+import margins from "../configurations/margins"
 
 import { H1 } from "../styles/global.style"
 
@@ -10,23 +11,20 @@ export const Title = styled(H1)`
     text-align: center;
 `
 
+export const Wrapper = styled.div`
+    margin-top: 20px;
+    margin-bottom: 20px;
+    ${margins.inner_margin}
+`
+
+
 export const Feature = styled(Img)`
     width: 100% !important;
     height: 350px !important;
-    margin-top: 20px;
-    margin-bottom: 20px;
 `
 
 export const Content = styled.div`
-    margin: 0 180px;
-
-    ${resolutions.medias.desktop}{
-        margin: 0 160px;
-    }
-
-    ${resolutions.medias.tablet_landscape}{
-        margin: 0 0;
-    }
+    ${margins.inner_margin}
 
     pre {
         background-color: ${colors.dark};

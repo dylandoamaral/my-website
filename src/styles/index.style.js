@@ -71,9 +71,6 @@ export const Image = styled.img`
     }
 `
 
-/*
-width: 70%;
-        height: auto;*/
 export const Div = styled.div`
     margin: 30px 0;
 `

@@ -24,10 +24,6 @@ export const Logo = styled(Link)`
     background-color: ${colors.dark};
     transition: opacity 0.3s;
     opacity: 1;
-
-    :hover {
-        opacity: 0.8;
-    }
 `
 
 /*
