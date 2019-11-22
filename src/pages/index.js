@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/global/layout/layout"
 
 import {
     Showcase,
@@ -16,7 +16,7 @@ import {
 } from "../styles/index.style"
 import { H1, Line } from "../styles/global.style"
 
-import Citation from "../components/citation/citation"
+import Citation from "../components/other/citation/citation"
 
 export default () => (
     <Layout page="index">

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import resolutions from "../../configurations/resolutions.json"
+import resolutions from "../../../configurations/resolutions.json"
 
 export const Wrapper = styled.aside`
     max-width: 360px;

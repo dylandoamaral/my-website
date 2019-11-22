@@ -2,7 +2,7 @@ import React from "react"
 
 import { Canvas } from "./game.style"
 
-import colors from "../../configurations/colors.json"
+import colors from "../../../configurations/colors.json"
 
 const WIDTH = 1600
 const HEIGHT = 800

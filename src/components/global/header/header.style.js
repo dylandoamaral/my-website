@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 
 import styled from "styled-components"
 
-import colors from "../../configurations/colors.json"
-import resolutions from "../../configurations/resolutions.json"
-import fonts from "../../configurations/fonts.json"
+import colors from "../../../configurations/colors.json"
+import resolutions from "../../../configurations/resolutions.json"
+import fonts from "../../../configurations/fonts.json"
 
 export const Wrapper = styled.header`
     padding: 20px 0;

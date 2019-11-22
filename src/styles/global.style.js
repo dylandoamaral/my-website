@@ -3,7 +3,7 @@ import styled from "styled-components"
 import colors from "../configurations/colors.json"
 import fonts from "../configurations/fonts.json"
 
-import Hr from "../components/hr/hr"
+import Hr from "../components/global/hr/hr"
 
 export const H1 = styled.h1`
     margin: 0;

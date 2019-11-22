@@ -2,16 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/global/layout/layout"
 import { Title, Wrapper, Feature, Content } from "../styles/article.style"
 import { H2, H3, P, Span, A, Li } from "../styles/global.style"
 
 import rehypeReact from "rehype-react"
-import Aside from "../components/aside/aside"
-import Horizontal from "../components/horizontal/horizontal"
-import Callout from "../components/callout/callout"
-import Caption from "../components/caption/caption"
-import Game from "../components/game/game"
+import Aside from "../components/article/aside/aside"
+import Horizontal from "../components/article/horizontal/horizontal"
+import Callout from "../components/article/callout/callout"
+import Caption from "../components/article/caption/caption"
+import Game from "../components/article/game/game"
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,

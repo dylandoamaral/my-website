@@ -1,14 +1,14 @@
 import React from "react"
 
 import { Footer, FooterLink } from "./footer.style"
-import { Span } from "../../styles/global.style"
+import { Span } from "../../../styles/global.style"
 
-import TwitterIcon from "../../assets/images/icons/twitter.svg"
-import LinkedinIcon from "../../assets/images/icons/linkedin.svg"
-import GithubIcon from "../../assets/images/icons/github.svg"
-import CVIcon from "../../assets/images/icons/cv.svg"
+import TwitterIcon from "../../../assets/images/icons/twitter.svg"
+import LinkedinIcon from "../../../assets/images/icons/linkedin.svg"
+import GithubIcon from "../../../assets/images/icons/github.svg"
+import CVIcon from "../../../assets/images/icons/cv.svg"
 
-import CV from "../../assets/documents/cv.pdf"
+import CV from "../../../assets/documents/cv.pdf"
 
 export default () => (
     <Footer>

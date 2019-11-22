@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 
 import Img from "gatsby-image"
 
-import colors from "../../configurations/colors.json"
-import { H2 } from "../../styles/global.style"
+import colors from "../../../configurations/colors.json"
+import { H2 } from "../../../styles/global.style"
 
 export const Click = styled(Link)`
     text-decoration: none;

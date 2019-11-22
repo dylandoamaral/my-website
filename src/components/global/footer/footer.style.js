@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import resolutions from "../../configurations/resolutions.json"
+import resolutions from "../../../configurations/resolutions.json"
 
 export const Footer = styled.footer`
     height: 100px;

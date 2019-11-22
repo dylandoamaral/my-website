@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-import colors from "../../configurations/colors.json"
-import resolutions from "../../configurations/resolutions.json"
+import colors from "../../../configurations/colors.json"
+import resolutions from "../../../configurations/resolutions.json"
 
 export const Wrapper = styled.div`
     width: 100%;

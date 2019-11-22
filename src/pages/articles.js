@@ -2,11 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/global/layout/layout"
 
 import { Wrapper, Preface, Cards } from "../styles/articles.style"
 import { H1, P, Line } from "../styles/global.style"
-import ArticleCard from "../components/article_card/article_card"
+import ArticleCard from "../components/article/article_card/article_card"
 
 import { addUniqueIdToArray } from "../utils/array"
 

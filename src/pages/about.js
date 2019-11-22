@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/global/layout/layout"
 import CV from "../assets/documents/cv.pdf"
 
 import { Wrapper, Picture, Catchphrase } from "../styles/about.style"

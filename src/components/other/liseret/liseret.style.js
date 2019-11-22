@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components"
 
-import resolutions from "../../configurations/resolutions.json"
+import resolutions from "../../../configurations/resolutions.json"
 
 const liseretSlideTop = keyframes`
     from {

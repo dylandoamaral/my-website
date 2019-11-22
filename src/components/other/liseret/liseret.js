@@ -2,8 +2,8 @@ import React from "react"
 
 import { Canvas } from "./liseret.style"
 
-import resolutions from "../../configurations/resolutions.json"
-import colors from "../../configurations/colors.json"
+import resolutions from "../../../configurations/resolutions.json"
+import colors from "../../../configurations/colors.json"
 
 class Liseret extends React.Component {
     constructor(props) {

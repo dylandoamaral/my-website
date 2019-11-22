@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import colors from "../../configurations/colors.json"
+import colors from "../../../configurations/colors.json"
 
 export const Wrapper = styled.div`
     width: 300px;
