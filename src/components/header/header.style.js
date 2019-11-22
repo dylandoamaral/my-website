@@ -30,28 +30,13 @@ export const Logo = styled(Link)`
     }
 `
 
+/*
+*   NAVIGATION FOR LARGE SCREEN
+*/
 export const Navigation = styled.nav`
     ${resolutions.medias.phone} {
         display: none;
         
-    }
-`
-
-//        transform: ${props => props.isToggle === "true" ? "translateY(0px)" : "translateY(-188.8px)"};
-
-export const BurgerNavigation = styled.nav`
-    display: none;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
-    margin: 0 -20px 20px -20px;
-
-    ${resolutions.medias.phone} {
-        display: flex;
-        height: ${props => props.isToggle === "true" ? "189px" : "0px"};
-        overflow: hidden;
-        flex-direction: column;
-        align-items: center;
-
-        transition: height 0.5s ease-out;
     }
 `
 
@@ -64,6 +49,25 @@ export const Navlink = styled(Link)`
 
     :hover {
         color: ${colors.primary};
+    }
+`
+
+/*
+*   NAVIGATION FOR SMALL SCREEN
+*/
+export const BurgerNavigation = styled.nav`
+    display: none;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+    margin: 0 -20px 20px -20px;
+
+    ${resolutions.medias.phone} {
+        display: flex;
+        height: ${props => props.isToggle === "true" ? "122px" : "0px"};
+        overflow: hidden;
+        flex-direction: column;
+        align-items: center;
+
+        transition: height 0.5s ease-out;
     }
 `
 
@@ -86,7 +90,9 @@ export const BurgerSeparation = styled.hr`
     opacity: 0.15;
 `
     
-
+/*
+*   HAMBURGER ICON
+*/
 export const Bread = styled.a`
     width: 30px;
     height: 25px;

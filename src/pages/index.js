@@ -14,7 +14,7 @@ import {
     Description,
     Picture,
 } from "../styles/index.style"
-import { H2, Line } from "../styles/global.style"
+import { H1, Line } from "../styles/global.style"
 
 import Citation from "../components/citation/citation"
 
@@ -33,7 +33,7 @@ export default () => (
         </Showcase>
         <Citation />
         <Div>
-            <H2 style={{ "textAlign": "center" }}>Pourquoi ce site ?</H2>
+            <H1 style={{ "textAlign": "center" }}>Pourquoi ce site ?</H1>
             <Line />
             <Content>
                 <Picture src={"/forest.jpg"} alt="owl" />

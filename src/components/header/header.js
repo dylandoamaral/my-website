@@ -41,12 +41,6 @@ class Header extends React.Component {
                         >
                             MES ARTICLES
                         </Navlink>
-                        <Navlink
-                            on={this.props.page === "about" ? "true" : "false"}
-                            to="/about/"
-                        >
-                            À PROPOS DE MOI
-                        </Navlink>
                     </Navigation>
                     <Bread onClick={this.toggleMenu}>
                         <Slice />
@@ -67,13 +61,6 @@ class Header extends React.Component {
                         to="/articles/"
                     >
                         MES ARTICLES
-                    </BurgerNavlink>
-                    <BurgerSeparation />
-                    <BurgerNavlink
-                        on={this.props.page === "about" ? "true" : "false"}
-                        to="/about/"
-                    >
-                        À PROPOS DE MOI
                     </BurgerNavlink>
                 </BurgerNavigation>
             </div>

@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout/layout"
-import { Title, Feature, Content, H1 } from "../styles/article.style"
+import { Title, Feature, Content } from "../styles/article.style"
+import { H2, H3, P, Span, A, Li } from "../styles/global.style"
 
 import rehypeReact from "rehype-react"
 import Aside from "../components/aside/aside"
@@ -15,13 +16,21 @@ import Game from "../components/game/game"
 const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: {
+        // Normal components
+        h1: H2,
+        h2: H3,
+        p: P,
+        span: Span,
+        a: A,
+        li: Li,
+
+        // Additional components
         "aside-element": Aside,
         "horizontal-element": Horizontal,
         "callout-element": Callout,
         "thumb-caption": Caption,
 
-        h1: H1,
-
+        // Special components
         "fancy-demonstration": Game,
     },
 }).Compiler

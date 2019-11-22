@@ -1,13 +1,5 @@
 /* Some stuff come from https://github.com/csstools/sanitize.css/blob/master/sanitize.css */
 @font-face {
-    font-family: cormorant;
-    src: url("../assets/fonts/cormorant_garamond/CormorantGaramond-Regular.ttf")
-        format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: futura;
     src: url("../assets/fonts/futura/futuraMedium.ttf")
         format("truetype");
@@ -20,7 +12,11 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    
     cursor: default;
     line-height: 1.5;
     -moz-tab-size: 4;
@@ -31,63 +27,6 @@ html {
     word-break: break-word;
 
     background-color: #ececec;
-    color: #222222;
-
-    font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
-        /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
-        /* Ubuntu 10.10+ */ Ubuntu, /* Gnome 3+ */ Cantarell,
-        /* KDE Plasma 5+ */ Noto Sans, /* fallback */ sans-serif,
-        /* macOS emoji */ "Apple Color Emoji",
-        /* Windows emoji */ "Segoe UI Emoji",
-        /* Windows emoji */ "Segoe UI Symbol",
-        /* Linux emoji */ "Noto Color Emoji";
-}
-
-body {
-    margin: 0;
-}
-
-h1 {
-    margin: 0;
-}
-
-h2 {
-    margin: 0.5em 0;
-}
-
-p {
-    color: #222222;
-    font-size: 1.05em;
-    font-weight: 400;
-}
-
-a {
-    color: #FDBF4E;
-}
-
-pre {
-    font-family: monospace, monospace;
-    font-size: 1em;
-}
-
-b,
-strong {
-    font-weight: bolder;
-}
-
-code,
-kbd,
-samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
-}
-
-html,
-body {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    line-height: 1.5;
 
     font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
         /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,
@@ -109,4 +48,9 @@ samp {
         /* KDE Plasma 5+ */ Noto Mono, /* KDE Plasma 4+ */ Oxygen Mono,
         /* Linux/OpenOffice fallback */ Liberation Mono,
         /* fallback */ monospace;
+}
+
+b,
+strong {
+    font-weight: bolder;
 }

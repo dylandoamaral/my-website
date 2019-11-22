@@ -28,6 +28,8 @@ export const Name = styled.h1`
     font-family: futura;
     color: ${colors.dark};
     
+    margin: 0;
+
     ${resolutions.medias.phone} {
         font-size: 50px;
         margin-left: 20px;

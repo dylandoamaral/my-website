@@ -4,7 +4,9 @@ import Img from "gatsby-image"
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
 
-export const Title = styled.h1`
+import { H1 } from "../styles/global.style"
+
+export const Title = styled(H1)`
     text-align: center;
 `
 
@@ -39,8 +41,4 @@ export const Content = styled.div`
             margin: 0;
         }
     }
-`
-
-export const H1 = styled.h2`
-    margin: 1.5em 0 0.5em 0;
 `

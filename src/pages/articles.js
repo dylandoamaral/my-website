@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout/layout"
 
 import { Preface, Cards } from "../styles/articles.style"
-import { H2, P, Line } from "../styles/global.style"
+import { H1, P, Line } from "../styles/global.style"
 import ArticleCard from "../components/article_card/article_card"
 
 import { addUniqueIdToArray } from "../utils/array"
@@ -19,7 +19,7 @@ class Articles extends React.Component {
             <Layout page="articles">
                 <Helmet title="Mes articles | Dylan Do Amaral" defer={false} />
                 <Preface>
-                    <H2>Mes articles</H2>
+                    <H1>Mes articles</H1>
                     <P>
                         Dans cette section, j'écris des articles sur des choses
                         qui m'amusent, qui me divertissent toujours en rapport
