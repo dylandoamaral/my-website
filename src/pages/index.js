@@ -32,11 +32,11 @@ export default () => (
                 <Title>Data Magicien</Title>
                 <Title secondary={true}>Bloggeur</Title>
             </Titles>
-            <Image src={"/owl.png"} alt="owl" />
+            <Image src={"/index/owl.png"} alt="owl" />
         </Showcase>
         <Citation />
         <Div>
-            <H1 style={{ "textAlign": "center", "margin-top": "40px", "marginBottom": "40px" }}>Pourquoi ce site ?</H1>
+            <H1 style={{ "textAlign": "center", "margin-top": "80px", "marginBottom": "80px" }}>Pourquoi ce site ?</H1>
             <Content>
                 <Picture alt="owl" />
                 <DescriptionContainer>
@@ -52,7 +52,7 @@ export default () => (
             </Content>
         </Div>
         <Div>
-        <H1 style={{ "textAlign": "center", "margin-top": "40px" }}>Pour qui s'adresse t-il?</H1>
+        <H1 style={{ "textAlign": "center", "margin-top": "80px" }}>Pour qui s'adresse t-il?</H1>
             <Content>
                <MenCard>
                    <Men src={"/index/men/happy.png"} alt="mr.men happy" />

@@ -92,20 +92,20 @@ export const Content = styled.div`
 export const Picture = styled.div`
     flex: 1;
 
-    min-height: 500px;
+    min-height: 450px;
 
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
 
-    background-image: url("/forest.jpg");
+    background-image: url("/index/forest.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    margin-right: 60px;
+    margin-right: 40px;
 
     ${resolutions.medias.tablet_portrait} {
         width: 100%;
-        min-height: 400px;
+        min-height: 350px;
         margin-right: 0;
         margin-bottom: 20px;
     }
@@ -120,7 +120,7 @@ export const DescriptionContainer = styled.div`
 
     margin: 0;
     padding: 0;
-    margin-left: 60px;
+    margin-left: 40px;
 
     ${resolutions.medias.tablet_portrait} {
         margin-left: 0;
@@ -141,7 +141,7 @@ export const MenCard = styled.div`
     justify-items: center;
 
     text-align: center;
-    margin-top: 20px;
+    margin-top: 60px;
 
 `
 
