@@ -13,6 +13,8 @@ export const H1 = styled.h1`
     font-weight: normal;
 
     font-family: futura;
+
+    text-align: center;
 `
 
 export const H2 = styled.h2`

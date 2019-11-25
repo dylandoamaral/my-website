@@ -4,7 +4,7 @@ import colors from "../../../configurations/colors.json"
 
 export const Wrapper = styled.div`
     width: 300px;
-    margin: 10px auto;
+    margin: 30px auto;
 
     display: flex;
     align-items: center;

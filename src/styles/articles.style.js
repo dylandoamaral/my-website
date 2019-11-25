@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 `
 
 export const Preface = styled.div`
+    margin-top: 20px;
     text-align: center;
 `
 

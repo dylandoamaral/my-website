@@ -4,7 +4,7 @@ import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
 import margins from "../configurations/margins"
 
-import { P } from "../styles/global.style"
+import { P, H1 } from "../styles/global.style"
 
 export const Showcase = styled.div`
     height: calc(100vh - 100px);
@@ -70,8 +70,11 @@ export const Image = styled.img`
     }
 `
 
-export const Div = styled.div`
-    margin: 30px 0;
+export const Heading = styled(H1)`
+    margin: 80px 0;
+    ${resolutions.medias.tablet_portrait} {
+        margin: 80px 0 20px 0;
+    }
 `
 
 export const Content = styled.div`
@@ -141,7 +144,7 @@ export const MenCard = styled.div`
     justify-items: center;
 
     text-align: center;
-    margin-top: 60px;
+    margin-bottom: 80px;
 
 `
 
