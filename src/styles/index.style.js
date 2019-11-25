@@ -2,13 +2,13 @@ import styled from "styled-components"
 
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
+import margins from "../configurations/margins"
 
 import { P } from "../styles/global.style"
 
 export const Showcase = styled.div`
     height: calc(100vh - 100px);
-    min-height: 550px;
-    max-height: 650px;
+    min-height: 650px;
 
     display: flex;
     flex-direction: column;
@@ -19,7 +19,6 @@ export const Showcase = styled.div`
 
     ${resolutions.medias.phone} {
         margin: 0 -20px;
-        height: 600px;
     }
 `
 
@@ -77,29 +76,79 @@ export const Div = styled.div`
 
 export const Content = styled.div`
     margin-top: 20px;
-    width: 100%;
+
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     ${resolutions.medias.tablet_portrait} {
         flex-direction: column;
+        align-items: center;
     }
+
+    ${margins.inner_margin}
 `
 
-export const Picture = styled.img`
-    width: 40%;
+export const Picture = styled.div`
+    flex: 1;
+
+    min-height: 500px;
+
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
-    margin-right: 20px;
+
+    background-image: url("/forest.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    margin-right: 60px;
 
     ${resolutions.medias.tablet_portrait} {
         width: 100%;
-        height: auto;
+        min-height: 400px;
         margin-right: 0;
         margin-bottom: 20px;
+    }
+`
+
+export const DescriptionContainer = styled.div`
+    flex: 2.5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    margin-left: 60px;
+
+    ${resolutions.medias.tablet_portrait} {
+        margin-left: 0;
     }
 `
 
 export const Description = styled(P)`
     margin: 0;
     padding: 0;
+`
+
+export const MenCard = styled.div`
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    text-align: center;
+    margin-top: 20px;
+
+`
+
+export const Men = styled.img`
+    width: 200px;
+    height: 200px;
+
+    margin-bottom: 20px;
 `
 
