@@ -31,7 +31,7 @@ module.exports = {
                 short_name: `dylandoamaral`,
                 start_url: `/`,
                 background_color: `#ECECEC`,
-                theme_color: `#334F4F`,
+                theme_color: `#284739`,
                 display: `standalone`,
                 icon: `src/assets/images/icon.png`,
             },
