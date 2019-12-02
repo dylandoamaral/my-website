@@ -102,7 +102,9 @@ const Cards = () => (
 
 export default () => (
     <Layout page="index">
-        <Helmet title="Dylan Do Amaral" defer={false} />
+        <Helmet title="Dylan Do Amaral" defer={false}>
+            <meta name="description" content={"Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"} />
+        </Helmet>
         <Showcase />
         <Citation />
         <Description />

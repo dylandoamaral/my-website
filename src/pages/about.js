@@ -10,7 +10,9 @@ import { Wrapper, Picture, Catchphrase } from "../styles/about.style"
 
 export default ({ data }) => (
     <Layout page="about">
-        <Helmet title="À propos de moi | Dylan Do Amaral" defer={false} />
+        <Helmet title="À propos de moi | Dylan Do Amaral" defer={false}>
+            <meta name="description" content={"Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"} />
+        </Helmet>
         <Wrapper>
             <Picture fixed={data.owl.childImageSharp.fixed} alt="owl" />
             <Catchphrase>Coucou c'est moi,</Catchphrase>
