@@ -26,7 +26,7 @@ body {
     -webkit-text-size-adjust: 100%;
     word-break: break-word;
 
-    background-color: #ececec;
+    background-color: white;
 
     font-family: system-ui, /* macOS 10.11-10.12 */ -apple-system,
         /* Windows 6+ */ Segoe UI, /* Android 4+ */ Roboto,

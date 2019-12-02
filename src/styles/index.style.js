@@ -6,7 +6,47 @@ import margins from "../configurations/margins"
 
 import { P, H1 } from "../styles/global.style"
 
-export const Showcase = styled.div`
+/*
+ * GLOBAL
+ */
+export const Container = styled.div``
+
+export const Title = styled(H1)`
+    margin: 80px 0;
+    ${resolutions.medias.phone} {
+        margin: 80px 0 20px 0;
+    }
+`
+
+export const Primary = styled.span`
+    color: ${colors.primary};
+`
+
+export const Secondary = styled.span`
+    color: ${colors.secondary};
+`
+
+/*
+ * SHOWCASE
+ */
+export const RoleList = styled.div`
+    display: flex;
+    margin: 10px 0 20px 0;
+
+    ${resolutions.medias.phone} {
+        margin-left: 20px;
+    }
+`
+
+export const Role = styled.span`
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+
+    font-weight: 500;
+    color: ${props => (props.secondary ? colors.secondary : colors.primary)};
+`
+
+export const ShowcaseContainer = styled.div`
     height: calc(100vh - 100px);
     min-height: 650px;
 
@@ -22,11 +62,11 @@ export const Showcase = styled.div`
     }
 `
 
-export const Name = styled.h1`
+export const ShowcaseName = styled.h1`
     font-size: 70px;
     font-family: futura;
     color: ${colors.dark};
-    
+
     margin: 0;
 
     ${resolutions.medias.phone} {
@@ -35,24 +75,7 @@ export const Name = styled.h1`
     }
 `
 
-export const Titles = styled.div`
-    display: flex;
-    margin: 10px 0 20px 0;
-
-    ${resolutions.medias.phone} {
-        margin-left: 20px;
-    }
-`
-
-export const Title = styled.span`
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-
-    font-weight: 500;
-    color: ${props => (props.secondary ? colors.secondary : colors.primary)};
-`
-
-export const Image = styled.img`
+export const ShowcaseImage = styled.img`
     position: absolute;
     right: 0;
     bottom: 0;
@@ -70,29 +93,83 @@ export const Image = styled.img`
     }
 `
 
-export const Heading = styled(H1)`
-    margin: 80px 0;
-    ${resolutions.medias.tablet_portrait} {
-        margin: 80px 0 20px 0;
+/*
+ * CITATION
+ */
+export const CitationContainer = styled.div`
+    ${margins.anti_outer_margin}
+    background-color: ${colors.light};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+`
+
+export const CitationContent = styled.div`
+    ${margins.full_margin}
+`
+
+export const CitationBr = styled.div`
+    display: block;
+    height: 0;
+`
+
+export const CitationText = styled.p`
+    margin: 0 10px;
+
+    display: inline-block;
+
+    font-family: futura;
+    font-weight: 600px;
+    font-size: 45px;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+    ${resolutions.medias.phone} {
+        display: block;
     }
 `
 
-export const Content = styled.div`
-    margin-top: 20px;
+export const CitationTextOne = styled(CitationText)`
+    ${resolutions.medias.phone} {
+        font-size: 20vw;
+    }
+`
 
+export const CitationTextTwo = styled(CitationText)`
+    ${resolutions.medias.phone} {
+        font-size: 11.5vw;
+    }
+`
+
+export const CitationTextThree = styled(CitationText)`
+    ${resolutions.medias.phone} {
+        font-size: 18.3vw;
+    }
+`
+
+export const CitationTextFour = styled(CitationText)`
+    ${resolutions.medias.phone} {
+        font-size: 13.4vw;
+    }
+`
+
+/*
+ * WEBSITE DESCRIPTION
+ */
+export const DescriptionContainer = styled.div`
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     ${resolutions.medias.tablet_portrait} {
         flex-direction: column;
         align-items: center;
     }
-
     ${margins.inner_margin}
 `
 
-export const Picture = styled.div`
+export const DescriptionImage = styled.div`
     flex: 1;
 
     min-height: 450px;
@@ -108,50 +185,66 @@ export const Picture = styled.div`
 
     ${resolutions.medias.tablet_portrait} {
         width: 100%;
-        min-height: 350px;
+        min-height: 300px;
         margin-right: 0;
         margin-bottom: 20px;
     }
 `
 
-export const DescriptionContainer = styled.div`
+export const DescriptionText = styled(P)`
     flex: 2.5;
+`
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/*
+ * CARDS
+ */
+export const CardsContainer = styled.div`
+    ${margins.anti_outer_margin}
+    background-color: ${colors.secondary};
+    height: 200px;
+    margin-bottom: 150px;
 
-    margin: 0;
-    padding: 0;
-    margin-left: 40px;
-
-    ${resolutions.medias.tablet_portrait} {
-        margin-left: 0;
+    ${resolutions.medias.phone} {
+        height: 700px;
+        margin-bottom: 150px;
     }
 `
 
-export const Description = styled(P)`
-    margin: 0;
-    padding: 0;
-`
-
-export const MenCard = styled.div`
-    width: 250px;
+export const CardList = styled.div`
+    ${margins.full_margin}
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
+    justify-content: space-between;
+    
+    padding-top: 100px;
 
-    text-align: center;
-    margin-bottom: 80px;
-
+    ${resolutions.medias.phone} {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
-export const Men = styled.img`
+export const CardContainer = styled.div`
     width: 200px;
     height: 200px;
 
-    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    ${resolutions.medias.phone} {
+        margin-bottom: 50px;
+        width: 80%;
+        padding: 40px;
+    }
 `
 
+export const CardTitle = styled(P)`
+    margin: 0;
+    padding: 0;
+`
