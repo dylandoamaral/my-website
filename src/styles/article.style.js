@@ -1,11 +1,13 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
 import margins from "../configurations/margins"
+import fonts from "../configurations/fonts.json"
 
-import { H1, H2 } from "../styles/global.style"
+import { H1, H2, P } from "../styles/global.style"
 
 export const Title = styled(H1)`
     text-align: center;
@@ -44,4 +46,15 @@ export const Content = styled.div`
             margin: 0;
         }
     }
+`
+
+export const Back = styled(Link)`
+    ${margins.inner_margin}
+    color: ${colors.primary};
+    text-align: right;
+    display: block;
+    
+    font-size: ${fonts.sizes.normal};
+    line-height: 1.6em;
+    letter-spacing: 0.05em;
 `
