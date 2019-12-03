@@ -5,10 +5,15 @@ import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
 import margins from "../configurations/margins"
 
-import { H1 } from "../styles/global.style"
+import { H1, H2 } from "../styles/global.style"
 
 export const Title = styled(H1)`
     text-align: center;
+`
+
+export const Subtitle = styled(H2)`
+    text-align: center;
+    margin: 0;
 `
 
 export const Wrapper = styled.div`

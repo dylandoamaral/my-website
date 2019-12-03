@@ -39,7 +39,7 @@ Par soucis de simplicité, j'ai décidé de le séparer en 4 parties qui sortiro
 Voici les différentes parties retraçant l'histoire de la création de mon site internet :
 - [La naissance de mon premier site | Partie 1 : Introduction](/articles/la_naissance_de_mon_premier_site)
 - ~~La naissance de mon premier site | Partie 2 : Le choix des technologies~~
-- ~~La naissance de mon premier site | Partie 3 : Le design pour un programmer~~
+- ~~La naissance de mon premier site | Partie 3 : Le design pour un programmeur~~
 - ~~La naissance de mon premier site | Partie 4 : Les outils externes au projet~~
 
 

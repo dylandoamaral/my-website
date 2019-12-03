@@ -44,12 +44,9 @@ class Articles extends React.Component {
                                 <ArticleCard
                                     first={article.value === articles[0]}
                                     title={article.value.node.frontmatter.title}
+                                    subtitle={article.value.node.frontmatter.subtitle}
                                     key={article.uniqueId}
                                     path={article.value.node.frontmatter.path}
-                                    description={
-                                        article.value.node.frontmatter
-                                            .description
-                                    }
                                     date={article.value.node.frontmatter.date}
                                     featuredImage={
                                         article.value.node.frontmatter
@@ -92,7 +89,7 @@ export const articlesQuery = graphql`
                     frontmatter {
                         path
                         title
-                        description
+                        subtitle
                         date(formatString: "DD/MM/YYYY")
                         featuredImage {
                             childImageSharp {

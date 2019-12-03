@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/global/layout/layout"
-import { Title, Wrapper, Feature, Content } from "../styles/article.style"
+import { Title, Subtitle, Wrapper, Feature, Content } from "../styles/article.style"
 import { H2, H3, P, Span, A, Li } from "../styles/global.style"
 
 import rehypeReact from "rehype-react"
@@ -48,6 +48,7 @@ export default function Template({ data }) {
                 <meta name="keywords" content={frontmatter.keywords} />
             </Helmet>
             <Title>{frontmatter.title}</Title>
+            <Subtitle>{frontmatter.subtitle}</Subtitle>
             <Wrapper>
                 <Feature
                     fixed={frontmatter.featuredImage.childImageSharp.fixed}
