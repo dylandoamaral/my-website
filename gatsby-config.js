@@ -27,7 +27,7 @@ module.exports = {
                 pageTransitionDelay: 0,
             },
         },
-        `gatsby-plugin-sitemap`
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
