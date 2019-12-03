@@ -4,55 +4,88 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 import colors from "../../../configurations/colors.json"
-import { H2 } from "../../../styles/global.style"
+import margins from "../../../configurations/margins"
+import resolutions from "../../../configurations/resolutions.json"
 
-export const Click = styled(Link)`
-    text-decoration: none;
+import { H2, H3, P } from "../../../styles/global.style"
 
-    flex: ${props => (props.first ? "1 1 100%" : "1 1 250px")};
-    @media (max-width: 600px) {
-        flex: 1 1 250px;
-    }
+export const Wrapper = styled.div`
+    padding: 40px 0;
+    ${margins.anti_full_margin}
+
+    background-color: ${props => props.even === "false" ? colors.light : "none"};
 `
-
-export const Wrapper = styled.article`
-    margin: 10px;
-
-    background-color: white;
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+export const Card = styled(Link)`
+    text-decoration: none;
+    ${margins.full_margin}
 
     display: flex;
-    flex-direction: ${props => (props.first ? "row" : "column-reverse")};
-
-    height: ${props => (props.first ? "340px" : "500px")};
-
-    @media (max-width: 600px) {
+    ${resolutions.medias.tablet_portrait} {
         flex-direction: column-reverse;
-        height: 500px;
     }
 `
 
 export const Content = styled.div`
-    width: 100%;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px;
+    justify-content: space-between;
+    flex: 1;
+    
+    margin-right: 60px;
+    ${resolutions.medias.tablet_portrait} {
+        margin-right: 0px;
+    }
 `
 
+export const Feature = styled(Img)`
+    width: 225px !important;
+    height: 225px !important;
+    
+    border-radius: 10px;
+
+    ${resolutions.medias.tablet_portrait} {
+        width: 100% !important;
+        height: 250px !important;
+    }
+`
+
+export const Header = styled.div``
+
 export const Title = styled(H2)`
-    margin: 0 20px;
-    font-size: 32px;
-    text-align: center;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 1.5; /* fallback */
+    max-height: 1.5 * 2; /* fallback */
+`
+
+export const Subtitle = styled(H3)`
+    margin: 0;
+    color: ${colors.primary};
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 1.25; /* fallback */
+    max-height: 1.25 * 2; /* fallback */
+`
+
+export const Description = styled(P)`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-height: 1; /* fallback */
+    max-height: 1 * 3; /* fallback */
 `
 
 export const Footer = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 `
@@ -68,9 +101,4 @@ export const Theme = styled(Img)`
 export const Date = styled.span`
     opacity: 0.33;
     color: ${colors.dark};
-`
-
-export const Feature = styled(Img)`
-    width: 100% !important;
-    height: 100% !important;
 `

@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet"
 
 import Layout from "../components/global/layout/layout"
 
-import { Wrapper, Preface, Cards } from "../styles/articles.style"
-import { H1, P, Line } from "../styles/global.style"
+import { Wrapper, Preface, Description, Cards } from "../styles/articles.style"
+import { H1 } from "../styles/global.style"
 import ArticleCard from "../components/article/article_card/article_card"
 
 import { addUniqueIdToArray } from "../utils/array"
@@ -13,7 +13,12 @@ import { addUniqueIdToArray } from "../utils/array"
 class Articles extends React.Component {
     render() {
         const articles = this.props.data.allMarkdownRemark.edges
+        articles.forEach((item, i) => {
+            item.id = i + 1;
+          })
+
         const themes = this.props.data.themes.edges
+
 
         return (
             <Layout page="articles">
@@ -31,21 +36,21 @@ class Articles extends React.Component {
                     </Helmet>
                     <Preface>
                         <H1>Mes articles</H1>
-                        <P>
+                        <Description>
                             Dans cette section, j'écris des articles sur des
                             choses qui m'amusent, qui me divertissent toujours
                             en rapport avec ma passion, la programmation.
-                        </P>
+                        </Description>
                     </Preface>
-                    <Line />
                     <Cards>
                         {addUniqueIdToArray(articles).map(article => {
                             return (
                                 <ArticleCard
-                                    first={article.value === articles[0]}
+                                    key={article.uniqueId}
+                                    even={(article.value.id % 2 === 0) ? "true" : "false"}
                                     title={article.value.node.frontmatter.title}
                                     subtitle={article.value.node.frontmatter.subtitle}
-                                    key={article.uniqueId}
+                                    description={article.value.node.frontmatter.description}
                                     path={article.value.node.frontmatter.path}
                                     date={article.value.node.frontmatter.date}
                                     featuredImage={
@@ -90,10 +95,12 @@ export const articlesQuery = graphql`
                         path
                         title
                         subtitle
+                        description
+                        subtitle
                         date(formatString: "DD/MM/YYYY")
                         featuredImage {
                             childImageSharp {
-                                fixed(width: 2000) {
+                                fixed(width: 1000) {
                                     ...GatsbyImageSharpFixed
                                 }
                             }

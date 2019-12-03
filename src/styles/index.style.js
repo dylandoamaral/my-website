@@ -167,6 +167,7 @@ export const DescriptionContainer = styled.div`
         align-items: center;
     }
     ${margins.inner_margin}
+
 `
 
 export const DescriptionImage = styled.div`
@@ -175,13 +176,14 @@ export const DescriptionImage = styled.div`
     min-height: 450px;
 
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 
     background-image: url("/index/forest.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    margin-right: 40px;
+    margin-right: 70px;
 
     ${resolutions.medias.tablet_portrait} {
         width: 100%;
@@ -192,7 +194,8 @@ export const DescriptionImage = styled.div`
 `
 
 export const DescriptionText = styled(P)`
-    flex: 2.5;
+    flex: 2.2;
+    margin-left: 70px;
 `
 
 /*
