@@ -41,15 +41,11 @@ export default function Template({ data }) {
     return (
         <Layout page="articles">
             <Helmet
-                title={frontmatter.title + " | Dylan Do Amaral"}
+                title={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}
                 defer={false}
             >
-                <meta
-                    name="description"
-                    content={
-                        "Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
-                    }
-                />
+                <meta name="description" content={frontmatter.description} />
+                <meta name="keywords" content={frontmatter.keywords} />
             </Helmet>
             <Title>{frontmatter.title}</Title>
             <Wrapper>
@@ -76,6 +72,8 @@ export const articleQuery = graphql`
             frontmatter {
                 path
                 title
+                subtitle
+                keywords
                 description
                 date(formatString: "DD/MM/YYYY")
                 featuredImage {

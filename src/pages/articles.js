@@ -85,7 +85,7 @@ export const articlesQuery = graphql`
     query {
         allMarkdownRemark(
             limit: 2000
-            sort: { fields: [frontmatter___date], order: ASC }
+            sort: { fields: [frontmatter___date], order: DESC }
         ) {
             edges {
                 node {
