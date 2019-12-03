@@ -26,7 +26,6 @@ import {
     CardsContainer,
     CardList,
     CardContainer,
-    CardImage,
     CardTitle,
 } from "../styles/index.style"
 
@@ -57,7 +56,7 @@ const Citation = () => (
             <CitationTextTwo><Primary>programmer</Primary></CitationTextTwo>
             <CitationBr />
             <CitationTextThree right={"true"}>mais pas</CitationTextThree>
-            <CitationTextFour right={"true"}><Secondary>parametrer</Secondary></CitationTextFour>
+            <CitationTextFour right={"true"}><Secondary>paramétrer</Secondary></CitationTextFour>
         </CitationContent>
     </CitationContainer>
 )

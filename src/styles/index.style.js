@@ -115,7 +115,7 @@ export const CitationBr = styled.div`
 `
 
 export const CitationText = styled.p`
-    margin: 0 10px;
+    margin: 0 8px;
 
     display: inline-block;
 

@@ -9,6 +9,9 @@ const gatsby_remark_image_wrapper = `
   `
 
 module.exports = {
+    siteMetadata: {
+        siteUrl: `https://www.dylandoamaral.me`,
+    },
     plugins: [
         {
             resolve: `gatsby-plugin-google-analytics`,
@@ -24,6 +27,7 @@ module.exports = {
                 pageTransitionDelay: 0,
             },
         },
+        `gatsby-plugin-sitemap`
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
