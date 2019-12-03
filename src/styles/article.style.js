@@ -7,7 +7,7 @@ import resolutions from "../configurations/resolutions.json"
 import margins from "../configurations/margins"
 import fonts from "../configurations/fonts.json"
 
-import { H1, H2, P } from "../styles/global.style"
+import { H1, H2 } from "../styles/global.style"
 
 export const Title = styled(H1)`
     text-align: left;

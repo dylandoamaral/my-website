@@ -196,6 +196,10 @@ export const DescriptionImage = styled.div`
 export const DescriptionText = styled(P)`
     flex: 2.2;
     margin-left: 70px;
+
+    ${resolutions.medias.tablet_portrait} {
+        margin-left: 0;
+    }
 `
 
 /*
