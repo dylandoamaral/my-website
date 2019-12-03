@@ -47,14 +47,15 @@ export default function Template({ data }) {
                 <meta name="description" content={frontmatter.description} />
                 <meta name="keywords" content={frontmatter.keywords} />
             </Helmet>
-            <Title>{frontmatter.title}</Title>
-            <Subtitle>{frontmatter.subtitle}</Subtitle>
             <Wrapper>
                 <Feature
                     fixed={frontmatter.featuredImage.childImageSharp.fixed}
                     alt="feature image"
                 />
             </Wrapper>
+            <Title>{frontmatter.title}</Title>
+            <Subtitle>{frontmatter.subtitle}</Subtitle>
+
             <Content>{renderAst(htmlAst)}</Content>
             <Back to={"/articles"}>Retour vers mes articles...</Back>
         </Layout>

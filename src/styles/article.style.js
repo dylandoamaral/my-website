@@ -10,24 +10,25 @@ import fonts from "../configurations/fonts.json"
 import { H1, H2, P } from "../styles/global.style"
 
 export const Title = styled(H1)`
-    text-align: center;
+    text-align: left;
+    ${margins.inner_margin}
 `
 
 export const Subtitle = styled(H2)`
-    text-align: center;
+    color: ${colors.primary};
+    ${margins.inner_margin}
     margin: 0;
 `
 
 export const Wrapper = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
-    ${margins.inner_margin}
 `
-
 
 export const Feature = styled(Img)`
     width: 100% !important;
-    height: 350px !important;
+    height: 250px !important;
+    border-radius: 10px;
 `
 
 export const Content = styled.div`
@@ -53,7 +54,7 @@ export const Back = styled(Link)`
     color: ${colors.primary};
     text-align: right;
     display: block;
-    
+
     font-size: ${fonts.sizes.normal};
     line-height: 1.6em;
     letter-spacing: 0.05em;
