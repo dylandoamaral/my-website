@@ -7,8 +7,7 @@ import resolutions from "../../../configurations/resolutions.json"
 import fonts from "../../../configurations/fonts.json"
 
 export const Wrapper = styled.header`
-    padding: 20px 0;
-    height: 100px;
+    padding: 30px 0 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -47,8 +47,9 @@ export const Role = styled.span`
 `
 
 export const ShowcaseContainer = styled.div`
-    height: calc(100vh - 100px);
-    min-height: 650px;
+    height: calc(100vh - 64px);
+    min-height: 550px;
+    max-height: 700px;
 
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@ export const ShowcaseName = styled.h1`
     margin: 0;
 
     ${resolutions.medias.phone} {
-        font-size: 50px;
+        font-size: 11.1vw;
         margin-left: 20px;
     }
 `
@@ -84,7 +85,7 @@ export const ShowcaseImage = styled.img`
     width: auto;
 
     ${resolutions.medias.tablet_landscape} {
-        height: 90%;
+        height: 80%;
     }
 
     ${resolutions.medias.phone} {
