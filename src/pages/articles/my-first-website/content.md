@@ -8,6 +8,7 @@ featuredImage: "feature.jpg"
 tags:
     - website
 keywords: "website, site internet, nouveau projet, dylan do amaral, programmation, front end, gatsby, site vitrine, blog, blogs, article, articles, faire un blog, écrire des articles, site statique"
+source: "dylandoamaral"
 ---
 
 ***On se sent fière quand on termine un objectif que l'on s'était fixé, en tout cas, c'est mon cas actuellement. Ce site est une petite victoire sur ma tendance à ne jamais être satisfait de par mon côté perfectionniste.***

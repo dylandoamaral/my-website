@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import Img from "gatsby-image"
 
@@ -15,7 +16,17 @@ export const Wrapper = styled.div`
 
     background-color: ${props => props.even === "false" ? colors.light : "none"};
 `
-export const Card = styled(Link)`
+export const InnerClick = styled(Link)`
+    text-decoration: none;
+    ${margins.full_margin}
+
+    display: flex;
+    ${resolutions.medias.tablet_portrait} {
+        flex-direction: column-reverse;
+    }
+`
+
+export const OuterClick = styled(OutboundLink)`
     text-decoration: none;
     ${margins.full_margin}
 

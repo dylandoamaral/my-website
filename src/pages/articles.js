@@ -48,6 +48,7 @@ class Articles extends React.Component {
                                     description={article.value.node.frontmatter.description}
                                     path={article.value.node.frontmatter.path}
                                     date={article.value.node.frontmatter.date}
+                                    source={article.value.node.frontmatter.source}
                                     featuredImage={
                                         article.value.node.frontmatter
                                             .featuredImage.childImageSharp.fixed
@@ -93,9 +94,10 @@ export const articlesQuery = graphql`
                         description
                         subtitle
                         date(formatString: "DD/MM/YYYY")
+                        source
                         featuredImage {
                             childImageSharp {
-                                fixed(width: 1000) {
+                                fixed(width: 500) {
                                     ...GatsbyImageSharpFixed
                                 }
                             }
@@ -116,7 +118,7 @@ export const articlesQuery = graphql`
                 node {
                     name
                     childImageSharp {
-                        fixed(width: 20, height: 20) {
+                        fixed(height: 20) {
                             ...GatsbyImageSharpFixed
                         }
                     }

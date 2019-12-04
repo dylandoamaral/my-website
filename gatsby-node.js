@@ -28,11 +28,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: articleTemplate,
-            context: {}, // additional data can be passed via context
+    result.data.allMarkdownRemark.edges
+        .filter(({ node }) => node.frontmatter.path[0] === "/") // Only create pages for articles from this blog
+        .forEach(({ node }) => {
+            createPage({
+                path: node.frontmatter.path,
+                component: articleTemplate,
+                context: {},
+            })
         })
-    })
 }

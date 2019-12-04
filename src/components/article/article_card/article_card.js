@@ -2,7 +2,8 @@ import React from "react"
 
 import {
     Wrapper,
-    Card,
+    InnerClick,
+    OuterClick,
     Content,
     Header,
     Title,
@@ -19,28 +20,59 @@ class ArticleCard extends React.Component {
     render() {
         return (
             <Wrapper even={this.props.even}>
-                <Card to={this.props.path}>
-                    <Content>
-                        <Header>
-                            <Title>{this.props.title}</Title>
-                            <Subtitle>{this.props.subtitle}</Subtitle>
-                        </Header>
-                        <Description>{this.props.description}</Description>
-                        <Footer>
-                            <Date>{this.props.date}</Date>
-                            <Themes>
-                                {this.props.themesImage.map(theme => (
-                                    <Theme
-                                        fixed={theme.value}
-                                        key={theme.uniqueId}
-                                    />
-                                ))}
-                            </Themes>
-                        </Footer>
-                    </Content>
-                    <Feature fixed={this.props.featuredImage} alt="feature image" />
-
-                </Card>
+                {this.props.source === "dylandoamaral" ? (
+                    //This is an article that come from inside
+                    <InnerClick to={this.props.path}>
+                        <Content>
+                            <Header>
+                                <Title>{this.props.title}</Title>
+                                <Subtitle>{this.props.subtitle}</Subtitle>
+                            </Header>
+                            <Description>{this.props.description}</Description>
+                            <Footer>
+                                <Date>{this.props.date}</Date>
+                                <Themes>
+                                    {this.props.themesImage.map(theme => (
+                                        <Theme
+                                            fixed={theme.value}
+                                            key={theme.uniqueId}
+                                        />
+                                    ))}
+                                </Themes>
+                            </Footer>
+                        </Content>
+                        <Feature
+                            fixed={this.props.featuredImage}
+                            alt="feature image"
+                        />
+                    </InnerClick>
+                ) : (
+                    //This is an article that come from outside
+                    <OuterClick href={this.props.path}>
+                        <Content>
+                            <Header>
+                                <Title>{this.props.title}</Title>
+                                <Subtitle>{this.props.subtitle}</Subtitle>
+                            </Header>
+                            <Description>{this.props.description}</Description>
+                            <Footer>
+                                <Date>{this.props.date}</Date>
+                                <Themes>
+                                    {this.props.themesImage.map(theme => (
+                                        <Theme
+                                            fixed={theme.value}
+                                            key={theme.uniqueId}
+                                        />
+                                    ))}
+                                </Themes>
+                            </Footer>
+                        </Content>
+                        <Feature
+                            fixed={this.props.featuredImage}
+                            alt="feature image"
+                        />
+                    </OuterClick>
+                )}
             </Wrapper>
         )
     }
