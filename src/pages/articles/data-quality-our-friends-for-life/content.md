@@ -9,6 +9,6 @@ tags:
     - univalence
     - spark
     - scala
-keywords: "website, site internet, nouveau projet, dylan do amaral, programmation, front end, gatsby, site vitrine, blog, blogs, article, articles, faire un blog, écrire des articles, site statique"
+keywords: ""
 source: "univalence"
 ---
