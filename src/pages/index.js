@@ -151,11 +151,13 @@ export default () => (
         <Helmet title="Dylan Do Amaral" property="og:title" defer={false}>
             <meta name="author" content="Dylan Do Amaral" />
             <meta property="og:type" content="website" />
+            <meta name="title" property="og:title" content="Mon site internet"/>
             <meta
                 name="description"
                 property="og:description"
                 content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
             />
+
             <meta
                 name="image"
                 property="og:image"
