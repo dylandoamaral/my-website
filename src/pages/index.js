@@ -148,27 +148,19 @@ const Cards = () => (
 
 export default () => (
     <Layout page="index">
-        <Helmet title="Dylan Do Amaral" defer={false}>
+        <Helmet title="Dylan Do Amaral" property="og:title" defer={false}>
+            <meta name="author" content="Dylan Do Amaral" />
+            <meta property="og:type" content="website" />
             <meta
                 name="description"
+                property="og:description"
                 content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
             />
             <meta
                 name="image"
+                property="og:image"
                 content="https://www.dylandoamaral.me/images/mywebsite.jpg"
             />
-
-            <meta prefix="og: http://ogp.me/ns#" property="og:type" content="website" />
-            <meta prefix="og: http://ogp.me/ns#" property="og:title" content="Dylan Do Amaral" />
-            <meta
-                prefix="og: http://ogp.me/ns#" property="og:image"
-                content="https://www.dylandoamaral.me/images/mywebsite.jpg"
-            />
-            <meta
-                prefix="og: http://ogp.me/ns#" property="og:description"
-                content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
-            />
-            <meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://www.dylandoamaral.me" />
         </Helmet>
         <Showcase />
         <Citation />
