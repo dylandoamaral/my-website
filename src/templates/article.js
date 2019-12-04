@@ -59,7 +59,7 @@ export default function Template({ data }) {
 
             <Content>{renderAst(htmlAst)}</Content>
             </Article>
-            <Back to={"/articles"}>Retour vers mes articles...</Back>
+            <Back to={"/articles/"}>Retour vers mes articles...</Back>
         </Layout>
     )
 }
