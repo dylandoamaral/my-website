@@ -53,7 +53,7 @@ const Roles = () => (
 
 const Links = () => (
     <Social>
-        <SocialLink href="https://www.linkedin.com/in/dylan-do-amaral-431219112/">
+        <SocialLink href="https://www.linkedin.com/in/dylandoamaral/">
             <LinkedinIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
         <SocialLink href="https://github.com/dylandoamaral">

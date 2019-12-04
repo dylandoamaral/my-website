@@ -13,7 +13,7 @@ import CV from "../../../assets/documents/cv.pdf"
 export default () => (
     <Footer>
         <div>
-            <FooterLink href="https://www.linkedin.com/in/dylan-do-amaral-431219112/">
+            <FooterLink href="https://www.linkedin.com/in/dylandoamaral/">
                 <LinkedinIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
             <FooterLink href="https://github.com/dylandoamaral">
