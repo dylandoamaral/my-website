@@ -54,16 +54,16 @@ const Roles = () => (
 const Links = () => (
     <Social>
         <SocialLink href="https://www.linkedin.com/in/dylan-do-amaral-431219112/">
-            <LinkedinIcon style={{ width: "20px", height: "20px" }} />
+            <LinkedinIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
         <SocialLink href="https://github.com/dylandoamaral">
-            <GithubIcon style={{ width: "20px", height: "20px" }} />
+            <GithubIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
         <SocialLink href="https://twitter.com/DylanDoAmaral3">
-            <TwitterIcon style={{ width: "20px", height: "20px" }} />
+            <TwitterIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
         <SocialLink href={CV} download>
-            <CVIcon style={{ width: "20px", height: "20px" }} />
+            <CVIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
     </Social>
 )

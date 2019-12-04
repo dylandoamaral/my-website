@@ -49,17 +49,25 @@ export const Role = styled.span`
 export const Social = styled.div`
     display: flex;
     margin-left: 10px;
+
+    ${resolutions.medias.phone} {
+        flex-direction: column;
+    }
 `
 
 export const SocialLink = styled(OutboundLink)`
     text-decoration: none;
     margin: 0 5px;
 
-    padding: 8px;
+    padding: 12px;
     background-color: white;
-    height: 35px;
+    height: 49px;
     border-radius: 50%;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+
+    ${resolutions.medias.phone} {
+        margin: 5px 0;
+    }
 `
 
 export const ShowcaseContainer = styled.div`
@@ -110,7 +118,7 @@ export const ShowcaseImage = styled.img`
     }
 
     ${resolutions.medias.phone} {
-        height: 75%;
+        height: 450px;
         right: -140px;
     }
 `
