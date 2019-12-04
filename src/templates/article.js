@@ -44,8 +44,22 @@ export default function Template({ data }) {
                 title={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}
                 defer={false}
             >
-                <meta name="description" content={frontmatter.description} />
+                <meta name="title" property="og:title" content={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}/>
+                <meta property="og:type" content="article" />
+                <meta name="author" content="Dylan Do Amaral" />
+                <meta property="og:description" name="description" content={frontmatter.description} />
                 <meta name="keywords" content={frontmatter.keywords} />
+                
+                <meta
+                    name="image"
+                    property="og:image"
+                    content={frontmatter.featuredImage.childImageSharp.fixed}
+                />
+
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:title" content={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}/>
+                <meta name="twitter:description" content={frontmatter.description}/>
+                <meta name="twitter:image" content={frontmatter.featuredImage.childImageSharp.fixed}/>
             </Helmet>
             <Wrapper>
                 <Feature

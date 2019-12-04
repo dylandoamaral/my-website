@@ -22,11 +22,41 @@ class Articles extends React.Component {
                         title="Mes articles | Dylan Do Amaral"
                         defer={false}
                     >
+                        <meta name="author" content="Dylan Do Amaral" />
+                        <meta property="og:type" content="website" />
+                        <meta
+                            name="title"
+                            property="og:title"
+                            content="Dylan Do Amaral"
+                        />
                         <meta
                             name="description"
-                            content={
-                                "Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
-                            }
+                            property="og:description"
+                            content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
+                        />
+                        <meta
+                            name="keywords"
+                            content="dylan, dylan do amaral, do amaral, engineer, ingénieur, big data, ingénieur data, website, gatsby, date engineer, ingénieur de la donnée"
+                        />
+
+                        <meta
+                            name="image"
+                            property="og:image"
+                            content="https://www.dylandoamaral.me/index/forest.jpg"
+                        />
+
+                        <meta
+                            name="twitter:card"
+                            content="summary_large_image"
+                        />
+                        <meta name="twitter:title" content="Dylan Do Amaral" />
+                        <meta
+                            name="twitter:description"
+                            content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
+                        />
+                        <meta
+                            name="twitter:image"
+                            content="http://www.dylandoamaral.me/index/forest.jpg"
                         />
                     </Helmet>
                     <Preface>
@@ -42,13 +72,20 @@ class Articles extends React.Component {
                             return (
                                 <ArticleCard
                                     key={article.uniqueId}
-                                    even={(index % 2 === 1) ? "true" : "false"}
+                                    even={index % 2 === 1 ? "true" : "false"}
                                     title={article.value.node.frontmatter.title}
-                                    subtitle={article.value.node.frontmatter.subtitle}
-                                    description={article.value.node.frontmatter.description}
+                                    subtitle={
+                                        article.value.node.frontmatter.subtitle
+                                    }
+                                    description={
+                                        article.value.node.frontmatter
+                                            .description
+                                    }
                                     path={article.value.node.frontmatter.path}
                                     date={article.value.node.frontmatter.date}
-                                    source={article.value.node.frontmatter.source}
+                                    source={
+                                        article.value.node.frontmatter.source
+                                    }
                                     featuredImage={
                                         article.value.node.frontmatter
                                             .featuredImage.childImageSharp.fixed
