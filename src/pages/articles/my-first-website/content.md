@@ -12,7 +12,7 @@ keywords: "website, site internet, nouveau projet, dylan do amaral, programmatio
 
 ***On se sent fière quand on termine un objectif que l'on s'était fixé, en tout cas, c'est mon cas actuellement. Ce site est une petite victoire sur ma tendance à ne jamais être satisfait de par mon côté perfectionniste.***
 
-Bon avant tout de chose, la vérité, c'est que ce n'est pas mon premier site internet, le premier c'est [celui-ci](http://astuce-invizimals.e-monsite.com/). Je pars du principe que le ridicule ne tue pas, j'avais 10 ans donc l'orthographe ce n'était pas trop ça (ça ne l'est toujours pas du coup, mais bon on remarque quand même une différence) mais c'était déjà ça. 
+Bon avant tout de chose, la vérité, c'est que ce n'est pas mon premier site internet, le premier c'est [celui-ci](http://astuce-invizimals.e-monsite.com/). Je pars du principe que le ridicule ne tue pas, j'avais 10 ans donc l'orthographe ce n'était pas trop ça (ça ne l'est toujours pas du coup...). 
 
 Ce qui est assez marrant, c'est que c'est le projet qui a le plus fonctionné de toute ma vie, à l'heure où j'écris ces lignes je suis le 129283ème visiteur! Je repars donc de plus bel avec un peu plus d'expérience tout de même et avec un peu plus de maturité.
 
@@ -21,7 +21,7 @@ Ce qui est assez marrant, c'est que c'est le projet qui a le plus fonctionné de
 La réponse courte : parce que j'en avais envie tout simplement, en soi n'y a pas vraiment de réponse longue. J'avais envie d'avoir un espace dans lequel je pourrais partager mes projets, des articles et autres. Quelque chose qui me représente vraiment et mon propre site était parfait pour ça.
 
 <aside-element>
-    <callout-element type="advice">Un petit conseil à tous ceux qui sont encore étudiants, essayer vraiment d'appliquer ce que vous apprenez dans des cas concrets, c'est la meilleure manière de prouver aux autres ce que vous savez faire et c'est vraiment une plus-value lors d'entretiens par exemple.</callout-element>
+    <callout-element type="advice">Pour les étudiants, essayer vraiment d'appliquer ce que vous apprenez dans des cas concrets, c'est une énorme plus-value.</callout-element>
 </aside-element>
 
 C'est un projet dans lequel je me suis lancé, parmi tant d'autres. Sauf qu'à l'instar de ces derniers, celui-ci est arrivé à maturation. C'est un problème que j'ai toujours eu, à savoir mon incapacité à finir tout ce que j'entreprends, rien n'est jamais assez fini selon moi et j'en suis même venu à mettre des centaines d'heures de travails à la poubelle sur un coup de tête.
