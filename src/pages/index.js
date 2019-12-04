@@ -155,6 +155,7 @@ export default () => (
                     "Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
                 }
             />
+            <meta name="image" content={"https://www.dylandoamaral.me/images/mywebsite.jpg"} />
         </Helmet>
         <Showcase />
         <Citation />
