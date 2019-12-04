@@ -3,7 +3,15 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/global/layout/layout"
-import { Wrapper, Feature, Article, Title, Subtitle, Content, Back } from "../styles/article.style"
+import {
+    Wrapper,
+    Feature,
+    Article,
+    Title,
+    Subtitle,
+    Content,
+    Back,
+} from "../styles/article.style"
 import { H2, H3, P, Span, A, Li } from "../styles/global.style"
 
 import rehypeReact from "rehype-react"
@@ -38,28 +46,67 @@ const renderAst = new rehypeReact({
 export default function Template({ data }) {
     const { markdownRemark } = data
     const { frontmatter, htmlAst } = markdownRemark
+
     return (
         <Layout page="articles">
             <Helmet
-                title={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}
+                title={
+                    frontmatter.subtitle.length > 0
+                        ? frontmatter.title +
+                          " | " +
+                          frontmatter.subtitle +
+                          " | Dylan Do Amaral"
+                        : frontmatter.title + " | Dylan Do Amaral"
+                }
                 defer={false}
             >
-                <meta name="title" property="og:title" content={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}/>
+                <meta
+                    name="title"
+                    property="og:title"
+                    content={
+                        frontmatter.subtitle.length > 0
+                            ? frontmatter.title +
+                              " | " +
+                              frontmatter.subtitle +
+                              " | Dylan Do Amaral"
+                            : frontmatter.title + " | Dylan Do Amaral"
+                    }
+                />
                 <meta property="og:type" content="article" />
                 <meta name="author" content="Dylan Do Amaral" />
-                <meta property="og:description" name="description" content={frontmatter.description} />
+                <meta
+                    property="og:description"
+                    name="description"
+                    content={frontmatter.description}
+                />
                 <meta name="keywords" content={frontmatter.keywords} />
-                
+
                 <meta
                     name="image"
                     property="og:image"
-                    content={frontmatter.featuredImage.childImageSharp.fixed}
+                    content={"https://www.dylandoamaral.me" + frontmatter.featuredImage.childImageSharp.fixed.src}
                 />
 
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content={(frontmatter.subtitle.length > 0) ? frontmatter.title + " | " + frontmatter.subtitle + " | Dylan Do Amaral" : frontmatter.title + " | Dylan Do Amaral"}/>
-                <meta name="twitter:description" content={frontmatter.description}/>
-                <meta name="twitter:image" content={frontmatter.featuredImage.childImageSharp.fixed}/>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta
+                    name="twitter:title"
+                    content={
+                        frontmatter.subtitle.length > 0
+                            ? frontmatter.title +
+                              " | " +
+                              frontmatter.subtitle +
+                              " | Dylan Do Amaral"
+                            : frontmatter.title + " | Dylan Do Amaral"
+                    }
+                />
+                <meta
+                    name="twitter:description"
+                    content={frontmatter.description}
+                />
+                <meta
+                    name="twitter:image"
+                    content={"https://www.dylandoamaral.me" + frontmatter.featuredImage.childImageSharp.fixed.src}
+                />
             </Helmet>
             <Wrapper>
                 <Feature
@@ -68,10 +115,10 @@ export default function Template({ data }) {
                 />
             </Wrapper>
             <Article>
-            <Title>{frontmatter.title}</Title>
-            <Subtitle>{frontmatter.subtitle}</Subtitle>
+                <Title>{frontmatter.title}</Title>
+                <Subtitle>{frontmatter.subtitle}</Subtitle>
 
-            <Content>{renderAst(htmlAst)}</Content>
+                <Content>{renderAst(htmlAst)}</Content>
             </Article>
             <Back to={"/articles/"}>Retour vers mes articles...</Back>
         </Layout>
