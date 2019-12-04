@@ -148,10 +148,10 @@ const Cards = () => (
 
 export default () => (
     <Layout page="index">
-        <Helmet title="Dylan Do Amaral" property="og:title" defer={false}>
+        <Helmet title="Dylan Do Amaral" defer={false}>
             <meta name="author" content="Dylan Do Amaral" />
             <meta property="og:type" content="website" />
-            <meta name="title" property="og:title" content="Mon site internet"/>
+            <meta name="title" property="og:title" content="Dylan Do Amaral"/>
             <meta
                 name="description"
                 property="og:description"
@@ -161,7 +161,7 @@ export default () => (
             <meta
                 name="image"
                 property="og:image"
-                content="https://www.dylandoamaral.me/images/mywebsite.jpg"
+                content="https://www.dylandoamaral.me/index/forest.jpg"
             />
         </Helmet>
         <Showcase />
