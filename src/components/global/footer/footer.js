@@ -13,14 +13,14 @@ import CV from "../../../assets/documents/cv.pdf"
 export default () => (
     <Footer>
         <div>
-            <FooterLink href="https://twitter.com/DylanDoAmaral3">
-                <TwitterIcon style={{ width: "40px", height: "40px" }} />
-            </FooterLink>
             <FooterLink href="https://www.linkedin.com/in/dylan-do-amaral-431219112/">
                 <LinkedinIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
             <FooterLink href="https://github.com/dylandoamaral">
                 <GithubIcon style={{ width: "40px", height: "40px" }} />
+            </FooterLink>
+            <FooterLink href="https://twitter.com/DylanDoAmaral3">
+                <TwitterIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
             <FooterLink href={CV} download>
                 <CVIcon style={{ width: "40px", height: "40px" }} />

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
@@ -31,7 +32,6 @@ export const Secondary = styled.span`
  */
 export const RoleList = styled.div`
     display: flex;
-    margin: 10px 0 20px 0;
 
     ${resolutions.medias.phone} {
         margin-left: 20px;
@@ -44,6 +44,22 @@ export const Role = styled.span`
 
     font-weight: 500;
     color: ${props => (props.secondary ? colors.secondary : colors.primary)};
+`
+
+export const Social = styled.div`
+    display: flex;
+    margin-left: 10px;
+`
+
+export const SocialLink = styled(OutboundLink)`
+    text-decoration: none;
+    margin: 0 5px;
+
+    padding: 8px;
+    background-color: white;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
 `
 
 export const ShowcaseContainer = styled.div`
@@ -74,6 +90,11 @@ export const ShowcaseName = styled.h1`
         font-size: 11.1vw;
         margin-left: 20px;
     }
+`
+
+export const ShowcaseContent = styled.div`
+    margin: 10px 0 20px 0;
+    display: flex;
 `
 
 export const ShowcaseImage = styled.img`
