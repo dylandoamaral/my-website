@@ -10,13 +10,12 @@ import fonts from "../configurations/fonts.json"
 import { H1, H2 } from "../styles/global.style"
 
 export const Wrapper = styled.div`
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 50px 0 20px 0;
 `
 
 export const Feature = styled(Img)`
     width: 100% !important;
-    height: 250px !important;
+    height: 270px !important;
     border-radius: 10px;
 `
 
