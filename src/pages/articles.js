@@ -13,12 +13,7 @@ import { addUniqueIdToArray } from "../utils/array"
 class Articles extends React.Component {
     render() {
         const articles = this.props.data.allMarkdownRemark.edges
-        articles.forEach((item, i) => {
-            item.id = i + 1;
-          })
-
         const themes = this.props.data.themes.edges
-
 
         return (
             <Layout page="articles">
@@ -43,11 +38,11 @@ class Articles extends React.Component {
                         </Description>
                     </Preface>
                     <Cards>
-                        {addUniqueIdToArray(articles).map(article => {
+                        {addUniqueIdToArray(articles).map((article, index) => {
                             return (
                                 <ArticleCard
                                     key={article.uniqueId}
-                                    even={(article.value.id % 2 === 0) ? "true" : "false"}
+                                    even={(index % 2 === 1) ? "true" : "false"}
                                     title={article.value.node.frontmatter.title}
                                     subtitle={article.value.node.frontmatter.subtitle}
                                     description={article.value.node.frontmatter.description}
