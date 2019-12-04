@@ -153,6 +153,10 @@ export default () => (
                 name="description"
                 content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
             />
+            <meta
+                name="image"
+                content="https://www.dylandoamaral.me/images/mywebsite.jpg"
+            />
 
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Dylan Do Amaral" />
@@ -160,11 +164,11 @@ export default () => (
                 property="og:image"
                 content="https://www.dylandoamaral.me/images/mywebsite.jpg"
             />
-
             <meta
-                name="image"
-                content="https://www.dylandoamaral.me/images/mywebsite.jpg"
+                property="og:description"
+                content="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
             />
+            <meta property="og:url" content="https://www.dylandoamaral.me" />
         </Helmet>
         <Showcase />
         <Citation />
