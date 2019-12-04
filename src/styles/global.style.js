@@ -36,8 +36,10 @@ export const H3 = styled.h3`
 `
 
 export const Span = styled.span`
-    font-size: 16px;
     color: ${colors.dark};
+    font-size: ${fonts.sizes.normal};
+    line-height: 1.6em;
+    letter-spacing: 0.05em;
 `
 
 export const P = styled.p`

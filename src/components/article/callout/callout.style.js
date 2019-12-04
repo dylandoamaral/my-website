@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { Span } from "../../../styles/global.style"
+
 import colors from "../../../configurations/colors.json"
 import resolutions from "../../../configurations/resolutions.json"
 
@@ -20,11 +22,11 @@ export const Wrapper = styled.div`
 
         flex-direction: row;
         align-items: center;
-        text-align: justify;
+        text-align: left;
     }
 `
 
-export const Emoji = styled.span`
+export const Emoji = styled(Span)`
     text-align: center;
     font-size: 32px;
     display: block;
@@ -36,7 +38,6 @@ export const Emoji = styled.span`
     }
 `
 
-export const Text = styled.span`
-    font-size: 16px;
+export const Text = styled(Span)`
     color: ${colors.dark};
 `
