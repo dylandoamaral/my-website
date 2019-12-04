@@ -9,17 +9,6 @@ import fonts from "../configurations/fonts.json"
 
 import { H1, H2 } from "../styles/global.style"
 
-export const Title = styled(H1)`
-    text-align: left;
-    ${margins.inner_margin}
-`
-
-export const Subtitle = styled(H2)`
-    color: ${colors.primary};
-    ${margins.inner_margin}
-    margin: 0;
-`
-
 export const Wrapper = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
@@ -31,9 +20,21 @@ export const Feature = styled(Img)`
     border-radius: 10px;
 `
 
-export const Content = styled.div`
-    ${margins.inner_margin}
+export const Article = styled.div`
+    ${margins.article_margin}
+`
 
+
+export const Title = styled(H1)`
+    text-align: left;
+`
+
+export const Subtitle = styled(H2)`
+    color: ${colors.primary};
+    margin: 0;
+`
+
+export const Content = styled.div`
     pre {
         background-color: ${colors.dark};
         padding: 20px 20px;
@@ -50,7 +51,6 @@ export const Content = styled.div`
 `
 
 export const Back = styled(Link)`
-    ${margins.inner_margin}
     color: ${colors.primary};
     text-align: right;
     display: block;

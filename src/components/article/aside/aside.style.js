@@ -3,16 +3,14 @@ import styled from "styled-components"
 import resolutions from "../../../configurations/resolutions.json"
 
 export const Wrapper = styled.aside`
-    max-width: 360px;
+    max-width: 330px;
     position: absolute;
-    right: 0;
+    right: 170px;
 
-    padding-left: 30px;
-    padding-right: 60px;
 
     ${resolutions.medias.desktop}{
-        max-width: 320px;
-        padding-right: 20px;
+        max-width: 270px;
+        right: 130px;
     }
 
     ${resolutions.medias.tablet_landscape}{

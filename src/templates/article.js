@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/global/layout/layout"
-import { Title, Subtitle, Wrapper, Feature, Content, Back } from "../styles/article.style"
+import { Wrapper, Feature, Article, Title, Subtitle, Content, Back } from "../styles/article.style"
 import { H2, H3, P, Span, A, Li } from "../styles/global.style"
 
 import rehypeReact from "rehype-react"
@@ -53,10 +53,12 @@ export default function Template({ data }) {
                     alt="feature image"
                 />
             </Wrapper>
+            <Article>
             <Title>{frontmatter.title}</Title>
             <Subtitle>{frontmatter.subtitle}</Subtitle>
 
             <Content>{renderAst(htmlAst)}</Content>
+            </Article>
             <Back to={"/articles"}>Retour vers mes articles...</Back>
         </Layout>
     )

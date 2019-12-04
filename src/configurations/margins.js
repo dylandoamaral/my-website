@@ -1,7 +1,7 @@
 import resolutions from "./resolutions.json"
 
 const outer_margin_large = 170;
-const outer_margin_desktop = 150;
+const outer_margin_desktop = 130;
 const outer_margin_landscape = 80;
 const outer_margin_portrait = 20;
 const outer_margin = [outer_margin_large, outer_margin_desktop, outer_margin_landscape, outer_margin_portrait]
@@ -39,10 +39,32 @@ const margin = (margins) => {
     }`;
 }
 
+const two_margin = (left, right) => {
+    return `
+    margin-left: ${left[0]}px;
+    margin-right: ${right[0]}px;
+
+    ${resolutions.medias.desktop} {
+        margin-left: ${left[1]}px;
+        margin-right: ${right[1]}px;
+    }
+
+    ${resolutions.medias.tablet_landscape} {
+        margin-left: ${left[2]}px;
+        margin-right: ${right[2]}px;
+    }
+
+    ${resolutions.medias.tablet_portrait} {
+        margin-left: ${left[3]}px;
+        margin-right: ${right[3]}px;
+    }`;
+}
+
 export default {
     outer_margin:`${margin(outer_margin)}`,
     inner_margin:`${margin(inner_margin)}`,
     full_margin:`${margin(full_margin)}`,
+    article_margin:`${two_margin([0, 0, 0, 0], inner_margin.map(m => m * 2))}`,
 
     anti_outer_margin:`${margin(outer_margin.map(x => -1 * x))}`,
     anti_inner_margin:`${margin(inner_margin.map(x => -1 * x))}`,
