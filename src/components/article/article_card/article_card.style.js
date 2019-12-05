@@ -63,26 +63,26 @@ export const Feature = styled(Img)`
 export const Header = styled.div``
 
 export const Title = styled(H2)`
-    margin: 0;
+    margin: 10px 0 0 0;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; /* number of lines to show */
-    line-height: 1.5; /* fallback */
-    max-height: 1.5 * 2; /* fallback */
+    line-height: 1; /* fallback */
+    max-height: 1 * 2; /* fallback */
 `
 
 export const Subtitle = styled(H3)`
-    margin: 0;
+    margin: 5px 0 0 0;
     color: ${colors.primary};
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; /* number of lines to show */
-    line-height: 1.25; /* fallback */
-    max-height: 1.25 * 2; /* fallback */
+    line-height: 1; /* fallback */
+    max-height: 1 * 2; /* fallback */
 `
 
 export const Description = styled(P)`
@@ -93,6 +93,11 @@ export const Description = styled(P)`
     -webkit-line-clamp: 3; /* number of lines to show */
     line-height: 1; /* fallback */
     max-height: 1 * 3; /* fallback */
+
+    ${resolutions.medias.tablet_portrait} {
+        -webkit-line-clamp: 4; /* number of lines to show */
+        max-height: 1 * 4; /* fallback */
+    }
 `
 
 export const Footer = styled.div`
@@ -103,6 +108,7 @@ export const Footer = styled.div`
 
 export const Themes = styled.div`
     overflow: hidden;
+    height: 20px;
 `
 
 export const Theme = styled(Img)`

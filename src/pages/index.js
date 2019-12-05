@@ -104,7 +104,7 @@ const Description = () => (
                 Ce site a été penser comme un mémoire, envers ma personne, censé
                 regrouper les étapes importantes de ma vie et censé évoluer avec
                 son temps. Je compte y inscrire des articles et des projets
-                personnelles en premier lieux.
+                personnels en premier lieux.
             </DescriptionText>
         </DescriptionContainer>
     </Container>
