@@ -32,6 +32,7 @@ export const Secondary = styled.span`
  */
 export const RoleList = styled.div`
     display: flex;
+    height: 420px;
 
     ${resolutions.medias.phone} {
         margin-left: 20px;
