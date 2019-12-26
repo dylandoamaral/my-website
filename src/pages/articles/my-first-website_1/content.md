@@ -1,5 +1,5 @@
 ---
-path: "/articles/la_naissance_de_mon_premier_site"
+path: "/articles/la_naissance_de_mon_premier_site_1"
 date: "2019-12-03"
 title: "La naissance de mon premier site"
 subtitle: "Partie 1 : Introduction"
@@ -38,8 +38,8 @@ L'unique question qui doit vraiment vous intéresser à l'heure actuelle, c'est 
 Par soucis de simplicité, j'ai décidé de le séparer en 4 parties qui sortiront au fur et à mesure. Chacune d'entre elles traitent d'un aspect de ce projet et toutes sont importantes pour mener un projet de la sorte jusqu'à maturation.
 
 Voici les différentes parties retraçant l'histoire de la création de mon site internet :
-- [La naissance de mon premier site | Partie 1 : Introduction](/articles/la_naissance_de_mon_premier_site)
-- ~~La naissance de mon premier site | Partie 2 : Le choix des technologies~~
+- [La naissance de mon premier site | Partie 1 : Introduction](/articles/la_naissance_de_mon_premier_site_1)
+- [La naissance de mon premier site | Partie 2 : Le choix des technologies](/articles/la_naissance_de_mon_premier_site_2)
 - ~~La naissance de mon premier site | Partie 3 : Le design pour un programmeur~~
 - ~~La naissance de mon premier site | Partie 4 : Les outils externes au projet~~
 

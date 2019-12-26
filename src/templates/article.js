@@ -19,6 +19,8 @@ import Aside from "../components/article/aside/aside"
 import Horizontal from "../components/article/horizontal/horizontal"
 import Callout from "../components/article/callout/callout"
 import Caption from "../components/article/caption/caption"
+import ProsCons from "../components/article/proscons/proscons"
+
 import Game from "../components/article/game/game"
 
 const renderAst = new rehypeReact({
@@ -37,6 +39,8 @@ const renderAst = new rehypeReact({
         "horizontal-element": Horizontal,
         "callout-element": Callout,
         "thumb-caption": Caption,
+        "pros-and-cons": ProsCons,
+
 
         // Special components
         "fancy-demonstration": Game,

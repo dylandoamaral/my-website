@@ -28,31 +28,25 @@ class Articles extends React.Component {
                         </Description>
                     </Preface>
                     <Cards>
-                        {addUniqueIdToArray(articles).map((article, index) => {
+                        {articles.map((article, index) => {
+                            let articleData = article.node.frontmatter
                             return (
                                 <ArticleCard
-                                    key={article.uniqueId}
+                                    key={articleData.uniqueId}
                                     even={index % 2 === 1 ? "true" : "false"}
-                                    title={article.value.node.frontmatter.title}
-                                    subtitle={
-                                        article.value.node.frontmatter.subtitle
-                                    }
-                                    description={
-                                        article.value.node.frontmatter
-                                            .description
-                                    }
-                                    path={article.value.node.frontmatter.path}
-                                    date={article.value.node.frontmatter.date}
-                                    source={
-                                        article.value.node.frontmatter.source
-                                    }
+                                    title={articleData.title}
+                                    subtitle={articleData.subtitle}
+                                    description={articleData.description}
+                                    path={articleData.path}
+                                    date={articleData.date}
+                                    source={articleData.source}
                                     featuredImage={
-                                        article.value.node.frontmatter
-                                            .featuredImage.childImageSharp.fixed
+                                        articleData.featuredImage
+                                            .childImageSharp.fixed
                                     }
                                     themesImage={addUniqueIdToArray(themes)
                                         .filter(theme =>
-                                            article.value.node.frontmatter.tags.includes(
+                                            articleData.tags.includes(
                                                 theme.value.node.name
                                             )
                                         )

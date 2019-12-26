@@ -64,7 +64,7 @@ export const Header = styled.div``
 
 export const Title = styled(H2)`
     margin: 10px 0 0 0;
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -76,7 +76,7 @@ export const Title = styled(H2)`
 export const Subtitle = styled(H3)`
     margin: 5px 0 0 0;
     color: ${colors.primary};
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
