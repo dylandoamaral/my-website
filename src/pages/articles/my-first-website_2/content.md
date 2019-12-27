@@ -12,7 +12,7 @@ keywords: "website, site internet, nouveau projet, dylan do amaral, programmatio
 source: "dylandoamaral"
 ---
 
-**Les débuts ont été catastrophique.**
+**Les débuts ont été catastrophiques.**
 
 Alors pourquoi me direz-vous, parce que je me suis lancé la tête la première dans le développement sans même bien me préparer à la tâche. J'avais tout de même un design que je pensais aimer, mais j'en parlerais dans la prochaine partie, des technologies qui semblaient combler mes besoins, une roadmap pour ne pas me perdre dans mon développement, mais cela n'a clairement pas suffi.
 
