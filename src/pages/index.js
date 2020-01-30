@@ -101,7 +101,7 @@ const Description = () => (
         <DescriptionContainer>
             <DescriptionImage alt="landscape" />
             <DescriptionText>
-                Ce site a été penser comme un mémoire, envers ma personne, censé
+                Ce site a été pensé comme un mémoire, envers ma personne, censé
                 regrouper les étapes importantes de ma vie et censé évoluer avec
                 son temps. Je compte y inscrire des articles et des projets
                 personnels en premier lieux.
@@ -138,7 +138,7 @@ const Cards = () => (
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Les <Primary>curieux</Primary> qui s'ennuie
+                        Les <Primary>curieux</Primary> qui s'ennuient
                     </CardTitle>
                 </CardContainer>
             </CardList>

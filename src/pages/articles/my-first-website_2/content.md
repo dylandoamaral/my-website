@@ -14,7 +14,7 @@ source: "dylandoamaral"
 
 **Les débuts ont été catastrophiques.**
 
-Alors pourquoi me direz-vous, parce que je me suis lancé la tête la première dans le développement sans même bien me préparer à la tâche. J'avais tout de même un design que je pensais aimer, mais j'en parlerais dans la prochaine partie, des technologies qui semblaient combler mes besoins, une roadmap pour ne pas me perdre dans mon développement, mais cela n'a clairement pas suffi.
+Alors pourquoi me diriez-vous, parce que je me suis lancé la tête la première dans le développement sans même bien me préparer à la tâche. J'avais tout de même un design que je pensais aimer, mais j'en parlerais dans la prochaine partie, des technologies qui semblaient combler mes besoins, une roadmap pour ne pas me perdre dans mon développement, mais cela n'a clairement pas suffi.
 
 Je suis quelqu'un de très perfectionniste et cela m'a amené à recommencer littéralement tout le projet une ou deux fois. Je ne pense pas que ce soit une mauvaise chose en soi mais si je devais le refaire aujourd'hui, ce qui m'a auparavant pris un mois durant mes temps libres me prendrait une semaine à peine.
 
@@ -29,7 +29,7 @@ Oublions webpack pur, oublions SASS (même si j'adore plus que tout SASS lorsqu'
 
 # Pourquoi ces choix et pas d'autres ?
 
-Avant tout de chose, mes choix ne sont pas forcément les meilleurs, et même mes justifications ne sont pas forcément pertinentes alors si vous voulez me corriger ou alors préciser certaines choses envoyez-moi un mail ou contactez-moi sur Twitter ou LinkedIn. 
+Avant toutes choses, mes choix ne sont pas forcément les meilleurs, et même mes justifications ne sont pas forcément pertinentes, alors si vous voulez me corriger ou alors préciser certaines choses envoyez-moi un mail ou contactez-moi sur Twitter ou LinkedIn. 
 
 Il faut encore que j'implémente les commentaires moi...
 
@@ -39,7 +39,7 @@ Il faut encore que j'implémente les commentaires moi...
     <callout-element type="warning">Je viens d'apprendre que l'on peut fabriquer toute sa page sans Wordpress et l'utilisé juste pour le backend. C'est ma foi super interessant.</callout-element>
 </aside-element>
 
-Bon commençons par le plus important, [Gatsby](https://www.gatsbyjs.org/). Gatsby a littéralement été libérateur pour moi et correspondait exactement à mes besoins. Je voulais quelque chose de simple à utiliser sans pour autant influencer mes choix et me permettant de faire vraiment tout ce que je veux. C'est un peu ce que je reproche à des CMS comme Wordpress ou encore Wix. Tous les sites finissent par se ressembler et dès que l'on veut faire des choses un peu fancy, on ne peut pas le faire facilement.
+Bon commençons par le plus important, [Gatsby](https://www.gatsbyjs.org/). Gatsby a littéralement été libérateur pour moi et correspondait exactement à mes besoins. Je voulais quelque chose de simple à utiliser sans pour autant influencer mes choix et me permettant de faire vraiment tout ce que je veux. C'est un peu ce que je reproche à des CMS comme Wordpress ou encore Wix. Tous les sites finissent par se ressembler et dès que l'on veut faire des choses d'un peu "fancy", on ne peut pas le faire facilement.
 
 ### Alors Gatsby brièvement, c'est quoi ?
 
