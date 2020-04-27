@@ -27,11 +27,7 @@ export default () => (
             </FooterLink>
         </div>
         <Span>
-            Fait avec{" "}
-            <span role="img" aria-label="amour">
-                💛
-            </span>{" "}
-            par Dylan Do Amaral
+            Fait avec <span role="img" aria-label="amour">💛</span> par Dylan Do Amaral
         </Span>
         <Span>
             Mis à jour en Mai 2020
