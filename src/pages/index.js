@@ -1,4 +1,5 @@
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import Helmet from "../components/global/helmet/helmet"
 import Layout from "../components/global/layout/layout"
@@ -100,14 +101,17 @@ const Citation = () => (
 
 const Description = () => (
     <Container>
-        <Title>Pourquoi ce site ?</Title>
+        <Title>Moi en quelques mots</Title>
         <DescriptionContainer>
             <DescriptionImage alt="landscape" />
             <DescriptionText>
-                Ce site a été pensé comme un mémoire, envers ma personne, censé
-                regrouper les étapes importantes de ma vie et censé évoluer avec
-                son temps. Je compte y inscrire des articles et des projets
-                personnels en premier lieux.
+                Je suis un petit gars, étudiant de 5 ème année 
+                à <OutboundLink href="https://www.efrei.fr/campus-ecole-ingenieur/?gclid=EAIaIQobChMIhafMrKCJ6QIV0kPTCh0iUQIOEAAYASAAEgKctvD_BwE">Efrei</OutboundLink> actuellement en stage 
+                à <OutboundLink href="https://fr.ippon.tech/">Ippon Technologies</OutboundLink> en tant 
+                que Data Engineer. J'adore la programmation et suis fasciné par plein de 
+                domaines variés tels que la programmation fonctionnelle, la génération procédurale, 
+                l'IoT, le Big Data et j'en passe... De nature organisé et perfectionniste, j'adore produire
+                un code propre, modulable et intelligent.
             </DescriptionText>
         </DescriptionContainer>
     </Container>
