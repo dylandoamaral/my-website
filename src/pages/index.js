@@ -48,7 +48,7 @@ const Roles = () => (
     <RoleList>
         <Role>Data Engineer</Role>
         <Role>Bricoleur Numérique</Role>
-        <Role>Bloggeur</Role>
+        <Role>Enthousiaste</Role>
     </RoleList>
 )
 
