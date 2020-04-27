@@ -210,11 +210,11 @@ export const DescriptionImage = styled.div`
     flex: 1;
 
     min-height: 450px;
+    min-width: 240px;
 
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
 
-    background-image: url("/index/forest.jpg");
+    background-image: url("/index/taiwan.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -222,10 +222,17 @@ export const DescriptionImage = styled.div`
     margin-right: 70px;
 
     ${resolutions.medias.tablet_portrait} {
+        background-position: top center;
         width: 100%;
         min-height: 300px;
         margin-right: 0;
         margin-bottom: 20px;
+
+    }
+
+    ${resolutions.medias.tablet_landscape} {
+        min-height: 400px;
+        background-position: center;
     }
 `
 
