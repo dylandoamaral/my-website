@@ -89,10 +89,10 @@ const Citation = () => (
             </CitationTextTwo>
             <CitationBr />
             <CitationTextThree right={"true"}>
-                pour <Ippon>Ippon</Ippon>
+                pour <Ippon href="https://fr.ippon.tech/">Ippon</Ippon>
             </CitationTextThree>
             <CitationTextFour right={"true"}>
-                <Ippon>Technologies</Ippon>
+                <Ippon href="https://fr.ippon.tech/">Technologies</Ippon>
             </CitationTextFour>
         </CitationContent>
     </CitationContainer>

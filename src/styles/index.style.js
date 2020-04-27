@@ -27,8 +27,9 @@ export const Secondary = styled.span`
     color: ${colors.secondary};
 `
 
-export const Ippon = styled.span`
+export const Ippon = styled(OutboundLink)`
     color: #F95353;
+    text-decoration: none;
 `
 
 /*
