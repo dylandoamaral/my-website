@@ -10,6 +10,7 @@ tags:
     - gatsby
 keywords: "website, site internet, nouveau projet, dylan do amaral, programmation, front end, Gatsby, site vitrine, blog, blogs, article, articles, faire un blog, écrire des articles, site statique"
 source: "dylandoamaral"
+archive: true
 ---
 
 **Les débuts ont été catastrophiques.**
