@@ -13,6 +13,7 @@ export const Footer = styled.footer`
 
     ${resolutions.medias.phone} {
         flex-direction: column;
+        margin-bottom: 50px;
     }
 `
 
