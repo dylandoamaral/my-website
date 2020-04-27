@@ -8,6 +8,7 @@ import {
     Title,
     Primary,
     Secondary,
+    Ippon,
     RoleList,
     Role,
     Social,
@@ -82,14 +83,16 @@ const Showcase = () => (
 const Citation = () => (
     <CitationContainer>
         <CitationContent>
-            <CitationTextOne>J'adore</CitationTextOne>
+            <CitationTextOne>Actuellement</CitationTextOne>
             <CitationTextTwo>
-                <Primary>programmer</Primary>
+                <Secondary>Data Engineer</Secondary>
             </CitationTextTwo>
             <CitationBr />
-            <CitationTextThree right={"true"}>mais pas</CitationTextThree>
+            <CitationTextThree right={"true"}>
+                pour <Ippon>Ippon</Ippon>
+            </CitationTextThree>
             <CitationTextFour right={"true"}>
-                <Secondary>paramétrer</Secondary>
+                <Ippon>Technologies</Ippon>
             </CitationTextFour>
         </CitationContent>
     </CitationContainer>

@@ -27,6 +27,10 @@ export const Secondary = styled.span`
     color: ${colors.secondary};
 `
 
+export const Ippon = styled.span`
+    color: #F95353;
+`
+
 /*
  * SHOWCASE
  */
@@ -163,25 +167,25 @@ export const CitationText = styled.p`
 
 export const CitationTextOne = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 20vw;
+        font-size: 11.5vw;
     }
 `
 
 export const CitationTextTwo = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 11.5vw;
+        font-size: 11.1vw;
     }
 `
 
 export const CitationTextThree = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 18.3vw;
+        font-size: 14.1vw;
     }
 `
 
 export const CitationTextFour = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 13.4vw;
+        font-size: 11.1vw;
     }
 `
 
