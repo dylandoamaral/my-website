@@ -11,7 +11,7 @@ export const Footer = styled.footer`
     justify-content: space-between;
     align-items: center;
 
-    ${resolutions.medias.phone} {
+    ${resolutions.medias.tablet_landscape} {
         flex-direction: column;
         margin-bottom: 50px;
     }

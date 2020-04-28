@@ -1,8 +1,8 @@
 import resolutions from "./resolutions.json"
 
 const outer_margin_large = 170;
-const outer_margin_desktop = 130;
-const outer_margin_landscape = 80;
+const outer_margin_desktop = 80;
+const outer_margin_landscape = 60;
 const outer_margin_portrait = 20;
 const outer_margin = [outer_margin_large, outer_margin_desktop, outer_margin_landscape, outer_margin_portrait]
 

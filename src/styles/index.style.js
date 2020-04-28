@@ -203,7 +203,6 @@ export const DescriptionContainer = styled.div`
         align-items: center;
     }
     ${margins.inner_margin}
-
 `
 
 export const DescriptionImage = styled.div`
