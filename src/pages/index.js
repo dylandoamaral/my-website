@@ -34,9 +34,9 @@ import {
     CardTitle,
 } from "../styles/index.style"
 
-import PeopleIcon from "../assets/images/icons/people.svg"
+import FlameIcon from "../assets/images/icons/flame.svg"
 import NewspaperIcon from "../assets/images/icons/newspaper.svg"
-import EarIcon from "../assets/images/icons/ear.svg"
+import TrophyIcon from "../assets/images/icons/trophy.svg"
 
 import TwitterIcon from "../assets/images/icons/twitter.svg"
 import LinkedinIcon from "../assets/images/icons/linkedin.svg"
@@ -140,16 +140,16 @@ const ippon = () => {
 const cardImageSize = "75px"
 const Cards = () => (
     <Container>
-        <Title>Pour qui s'adresse t-il?</Title>
+        <Title>Trois choses sur moi</Title>
         <CardsContainer>
             <CardList>
                 <CardContainer>
-                    <PeopleIcon
+                    <FlameIcon
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Les <Primary>passionnés</Primary> de{" "}
-                        <Primary>programmation</Primary>
+                        La <Primary>programmation</Primary> est{" "}
+                        ma <Primary>passion</Primary>
                     </CardTitle>
                 </CardContainer>
                 <CardContainer>
@@ -157,15 +157,15 @@ const Cards = () => (
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Les assoiffés de <Primary>connaissance</Primary>
+                        Je suis <Primary>investis</Primary> et <Primary>curieux</Primary>
                     </CardTitle>
                 </CardContainer>
                 <CardContainer>
-                    <EarIcon
+                    <TrophyIcon
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Les <Primary>curieux</Primary> qui s'ennuient
+                        J'adore les <Primary>challenges</Primary>
                     </CardTitle>
                 </CardContainer>
             </CardList>
