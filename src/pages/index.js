@@ -157,7 +157,7 @@ const Cards = () => (
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Je suis <Primary>investis</Primary> et <Primary>curieux</Primary>
+                        Je suis <Primary>investi</Primary> et <Primary>curieux</Primary>
                     </CardTitle>
                 </CardContainer>
                 <CardContainer>
