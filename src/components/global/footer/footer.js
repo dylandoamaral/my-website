@@ -19,7 +19,7 @@ export default () => (
             <FooterLink href="https://github.com/dylandoamaral">
                 <GithubIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
-            <FooterLink href="https://twitter.com/DylanDoAmaral3">
+            <FooterLink href="https://twitter.com/dylandmrl">
                 <TwitterIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
             <FooterLink href={CV} download>
