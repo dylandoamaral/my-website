@@ -61,7 +61,7 @@ const Links = () => (
         <SocialLink href="https://github.com/dylandoamaral">
             <GithubIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
-        <SocialLink href="https://twitter.com/DylanDoAmaral3">
+        <SocialLink href="https://twitter.com/dylandmrl">
             <TwitterIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
         <SocialLink href={CV} download>
