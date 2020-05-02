@@ -11,10 +11,12 @@ tags:
     - github
 keywords: "nouveau projet, dylan do amaral, programmation, acp, add, commit, push, add-commit-push, typescript, articles, nodejs, cli, tool, erreur, erreurs, exception, exceptions, gérer, fonctionnelle, programmation fonctionnelle, either, getvalidation"
 source: "dylandoamaral"
-hide: true
+hide: false
 ---
 
 **Gérer les exceptions dans un programme est primordiale, il faut impérativement le faire pour éviter tout crash non désiré. Bon ça c’est déjà bien mais le faire fonctionnellement c’est mieux et on va voir une façon concrète de le faire.**
+
+# Add-commit-push et sa gestion des erreurs post v0.2.0
 
 Pour vous remettre dans le contexte, j’écris cette article pendant le développement d’[un petit CLI fait en typescript](https://www.npmjs.com/package/add-commit-push) visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour j’en avais marre de devoir écrire les mêmes lignes encore et encore.
 
@@ -102,11 +104,13 @@ try {
 }
 ```
 
+# Le chantier fonctionnel, de la théorie à la mise en pratique
+
 La première étape était de changer cette fonction de validation pour qu’elle ne throw pas les erreurs mais les renvoient pour les traiter ulterieurement rendant ainsi la fonction pure. C’est généralement ce qu’on fait en programmation fonctionnelle, on prend un type ayant deux états, on renvoie l’un quand il y a une erreur et l’autre quand il y en a pas et on traite les deux cas par la suite. Je vous renvois sur cette article de François Sarradin pour en savoir plus https://blog.univalence.io/ne-faites-pas-cette-erreur/.
 
 Des types on en a plein, on a le célèbre **Option** ou **Optional** qui se popularise beaucoup notamment depuis la version 8 de java. On a le **Try** présenté dans l’article ci dessus qui est fait pour gérer les erreurs et on en a d’autres encore.
 
-Dans notre cas, le type **Option<A>** ne va bien évidemment pas puisqu’on ne peut pas renseigner l’erreur, le type **Try<A>** ne va pas non plus car on veut chainer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter. Alors on va utiliser le type **Either<A, E>** qui renvoie soit un **Right<E>** qui contient la bonne réponse (the right answer) soit un **Left<A>** qui renvoie la mauvaise réponse. Les lettres A et le E peuvent être remplacer par le type qu’on veut, un boolean, un int, un string etc. Ainsi un **Either<string, boolean>** renverrait un string dans le cas d’une mauvaise réponse et un boolean dans l’autre cas. Dans notre cas ça va être un peu plus qu’un type primaire, puisqu’a gauche on va avoir un array de string et à droite une structure spéciale regroupant toute les infos qu’on a besoin pour traiter la demande de l’utilisateur. 
+Dans notre cas, le type **Option<A>** ne va bien évidemment pas puisqu’on ne peut pas renseigner l’erreur, le type **Try<A>** ne va pas non plus car on veut chainer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter et de toute façon il n'exist même pas dans fp-ts. Alors on va utiliser le type **Either<A, E>** qui renvoie soit un **Right<E>** qui contient la bonne réponse (the right answer) soit un **Left<A>** qui renvoie la mauvaise réponse. Les lettres A et le E peuvent être remplacer par le type qu’on veut, un boolean, un int, un string etc. Ainsi un **Either<string, boolean>** renverrait un string dans le cas d’une mauvaise réponse et un boolean dans l’autre cas. Dans notre cas ça va être un peu plus qu’un type primaire, puisqu’a gauche on va avoir un array de string et à droite une structure spéciale regroupant toute les infos qu’on a besoin pour traiter la demande de l’utilisateur. 
 
 Je me suis énormément inspiré de cette article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja alors n’hésitez pas à checker son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet, en français et avec un langage plus "humain" comparé aux gens parlant généralement de programmation fonctionnelle.
 
@@ -216,7 +220,7 @@ execute();
 par
 
 <aside-element>
-    <callout-element type="advice">Le fold appel show_error dans le cas ou validate retourne un left et executer la pipeline dans le cas ou validate renvoit un right.</callout-element>
+    <callout-element type="advice">Le fold appel show_error dans le cas ou validate retourne un left et exécute la pipeline dans le cas ou validate renvoit un right.</callout-element>
 </aside-element>
 
 ```typescript
@@ -224,6 +228,8 @@ pipe(validate(args, preset), fold(show_error, () => execute(toAcp([args, preset]
 ``` 
 
 Cela peut vous semblez un peu ridicule et sans intéret et pourtant on vient tout juste de supprimer les effets de bords, de rendre les erreurs composables et donc de pouvoir en renvoyer plusieurs erreurs au lieu d'une et sans le savoir, on a rendu notre système très modulable!
+
+# La modularité d'une telle architecture
 
 La modularité, on va la voir avec la deuxième partie du problème. La gestion des erreurs github qui se trouve dans l'index.ts sous forme de conditions. On va ici tout bouger dans la fichier validator.ts renommé validate par validate_preset et créer notre fonction validate pour composer l'ensemble des erreurs ensembles.
 
@@ -302,6 +308,41 @@ if (help) {
 
 Le fold est ici simplifier car notre fonction validate se charge de créer le acp lui-même et de renvoyer son résultat dans le container **Right** en cas de bonne réponse.
 
-C'est beaucoup plus lisible, beaucoup plus testable, beaucoup plus modulable, beaucoup plus propre, beaucoup moins sujette aux erreurs. On a plus d'effets de bords! Quoi? Il y en a encore car j'execute des commandes externes avec la fonction execSync? Bon c'est vrai je l'avoue, peut être une occasion future d'utiliser les IO monads dans un cas concret pour encore et toujours en apprendre plus sur la programmation fonctionnelle 👊.
+Parmis les erreurs, j'avais aussi oublié de traiter le cas ou la commande est lancé en dehors d'un repository git alors pour fix ça rien de plus facile avec cette nouvelle structure:
+
+On rajoute notre fonction validate_isrepo():
+
+```typescript
+const validate_isrepo = (): Either<NonEmptyArray<string>, void> => {
+    if (process.env.ACP_TEST === "true") return right(null);
+    return execSync("git rev-parse --is-inside-work-tree", { stdio: "ignore" }).toString() !== "true" ?
+     left(["the command is running outside à git repository"]) :
+     right(null);
+};
+```
+
+On rajoute cette fonction lors de la composition dans validate:
+
+```typescript
+sequenceT(applicativeValidation)(
+            validate_isrepo(),
+            validate_notuptodate(),
+            ...
+         )
+```
+
+Et c'est tout!
+
+C'est beaucoup plus lisible, beaucoup plus testable, beaucoup plus modulable, beaucoup plus propre, beaucoup moins sujette aux erreurs. On a plus d'effets de bords! 
+
+Hein? 
+
+Quoi? 
+
+Il y en a encore car j'execute des commandes externes avec la fonction execSync? 
+
+Bon c'est vrai je l'avoue...
+
+Peut être une occasion future d'utiliser les IO monads dans un cas concret pour encore et toujours en apprendre plus sur la programmation fonctionnelle 👊.
 
 source du code: https://github.com/dylandoamaral/add-commit-push
