@@ -28,7 +28,7 @@ class Articles extends React.Component {
                         </Description>
                     </Preface>
                     <Cards>
-                        {articles.filter(article => article.node.frontmatter.archive !== true).map((article, index) => {
+                        {articles.filter(article => article.node.frontmatter.hide !== true).map((article, index) => {
                             let articleData = article.node.frontmatter
                             console.log(articleData)
                             return (
@@ -95,7 +95,7 @@ export const articlesQuery = graphql`
                             }
                         }
                         tags
-                        archive
+                        hide
                     }
                 }
             }

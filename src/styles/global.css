@@ -42,6 +42,8 @@ code,
 kbd,
 pre,
 samp {
+    overflow-y: hidden;
+    overflow-x: auto;
     font-family:
     /* macOS 10.10+ */ Menlo, /* Windows 6+ */ Consolas,
         /* Android 4+ */ Roboto Mono, /* Ubuntu 10.10+ */ Ubuntu Monospace,

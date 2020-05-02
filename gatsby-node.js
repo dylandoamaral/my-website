@@ -15,7 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     node {
                         frontmatter {
                             path,
-                            archive
+                            hide
                         }
                     }
                 }
@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     result.data.allMarkdownRemark.edges
         .filter(({ node }) => node.frontmatter.path[0] === "/") // Only create pages for articles from this blog
-        .filter(({ node }) => node.frontmatter.archive !== true) // Only create pages for articles that are not archived
+        .filter(({ node }) => node.frontmatter.hide !== true) // Only create pages for articles that are not hided
         .forEach(({ node }) => {
             createPage({
                 path: node.frontmatter.path,
