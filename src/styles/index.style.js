@@ -4,20 +4,26 @@ import { OutboundLink } from "gatsby-plugin-google-analytics"
 import colors from "../configurations/colors.json"
 import resolutions from "../configurations/resolutions.json"
 import margins from "../configurations/margins"
+import fonts from "../configurations/fonts"
 
-import { P, H1 } from "../styles/global.style"
+import { P, H2 } from "../styles/global.style"
 
 /*
  * GLOBAL
  */
 export const Container = styled.div``
 
-export const Title = styled(H1)`
+export const Title = styled(H2)`
     margin: 80px 0;
+
+    font-size: ${fonts.sizes.h1};
+    text-align: center;
+
     ${resolutions.medias.phone} {
         margin: 80px 0 20px 0;
     }
 `
+
 
 export const Primary = styled.span`
     color: ${colors.primary};
