@@ -12,7 +12,8 @@
     "targets": {
         "d": "📕",
         "t": "👓",
-        "p": "💻"
+        "p": "💻",
+        "a": "📜"
     },
     "template": "<target> <action>: <message>"
 }
