@@ -11,7 +11,7 @@ tags:
     - github
 keywords: "nouveau projet, dylan do amaral, programmation, acp, add, commit, push, add-commit-push, typescript, articles, nodejs, cli, tool, erreur, erreurs, exception, exceptions, gérer, fonctionnelle, programmation fonctionnelle, either, getvalidation"
 source: "dylandoamaral"
-hide: false
+hide: true
 ---
 
 **Gérer les exceptions dans un programme est primordiale, il faut impérativement le faire pour éviter tout crash non désiré. Bon ça c’est déjà bien mais le faire fonctionnellement c’est mieux et on va voir une façon concrète de le faire.**
