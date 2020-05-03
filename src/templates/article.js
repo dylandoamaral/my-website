@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
+import { Helmet } from "../components/global/helmet/helmet";
 
 import Layout from "../components/global/layout/layout";
 import {
@@ -53,12 +53,25 @@ export default function Template({ data }) {
     const { markdownRemark } = data;
     const { frontmatter, htmlAst } = markdownRemark;
 
-    const title = `${frontmatter.title}|${info.author}`;
+    const title = `${frontmatter.title} | ${info.author}`;
     const image =
         "https://www.dylandoamaral.me" +
         frontmatter.featuredImage.childImageSharp.fixed.src;
+
     const dateArray = frontmatter.date.split("/");
     const date = new Date(dateArray[2], dateArray[1], dateArray[0]);
+
+    const articleSchema = {
+        "@content": frontmatter.path,
+        "@type": "BlogPosting",
+        headline: frontmatter.title,
+        about: frontmatter.description,
+        author: info.author,
+        keywords: frontmatter.keywords,
+        image: image,
+        datePublished: date.toISOString(),
+    };
+
     return (
         <Layout page="articles">
             <Helmet
@@ -70,20 +83,7 @@ export default function Template({ data }) {
                 url={frontmatter.path}
                 image={image}
                 type="article"
-                schemas={[
-                    websiteSchema,
-                    meSchema,
-                    {
-                        "@content": frontmatter.path,
-                        "@type": "BlogPosting",
-                        headline: frontmatter.title,
-                        about: frontmatter.description,
-                        author: info.author,
-                        keywords: frontmatter.keywords,
-                        image: image,
-                        datePublished: date.toISOString(),
-                    },
-                ]}
+                schemas={[websiteSchema, meSchema, articleSchema]}
             />
             <Wrapper>
                 <Feature
