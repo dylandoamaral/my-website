@@ -284,6 +284,7 @@ export const ToolsImage = styled.div`
 export const ToolsTooltip = styled.span`
     font-size: 20px;
     opacity: 0%;
+    visibility: hidden;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
 
     width: 120px;
@@ -315,6 +316,7 @@ export const ToolsTooltip = styled.span`
 
     ${ToolsImage}:hover & {
         opacity: 100%;
+        visibility: visible;
     }
 `
 
