@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "../components/global/helmet/helmet";
+import Helmet from "../components/global/helmet/helmet";
 
 import Layout from "../components/global/layout/layout";
 import {
@@ -121,7 +121,7 @@ export const articleQuery = graphql`
                 date(formatString: "DD/MM/YYYY")
                 featuredImage {
                     childImageSharp {
-                        fixed(width: 2000) {
+                        fixed(width: 1000) {
                             ...GatsbyImageSharpFixed
                         }
                     }
