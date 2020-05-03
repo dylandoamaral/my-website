@@ -12,6 +12,8 @@ import {
     Slice,
 } from "./header.style";
 
+import colors from "../../../configurations/colors.json";
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -30,15 +32,23 @@ class Header extends React.Component {
         return (
             <div>
                 <Wrapper>
-                    <Logo to="/">DD</Logo>
+                    <Logo cover bg={colors.secondary} duration={0.8} to="/">
+                        DD
+                    </Logo>
                     <Navigation>
                         <Navlink
+                            cover
+                            bg={colors.secondary}
+                            duration={0.8}
                             on={this.props.page === "index" ? "true" : "false"}
                             to="/"
                         >
                             HOME
                         </Navlink>
                         <Navlink
+                            cover
+                            bg={colors.secondary}
+                            duration={0.8}
                             on={
                                 this.props.page === "articles"
                                     ? "true"
@@ -59,6 +69,9 @@ class Header extends React.Component {
                     isToggle={this.state.toggled ? "true" : "false"}
                 >
                     <BurgerNavlink
+                        cover
+                        bg={colors.secondary}
+                        duration={0.8}
                         on={this.props.page === "index" ? "true" : "false"}
                         to="/"
                     >
@@ -66,6 +79,9 @@ class Header extends React.Component {
                     </BurgerNavlink>
                     <BurgerSeparation />
                     <BurgerNavlink
+                        cover
+                        bg={colors.secondary}
+                        duration={0.8}
                         on={this.props.page === "articles" ? "true" : "false"}
                         to="/articles/"
                     >

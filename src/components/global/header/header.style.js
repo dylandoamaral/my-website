@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import styled from "styled-components";
 
@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
     justify-content: space-between;
 `;
 
-export const Logo = styled(Link)`
+export const Logo = styled(AniLink)`
     text-decoration: none;
     font-family: "salute_riches";
     font-size: ${fonts.sizes.normal};
@@ -33,7 +33,7 @@ export const Navigation = styled.nav`
     }
 `;
 
-export const Navlink = styled(Link)`
+export const Navlink = styled(AniLink)`
     margin-left: 30px;
 
     text-decoration: none;
@@ -64,7 +64,7 @@ export const BurgerNavigation = styled.nav`
     }
 `;
 
-export const BurgerNavlink = styled(Link)`
+export const BurgerNavlink = styled(AniLink)`
     margin: 10px 0;
 
     text-decoration: none;
