@@ -56,7 +56,7 @@ export default function Template({ data }) {
     const image =
         "https://www.dylandoamaral.me" +
         frontmatter.featuredImage.childImageSharp.fixed.src;
-    const dateArray = frontmatter.data.split("/");
+    const dateArray = frontmatter.date.split("/");
     const date = new Date(dateArray[2], dateArray[1], dateArray[0])
     return (
         <Layout page="articles">
