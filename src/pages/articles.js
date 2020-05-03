@@ -11,6 +11,7 @@ import ArticleCard from "../components/article/article_card/article_card";
 import { addUniqueIdToArray } from "../utils/array";
 
 import info from "../configurations/info.json";
+import { websiteSchema, meSchema } from "../configurations/schema";
 
 const description =
     "Dans cette section, j'écris des articles sur des choses qui m'amusent, qui me divertissent toujours en rapport avec ma passion, la programmation.";
@@ -30,6 +31,7 @@ const description =
                         url="https://www.dylandoamaral.me/articles"
                         image="http://www.dylandoamaral.me/index/taiwan.jpg"
                         type="website"
+                        schemas={[websiteSchema, meSchema]}
                     />
                     <Preface>
                         <H1>Mes articles</H1>
