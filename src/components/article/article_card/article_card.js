@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import {
     Wrapper,
@@ -14,7 +14,7 @@ import {
     Theme,
     Date,
     Feature,
-} from "./article_card.style"
+} from "./article_card.style";
 
 class ArticleCard extends React.Component {
     render() {
@@ -74,11 +74,11 @@ class ArticleCard extends React.Component {
                     </OuterClick>
                 )}
             </Wrapper>
-        )
+        );
     }
 }
 
-export default ArticleCard
+export default ArticleCard;
 
 /*
                 <Feature fixed={this.props.featuredImage} alt="feature image" />

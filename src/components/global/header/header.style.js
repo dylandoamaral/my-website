@@ -1,18 +1,17 @@
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
-import styled from "styled-components"
+import styled from "styled-components";
 
-import colors from "../../../configurations/colors.json"
-import resolutions from "../../../configurations/resolutions.json"
-import fonts from "../../../configurations/fonts.json"
+import colors from "../../../configurations/colors.json";
+import resolutions from "../../../configurations/resolutions.json";
+import fonts from "../../../configurations/fonts.json";
 
 export const Wrapper = styled.header`
     padding: 30px 0 0 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-`
+`;
 
 export const Logo = styled(Link)`
     text-decoration: none;
@@ -23,17 +22,16 @@ export const Logo = styled(Link)`
     background-color: ${colors.dark};
     transition: opacity 0.3s;
     opacity: 1;
-`
+`;
 
 /*
-*   NAVIGATION FOR LARGE SCREEN
-*/
+ *   NAVIGATION FOR LARGE SCREEN
+ */
 export const Navigation = styled.nav`
     ${resolutions.medias.phone} {
         display: none;
-        
     }
-`
+`;
 
 export const Navlink = styled(Link)`
     margin-left: 30px;
@@ -45,11 +43,11 @@ export const Navlink = styled(Link)`
     :hover {
         color: ${colors.primary};
     }
-`
+`;
 
 /*
-*   NAVIGATION FOR SMALL SCREEN
-*/
+ *   NAVIGATION FOR SMALL SCREEN
+ */
 export const BurgerNavigation = styled.nav`
     display: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
@@ -57,14 +55,14 @@ export const BurgerNavigation = styled.nav`
 
     ${resolutions.medias.phone} {
         display: flex;
-        height: ${props => props.isToggle === "true" ? "122px" : "0px"};
+        height: ${props => (props.isToggle === "true" ? "122px" : "0px")};
         overflow: hidden;
         flex-direction: column;
         align-items: center;
 
         transition: height 0.5s ease-out;
     }
-`
+`;
 
 export const BurgerNavlink = styled(Link)`
     margin: 10px 0;
@@ -76,18 +74,18 @@ export const BurgerNavlink = styled(Link)`
     :hover {
         color: ${colors.primary};
     }
-`
+`;
 
 export const BurgerSeparation = styled.hr`
     width: 75%;
     border: 1px solid ${colors.dark};
     background-color: ${colors.dark};
     opacity: 0.15;
-`
-    
+`;
+
 /*
-*   HAMBURGER ICON
-*/
+ *   HAMBURGER ICON
+ */
 export const Bread = styled.a`
     width: 30px;
     height: 25px;
@@ -102,11 +100,11 @@ export const Bread = styled.a`
     ${resolutions.medias.phone} {
         display: flex;
     }
-`
+`;
 
 export const Slice = styled.div`
     background-color: ${colors.dark};
     width: ${props => (props.size === "small" ? "60%" : "100%")};
     height: 4px;
     border-radius: 2px;
-`
+`;

@@ -19,18 +19,18 @@ Alors pourquoi me diriez-vous, parce que je me suis lancé la tête la première
 
 Je suis quelqu'un de très perfectionniste et cela m'a amené à recommencer littéralement tout le projet une ou deux fois. Je ne pense pas que ce soit une mauvaise chose en soi mais si je devais le refaire aujourd'hui, ce qui m'a auparavant pris un mois durant mes temps libres me prendrait une semaine à peine.
 
-- Je suis passé du CSS à SASS pour finir par du Styled Components.
-- Je suis passé de pages HTML basique à la génération de ces dernières via webpack pour ensuite finir par utiliser Gatsby.
-- Je voulais écrire des articles en markdown pour ensuite changer pour des pages HTML en dur pour ensuite retourner sur du markdown avec des blocs imbriqués grâce à un plugin de Gatsby.
-- Je voulais faire un site avec un serveur nodeJS et une database quelconque pour ensuite générer un site statique qui me facilite énormément la tâche et me fait gagner de l'argent par la même occasion.
+-   Je suis passé du CSS à SASS pour finir par du Styled Components.
+-   Je suis passé de pages HTML basique à la génération de ces dernières via webpack pour ensuite finir par utiliser Gatsby.
+-   Je voulais écrire des articles en markdown pour ensuite changer pour des pages HTML en dur pour ensuite retourner sur du markdown avec des blocs imbriqués grâce à un plugin de Gatsby.
+-   Je voulais faire un site avec un serveur nodeJS et une database quelconque pour ensuite générer un site statique qui me facilite énormément la tâche et me fait gagner de l'argent par la même occasion.
 
 Bref, la route a été longue.
 
-Oublions webpack pur, oublions SASS (même si j'adore plus que tout SASS lorsqu'on parle feuille de style), oublions nodeJS, oublions tout le passé et concentrons-nous sur mes choix présents. 
+Oublions webpack pur, oublions SASS (même si j'adore plus que tout SASS lorsqu'on parle feuille de style), oublions nodeJS, oublions tout le passé et concentrons-nous sur mes choix présents.
 
 # Pourquoi ces choix et pas d'autres ?
 
-Avant toutes choses, mes choix ne sont pas forcément les meilleurs, et même mes justifications ne sont pas forcément pertinentes, alors si vous voulez me corriger ou alors préciser certaines choses envoyez-moi un mail ou contactez-moi sur Twitter ou LinkedIn. 
+Avant toutes choses, mes choix ne sont pas forcément les meilleurs, et même mes justifications ne sont pas forcément pertinentes, alors si vous voulez me corriger ou alors préciser certaines choses envoyez-moi un mail ou contactez-moi sur Twitter ou LinkedIn.
 
 Il faut encore que j'implémente les commentaires moi...
 
@@ -53,7 +53,7 @@ Notre base de données, c'est notre fichier de développement. Gatsby intègre a
 
 Dans mon cas, je ne veux pas et je ne compte pas avoir de système de "compte" ou autre, et une base de données serait vraiment de trop.
 
-Le fait de ne pas avoir de serveur et donc pas de base de données ne veut pas pour autant dire que l'on ne peut pas stocker des informations utilisateurs. On peut toujours, mais cela sera assez différent et pour l'instant je ne peux pas vous en dire plus parce que je ne l'ai jamais fait encore. Je vais bien devoir m'y confronter lorsque je vais implémenter les commentaires vu qu'il va bien falloir les stocker quelque part. 
+Le fait de ne pas avoir de serveur et donc pas de base de données ne veut pas pour autant dire que l'on ne peut pas stocker des informations utilisateurs. On peut toujours, mais cela sera assez différent et pour l'instant je ne peux pas vous en dire plus parce que je ne l'ai jamais fait encore. Je vais bien devoir m'y confronter lorsque je vais implémenter les commentaires vu qu'il va bien falloir les stocker quelque part.
 
 Il existe des micro-services qui font ça pour nous. Je suppose que lorsqu'un commentaire est écrit, on l'envoie vers notre micro-service qui le stocke et qui rebuild notre site avec le nouveau commentaire, mais ce n'est qu'une supposition ici.
 
@@ -63,10 +63,10 @@ Gatsby, c'est aussi plein de plugins qui, on va pas se mentir nous facilite drô
 
 ### Les primordiales
 
-- [Gatsby-plugin-sitemap](https://www.Gatsby.org/packages/Gatsby-plugin-sitemap): c'est un plugin qui crée la sitemap de votre site pour vous, la sitemap est un fichier qui aide le navigateur à bien référencer votre site, donc c'est plutôt important.
-- [Gatsby-plugin-google-analytics](https://www.Gatsby.org/packages/Gatsby-plugin-google-analytics): c'est un plugin qui facilite le linkage de votre google analytics avec votre site. En soi ce n'est pas forcément compliquer de l'intégrer de base, mais avec ce plugin c'est juste deux, trois lignes de configuration alors pourquoi s'en priver!
-- [Gatsby-plugin-manifest](https://www.Gatsby.org/packages/Gatsby-plugin-manifest): ce plugin créé le [manifest](https://developers.google.com/web/fundamentals/web-app-manifest) de votre site pour vous, il vous suffit de renseigner quelques informations et le tour est joué.
-- [Gatsby-plugin-React-helmet](https://www.Gatsby.org/packages/Gatsby-plugin-React-helmet): en gros, c'est la façon dont Gatsby peut interagir avec l'en-tête de votre page HTML. Elle fournit un composant React qui modifie cet en-tête. Donc si vous voulez ajouter un titre particulier à votre page ou quelques og meta alors vous aurez besoin de ce plugiciel pour sûr.
+-   [Gatsby-plugin-sitemap](https://www.Gatsby.org/packages/Gatsby-plugin-sitemap): c'est un plugin qui crée la sitemap de votre site pour vous, la sitemap est un fichier qui aide le navigateur à bien référencer votre site, donc c'est plutôt important.
+-   [Gatsby-plugin-google-analytics](https://www.Gatsby.org/packages/Gatsby-plugin-google-analytics): c'est un plugin qui facilite le linkage de votre google analytics avec votre site. En soi ce n'est pas forcément compliquer de l'intégrer de base, mais avec ce plugin c'est juste deux, trois lignes de configuration alors pourquoi s'en priver!
+-   [Gatsby-plugin-manifest](https://www.Gatsby.org/packages/Gatsby-plugin-manifest): ce plugin créé le [manifest](https://developers.google.com/web/fundamentals/web-app-manifest) de votre site pour vous, il vous suffit de renseigner quelques informations et le tour est joué.
+-   [Gatsby-plugin-React-helmet](https://www.Gatsby.org/packages/Gatsby-plugin-React-helmet): en gros, c'est la façon dont Gatsby peut interagir avec l'en-tête de votre page HTML. Elle fournit un composant React qui modifie cet en-tête. Donc si vous voulez ajouter un titre particulier à votre page ou quelques og meta alors vous aurez besoin de ce plugiciel pour sûr.
 
 J'en utilise d'autres qui me servent notamment à permettre à graphQL de gérer des images, ou qui me permettent de faire des transitions agréables, mais ceux ci-dessus sont vraiment les inévitables.
 
@@ -82,7 +82,7 @@ En tout cas, je voulais ce sentiment de liberté, je voulais faire tout ce que j
 
 ## Styled Components
 
-Bon, on a entamé le gros morceau donc il ne reste que des restes. Pour faire simple, ce projet est 100% en JS. Il y a les markdowns bien sur, mais 0 page HTML et 0 page CSS (je mens, il y en a une globale, mais on va faire semblant). 
+Bon, on a entamé le gros morceau donc il ne reste que des restes. Pour faire simple, ce projet est 100% en JS. Il y a les markdowns bien sur, mais 0 page HTML et 0 page CSS (je mens, il y en a une globale, mais on va faire semblant).
 
 Tout est généré par Gatsby. Alors certains vous diront que ce n'est pas super dans le sens où les différentes extensions permettaient de séparer la forme du fond, la structure, le style et la logique. Et à ces personnes, je leur répondrais qu'ils ont tout à fait raison, c'est super chiant et j'aime pas non plus.
 

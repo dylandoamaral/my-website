@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { Wrapper, Line, Triangle } from "./hr.style"
+import { Wrapper, Line, Triangle } from "./hr.style";
 
 export default class Hr extends React.Component {
     render() {
@@ -8,8 +8,8 @@ export default class Hr extends React.Component {
             <Wrapper>
                 <Line />
                 <Triangle />
-                <Line />    
+                <Line />
             </Wrapper>
-        )
+        );
     }
 }

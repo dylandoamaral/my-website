@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
+import React from "react";
+import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 
-import Layout from "../components/global/layout/layout"
+import Layout from "../components/global/layout/layout";
 import {
     Wrapper,
     Feature,
@@ -11,17 +11,17 @@ import {
     Subtitle,
     Content,
     Back,
-} from "../styles/article.style"
-import { H2, H3, P, Span, A, Li } from "../styles/global.style"
+} from "../styles/article.style";
+import { H2, H3, P, Span, A, Li } from "../styles/global.style";
 
-import rehypeReact from "rehype-react"
-import Aside from "../components/article/aside/aside"
-import Horizontal from "../components/article/horizontal/horizontal"
-import Callout from "../components/article/callout/callout"
-import Caption from "../components/article/caption/caption"
-import ProsCons from "../components/article/proscons/proscons"
+import rehypeReact from "rehype-react";
+import Aside from "../components/article/aside/aside";
+import Horizontal from "../components/article/horizontal/horizontal";
+import Callout from "../components/article/callout/callout";
+import Caption from "../components/article/caption/caption";
+import ProsCons from "../components/article/proscons/proscons";
 
-import Game from "../components/article/game/game"
+import Game from "../components/article/game/game";
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
@@ -41,15 +41,14 @@ const renderAst = new rehypeReact({
         "thumb-caption": Caption,
         "pros-and-cons": ProsCons,
 
-
         // Special components
         "fancy-demonstration": Game,
     },
-}).Compiler
+}).Compiler;
 
 export default function Template({ data }) {
-    const { markdownRemark } = data
-    const { frontmatter, htmlAst } = markdownRemark
+    const { markdownRemark } = data;
+    const { frontmatter, htmlAst } = markdownRemark;
 
     return (
         <Layout page="articles">
@@ -88,7 +87,10 @@ export default function Template({ data }) {
                 <meta
                     name="image"
                     property="og:image"
-                    content={"https://www.dylandoamaral.me" + frontmatter.featuredImage.childImageSharp.fixed.src}
+                    content={
+                        "https://www.dylandoamaral.me" +
+                        frontmatter.featuredImage.childImageSharp.fixed.src
+                    }
                 />
 
                 <meta name="twitter:card" content="summary_large_image" />
@@ -109,7 +111,10 @@ export default function Template({ data }) {
                 />
                 <meta
                     name="twitter:image"
-                    content={"https://www.dylandoamaral.me" + frontmatter.featuredImage.childImageSharp.fixed.src}
+                    content={
+                        "https://www.dylandoamaral.me" +
+                        frontmatter.featuredImage.childImageSharp.fixed.src
+                    }
                 />
             </Helmet>
             <Wrapper>
@@ -126,7 +131,7 @@ export default function Template({ data }) {
             </Article>
             <Back to={"/articles/"}>Retour vers mes articles...</Back>
         </Layout>
-    )
+    );
 }
 
 /**
@@ -156,4 +161,4 @@ export const articleQuery = graphql`
             }
         }
     }
-`
+`;

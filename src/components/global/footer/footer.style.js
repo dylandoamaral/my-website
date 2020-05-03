@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import styled from "styled-components";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import resolutions from "../../../configurations/resolutions.json"
+import resolutions from "../../../configurations/resolutions.json";
 
 export const Footer = styled.footer`
     height: 100px;
@@ -15,7 +15,7 @@ export const Footer = styled.footer`
         flex-direction: column;
         margin-bottom: 50px;
     }
-`
+`;
 
 export const FooterLink = styled(OutboundLink)`
     text-decoration: none;
@@ -24,4 +24,4 @@ export const FooterLink = styled(OutboundLink)`
     margin-bottom: 10px;
     width: 40px;
     height: 40px;
-`
+`;

@@ -1,8 +1,8 @@
-import React from "react"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React from "react";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import Helmet from "../components/global/helmet/helmet"
-import Layout from "../components/global/layout/layout"
+import Helmet from "../components/global/helmet/helmet";
+import Layout from "../components/global/layout/layout";
 
 import {
     Container,
@@ -35,20 +35,20 @@ import {
     CardList,
     CardContainer,
     CardTitle,
-} from "../styles/index.style"
+} from "../styles/index.style";
 
-import FlameIcon from "../assets/images/icons/flame.svg"
-import NewspaperIcon from "../assets/images/icons/newspaper.svg"
-import TrophyIcon from "../assets/images/icons/trophy.svg"
+import FlameIcon from "../assets/images/icons/flame.svg";
+import NewspaperIcon from "../assets/images/icons/newspaper.svg";
+import TrophyIcon from "../assets/images/icons/trophy.svg";
 
-import TwitterIcon from "../assets/images/icons/twitter.svg"
-import LinkedinIcon from "../assets/images/icons/linkedin.svg"
-import GithubIcon from "../assets/images/icons/github.svg"
-import CVIcon from "../assets/images/icons/cv.svg"
+import TwitterIcon from "../assets/images/icons/twitter.svg";
+import LinkedinIcon from "../assets/images/icons/linkedin.svg";
+import GithubIcon from "../assets/images/icons/github.svg";
+import CVIcon from "../assets/images/icons/cv.svg";
 
-import CV from "../assets/documents/cv.pdf"
+import CV from "../assets/documents/cv.pdf";
 
-import toolsData from "../configurations/tools.json"
+import toolsData from "../configurations/tools.json";
 
 const Roles = () => (
     <RoleList>
@@ -56,7 +56,7 @@ const Roles = () => (
         <Role>Bricoleur Numérique</Role>
         <Role>Enthousiaste</Role>
     </RoleList>
-)
+);
 
 const Links = () => (
     <Social>
@@ -73,7 +73,7 @@ const Links = () => (
             <CVIcon style={{ width: "25px", height: "25px" }} />
         </SocialLink>
     </Social>
-)
+);
 
 const Showcase = () => (
     <ShowcaseContainer>
@@ -84,7 +84,7 @@ const Showcase = () => (
         </ShowcaseContent>
         <ShowcaseImage src={"/index/owl.png"} alt="owl" />
     </ShowcaseContainer>
-)
+);
 
 const Citation = () => (
     <CitationContainer>
@@ -102,7 +102,7 @@ const Citation = () => (
             </CitationTextFour>
         </CitationContent>
     </CitationContainer>
-)
+);
 
 const Description = () => (
     <Container>
@@ -124,29 +124,32 @@ const Description = () => (
             </div>
         </DescriptionContainer>
     </Container>
-)
+);
 
 const efrei = () => {
     return (
         <OutboundLink href="https://www.efrei.fr/campus-ecole-ingenieur/?gclid=EAIaIQobChMIhafMrKCJ6QIV0kPTCh0iUQIOEAAYASAAEgKctvD_BwE">
             Efrei
         </OutboundLink>
-    )
-}
+    );
+};
 
 const ippon = () => {
     return (
         <OutboundLink href="https://fr.ippon.tech/">
             Ippon Technologies
         </OutboundLink>
-    )
-}
+    );
+};
 
 const ToolsElement = props => (
-    <ToolsImage path={`/index/${props.element.image}`} aria-label={props.element.name}>
+    <ToolsImage
+        path={`/index/${props.element.image}`}
+        aria-label={props.element.name}
+    >
         <ToolsTooltip>{props.element.name}</ToolsTooltip>
     </ToolsImage>
-)
+);
 
 const Tools = () => (
     <Container>
@@ -157,9 +160,9 @@ const Tools = () => (
             ))}
         </ToolsContainer>
     </Container>
-)
+);
 
-const cardImageSize = "75px"
+const cardImageSize = "75px";
 const Cards = () => (
     <Container>
         <Title>Trois choses sur moi</Title>
@@ -194,7 +197,7 @@ const Cards = () => (
             </CardList>
         </CardsContainer>
     </Container>
-)
+);
 
 export default () => (
     <Layout page="index">
@@ -205,4 +208,4 @@ export default () => (
         <Tools />
         <Cards />
     </Layout>
-)
+);

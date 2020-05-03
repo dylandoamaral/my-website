@@ -1,5 +1,5 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from "react";
+import { Helmet } from "react-helmet";
 
 export default () => (
     <Helmet title="Dylan Do Amaral" defer={false}>
@@ -35,4 +35,4 @@ export default () => (
         <meta http-equiv="content-language" content="fr-fr" />
         <html lang="fr" />
     </Helmet>
-)
+);

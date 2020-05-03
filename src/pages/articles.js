@@ -1,19 +1,19 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Helmet from "../components/global/helmet/helmet"
-import Layout from "../components/global/layout/layout"
+import Helmet from "../components/global/helmet/helmet";
+import Layout from "../components/global/layout/layout";
 
-import { Wrapper, Preface, Description, Cards } from "../styles/articles.style"
-import { H1 } from "../styles/global.style"
-import ArticleCard from "../components/article/article_card/article_card"
+import { Wrapper, Preface, Description, Cards } from "../styles/articles.style";
+import { H1 } from "../styles/global.style";
+import ArticleCard from "../components/article/article_card/article_card";
 
-import { addUniqueIdToArray } from "../utils/array"
+import { addUniqueIdToArray } from "../utils/array";
 
 class Articles extends React.Component {
     render() {
-        const articles = this.props.data.allMarkdownRemark.edges
-        const themes = this.props.data.themes.edges
+        const articles = this.props.data.allMarkdownRemark.edges;
+        const themes = this.props.data.themes.edges;
 
         return (
             <Layout page="articles">
@@ -28,47 +28,55 @@ class Articles extends React.Component {
                         </Description>
                     </Preface>
                     <Cards>
-                        {articles.filter(article => article.node.frontmatter.hide !== true).map((article, index) => {
-                            let articleData = article.node.frontmatter
-                            return (
-                                <ArticleCard
-                                    key={index}
-                                    even={index % 2 === 1 ? "true" : "false"}
-                                    title={articleData.title}
-                                    subtitle={articleData.subtitle}
-                                    description={articleData.description}
-                                    path={articleData.path}
-                                    date={articleData.date}
-                                    source={articleData.source}
-                                    featuredImage={
-                                        articleData.featuredImage
-                                            .childImageSharp.fixed
-                                    }
-                                    themesImage={addUniqueIdToArray(themes)
-                                        .filter(theme =>
-                                            articleData.tags.includes(
-                                                theme.value.node.name
-                                            )
-                                        )
-                                        .map(theme => {
-                                            return {
-                                                uniqueId: theme.uniqueId,
-                                                value:
-                                                    theme.value.node
-                                                        .childImageSharp.fixed,
-                                            }
-                                        })}
-                                />
+                        {articles
+                            .filter(
+                                article =>
+                                    article.node.frontmatter.hide !== true
                             )
-                        })}
+                            .map((article, index) => {
+                                let articleData = article.node.frontmatter;
+                                return (
+                                    <ArticleCard
+                                        key={index}
+                                        even={
+                                            index % 2 === 1 ? "true" : "false"
+                                        }
+                                        title={articleData.title}
+                                        subtitle={articleData.subtitle}
+                                        description={articleData.description}
+                                        path={articleData.path}
+                                        date={articleData.date}
+                                        source={articleData.source}
+                                        featuredImage={
+                                            articleData.featuredImage
+                                                .childImageSharp.fixed
+                                        }
+                                        themesImage={addUniqueIdToArray(themes)
+                                            .filter(theme =>
+                                                articleData.tags.includes(
+                                                    theme.value.node.name
+                                                )
+                                            )
+                                            .map(theme => {
+                                                return {
+                                                    uniqueId: theme.uniqueId,
+                                                    value:
+                                                        theme.value.node
+                                                            .childImageSharp
+                                                            .fixed,
+                                                };
+                                            })}
+                                    />
+                                );
+                            })}
                     </Cards>
                 </Wrapper>
             </Layout>
-        )
+        );
     }
 }
 
-export default Articles
+export default Articles;
 
 export const articlesQuery = graphql`
     query {
@@ -118,4 +126,4 @@ export const articlesQuery = graphql`
             }
         }
     }
-`
+`;

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -8,4 +8,4 @@ export const Wrapper = styled.div`
         width: ${props => props.width};
         margin: 10px;
     }
-`
+`;

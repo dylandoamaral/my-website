@@ -1,24 +1,39 @@
-import resolutions from "./resolutions.json"
+import resolutions from "./resolutions.json";
 
 const outer_margin_large = 170;
 const outer_margin_desktop = 80;
 const outer_margin_landscape = 60;
 const outer_margin_portrait = 20;
-const outer_margin = [outer_margin_large, outer_margin_desktop, outer_margin_landscape, outer_margin_portrait]
+const outer_margin = [
+    outer_margin_large,
+    outer_margin_desktop,
+    outer_margin_landscape,
+    outer_margin_portrait,
+];
 
 const inner_margin_large = 170;
 const inner_margin_desktop = 150;
 const inner_margin_landscape = 0;
 const inner_margin_portrait = 0;
-const inner_margin = [inner_margin_large, inner_margin_desktop, inner_margin_landscape, inner_margin_portrait]
+const inner_margin = [
+    inner_margin_large,
+    inner_margin_desktop,
+    inner_margin_landscape,
+    inner_margin_portrait,
+];
 
 const full_margin_large = outer_margin_large + inner_margin_large;
 const full_margin_desktop = outer_margin_desktop + inner_margin_desktop;
 const full_margin_landscape = outer_margin_landscape + inner_margin_landscape;
 const full_margin_portrait = outer_margin_portrait + inner_margin_portrait;
-const full_margin = [full_margin_large, full_margin_desktop, full_margin_landscape, full_margin_portrait]
+const full_margin = [
+    full_margin_large,
+    full_margin_desktop,
+    full_margin_landscape,
+    full_margin_portrait,
+];
 
-const margin = (margins) => {
+const margin = margins => {
     return `
     margin-left: ${margins[0]}px;
     margin-right: ${margins[0]}px;
@@ -37,7 +52,7 @@ const margin = (margins) => {
         margin-left: ${margins[3]}px;
         margin-right: ${margins[3]}px;
     }`;
-}
+};
 
 const two_margin = (left, right) => {
     return `
@@ -58,15 +73,18 @@ const two_margin = (left, right) => {
         margin-left: ${left[3]}px;
         margin-right: ${right[3]}px;
     }`;
-}
+};
 
 export default {
-    outer_margin:`${margin(outer_margin)}`,
-    inner_margin:`${margin(inner_margin)}`,
-    full_margin:`${margin(full_margin)}`,
-    article_margin:`${two_margin([0, 0, 0, 0], inner_margin.map(m => m * 2))}`,
+    outer_margin: `${margin(outer_margin)}`,
+    inner_margin: `${margin(inner_margin)}`,
+    full_margin: `${margin(full_margin)}`,
+    article_margin: `${two_margin(
+        [0, 0, 0, 0],
+        inner_margin.map(m => m * 2)
+    )}`,
 
-    anti_outer_margin:`${margin(outer_margin.map(x => -1 * x))}`,
-    anti_inner_margin:`${margin(inner_margin.map(x => -1 * x))}`,
-    anti_full_margin:`${margin(full_margin.map(x => -1 * x))}`,
-}
+    anti_outer_margin: `${margin(outer_margin.map(x => -1 * x))}`,
+    anti_inner_margin: `${margin(inner_margin.map(x => -1 * x))}`,
+    anti_full_margin: `${margin(full_margin.map(x => -1 * x))}`,
+};

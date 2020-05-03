@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import { Span } from "../../../styles/global.style"
+import { Span } from "../../../styles/global.style";
 
-import colors from "../../../configurations/colors.json"
-import resolutions from "../../../configurations/resolutions.json"
+import colors from "../../../configurations/colors.json";
+import resolutions from "../../../configurations/resolutions.json";
 
 export const Wrapper = styled.div`
     width: 100%;
@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
         align-items: center;
         text-align: left;
     }
-`
+`;
 
 export const Emoji = styled(Span)`
     text-align: center;
@@ -36,8 +36,8 @@ export const Emoji = styled(Span)`
         padding-right: 10px;
         padding-bottom: 0px;
     }
-`
+`;
 
 export const Text = styled(Span)`
     color: ${colors.dark};
-`
+`;

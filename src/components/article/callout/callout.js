@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
-import { Wrapper, Emoji, Text } from "./callout.style"
+import { Wrapper, Emoji, Text } from "./callout.style";
 
 export default class Callout extends React.Component {
     render() {
-        let type = types[this.props.type]
-        if (!type) type = types["advice"]
+        let type = types[this.props.type];
+        if (!type) type = types["advice"];
         return (
             <Wrapper background={type["background"]} border={type["border"]}>
                 <Emoji>
@@ -15,7 +15,7 @@ export default class Callout extends React.Component {
                 </Emoji>
                 <Text>{this.props.children}</Text>
             </Wrapper>
-        )
+        );
     }
 }
 
@@ -35,4 +35,4 @@ const types = {
         border: "#b8daff",
         emote: "💡",
     },
-}
+};

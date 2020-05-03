@@ -1,17 +1,22 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React from "react";
+import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import Layout from "../components/global/layout/layout"
-import CV from "../assets/documents/cv.pdf"
+import Layout from "../components/global/layout/layout";
+import CV from "../assets/documents/cv.pdf";
 
-import { Wrapper, Picture, Catchphrase } from "../styles/about.style"
+import { Wrapper, Picture, Catchphrase } from "../styles/about.style";
 
 export default ({ data }) => (
     <Layout page="about">
         <Helmet title="À propos de moi | Dylan Do Amaral" defer={false}>
-            <meta name="description" content={"Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"} />
+            <meta
+                name="description"
+                content={
+                    "Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
+                }
+            />
         </Helmet>
         <Wrapper>
             <Picture fixed={data.owl.childImageSharp.fixed} alt="owl" />
@@ -58,7 +63,7 @@ export default ({ data }) => (
             </p>
         </Wrapper>
     </Layout>
-)
+);
 
 export const pictureQuery = graphql`
     query {
@@ -70,4 +75,4 @@ export const pictureQuery = graphql`
             }
         }
     }
-`
+`;

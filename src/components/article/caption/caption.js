@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import { Wrapper, Text } from "./caption.style"
+import { Wrapper, Text } from "./caption.style";
 
 export default class Caption extends React.Component {
     render() {
@@ -8,6 +8,6 @@ export default class Caption extends React.Component {
             <Wrapper>
                 <Text>{this.props.children}</Text>
             </Wrapper>
-        )
+        );
     }
 }

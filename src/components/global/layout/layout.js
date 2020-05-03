@@ -1,14 +1,14 @@
-import React from "react"
+import React from "react";
 
-import Header from "../header/header"
-import Footer from "../footer/footer"
+import Header from "../header/header";
+import Footer from "../footer/footer";
 
-import { Layout } from "./layout.style"
+import { Layout } from "./layout.style";
 
-export default (props) => (
+export default props => (
     <Layout>
-        <Header page={props.page}/>
+        <Header page={props.page} />
         {props.children}
         <Footer />
     </Layout>
-)
+);

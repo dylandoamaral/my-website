@@ -6,7 +6,7 @@
 
 const gatsby_remark_image_wrapper = `
     margin: 20px auto;
-  `
+  `;
 
 module.exports = {
     siteMetadata: {
@@ -81,4 +81,4 @@ module.exports = {
             },
         },
     ],
-}
+};

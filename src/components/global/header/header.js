@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import {
     Wrapper,
@@ -10,21 +10,21 @@ import {
     BurgerSeparation,
     Bread,
     Slice,
-} from "./header.style"
+} from "./header.style";
 
 class Header extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             toggled: false,
-        }
+        };
     }
 
     toggleMenu = () => {
         this.setState({
-            toggled: !this.state.toggled
-        })
-    }
+            toggled: !this.state.toggled,
+        });
+    };
 
     render() {
         return (
@@ -32,11 +32,18 @@ class Header extends React.Component {
                 <Wrapper>
                     <Logo to="/">DD</Logo>
                     <Navigation>
-                        <Navlink on={this.props.page === "index" ? "true" : "false"} to="/">
+                        <Navlink
+                            on={this.props.page === "index" ? "true" : "false"}
+                            to="/"
+                        >
                             HOME
                         </Navlink>
                         <Navlink
-                            on={this.props.page === "articles" ? "true" : "false"}
+                            on={
+                                this.props.page === "articles"
+                                    ? "true"
+                                    : "false"
+                            }
                             to="/articles/"
                         >
                             MES ARTICLES
@@ -48,7 +55,9 @@ class Header extends React.Component {
                         <Slice size="small" />
                     </Bread>
                 </Wrapper>
-                <BurgerNavigation isToggle={this.state.toggled ? "true" : "false"}>
+                <BurgerNavigation
+                    isToggle={this.state.toggled ? "true" : "false"}
+                >
                     <BurgerNavlink
                         on={this.props.page === "index" ? "true" : "false"}
                         to="/"
@@ -64,7 +73,7 @@ class Header extends React.Component {
                     </BurgerNavlink>
                 </BurgerNavigation>
             </div>
-        )
+        );
     }
 }
 

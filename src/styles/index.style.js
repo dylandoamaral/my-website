@@ -1,17 +1,17 @@
-import styled from "styled-components"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import styled from "styled-components";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
-import colors from "../configurations/colors.json"
-import resolutions from "../configurations/resolutions.json"
-import margins from "../configurations/margins"
-import fonts from "../configurations/fonts"
+import colors from "../configurations/colors.json";
+import resolutions from "../configurations/resolutions.json";
+import margins from "../configurations/margins";
+import fonts from "../configurations/fonts";
 
-import { P, H2 } from "../styles/global.style"
+import { P, H2 } from "../styles/global.style";
 
 /*
  * GLOBAL
  */
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const Title = styled(H2)`
     margin: 80px 0;
@@ -22,20 +22,20 @@ export const Title = styled(H2)`
     ${resolutions.medias.phone} {
         margin: 80px 0 20px 0;
     }
-`
+`;
 
 export const Primary = styled.span`
     color: ${colors.primary};
-`
+`;
 
 export const Secondary = styled.span`
     color: ${colors.secondary};
-`
+`;
 
 export const Ippon = styled(OutboundLink)`
     color: #f95353;
     text-decoration: none;
-`
+`;
 
 /*
  * SHOWCASE
@@ -47,7 +47,7 @@ export const RoleList = styled.div`
     ${resolutions.medias.phone} {
         margin-left: 20px;
     }
-`
+`;
 
 export const Role = styled.span`
     writing-mode: vertical-lr;
@@ -55,7 +55,7 @@ export const Role = styled.span`
 
     font-weight: 500;
     color: ${props => (props.secondary ? colors.secondary : colors.primary)};
-`
+`;
 
 export const Social = styled.div`
     display: flex;
@@ -64,7 +64,7 @@ export const Social = styled.div`
     ${resolutions.medias.phone} {
         flex-direction: column;
     }
-`
+`;
 
 export const SocialLink = styled(OutboundLink)`
     text-decoration: none;
@@ -79,7 +79,7 @@ export const SocialLink = styled(OutboundLink)`
     ${resolutions.medias.phone} {
         margin: 5px 0;
     }
-`
+`;
 
 export const ShowcaseContainer = styled.div`
     height: calc(100vh - 64px);
@@ -96,7 +96,7 @@ export const ShowcaseContainer = styled.div`
     ${resolutions.medias.phone} {
         margin: 0 -20px;
     }
-`
+`;
 
 export const ShowcaseName = styled.h1`
     font-size: 70px;
@@ -109,12 +109,12 @@ export const ShowcaseName = styled.h1`
         font-size: 11.1vw;
         margin-left: 20px;
     }
-`
+`;
 
 export const ShowcaseContent = styled.div`
     margin: 10px 0 20px 0;
     display: flex;
-`
+`;
 
 export const ShowcaseImage = styled.img`
     position: absolute;
@@ -132,7 +132,7 @@ export const ShowcaseImage = styled.img`
         height: 450px;
         right: -140px;
     }
-`
+`;
 
 /*
  * CITATION
@@ -144,16 +144,16 @@ export const CitationContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 60px 0;
-`
+`;
 
 export const CitationContent = styled.div`
     ${margins.full_margin}
-`
+`;
 
 export const CitationBr = styled.div`
     display: block;
     height: 0;
-`
+`;
 
 export const CitationText = styled.p`
     margin: 0 8px;
@@ -169,31 +169,31 @@ export const CitationText = styled.p`
     ${resolutions.medias.phone} {
         display: block;
     }
-`
+`;
 
 export const CitationTextOne = styled(CitationText)`
     ${resolutions.medias.phone} {
         font-size: 11.25vw;
     }
-`
+`;
 
 export const CitationTextTwo = styled(CitationText)`
     ${resolutions.medias.phone} {
         font-size: 10.85vw;
     }
-`
+`;
 
 export const CitationTextThree = styled(CitationText)`
     ${resolutions.medias.phone} {
         font-size: 13.65vw;
     }
-`
+`;
 
 export const CitationTextFour = styled(CitationText)`
     ${resolutions.medias.phone} {
         font-size: 10.75vw;
     }
-`
+`;
 
 /*
  * WEBSITE DESCRIPTION
@@ -208,7 +208,7 @@ export const DescriptionContainer = styled.div`
         align-items: center;
     }
     ${margins.inner_margin}
-`
+`;
 
 export const DescriptionImage = styled.div`
     flex: 1;
@@ -237,7 +237,7 @@ export const DescriptionImage = styled.div`
         min-height: 400px;
         background-position: center;
     }
-`
+`;
 
 export const DescriptionText = styled(P)`
     flex: 2.2;
@@ -246,7 +246,7 @@ export const DescriptionText = styled(P)`
     ${resolutions.medias.tablet_portrait} {
         margin-left: 0;
     }
-`
+`;
 
 /*
  * TOOLS
@@ -257,7 +257,7 @@ export const ToolsContainer = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-`
+`;
 
 export const ToolsImage = styled.div`
     position: relative;
@@ -279,7 +279,7 @@ export const ToolsImage = styled.div`
         height: 60px;
          width: 60px;
     }
-`
+`;
 
 export const ToolsTooltip = styled.span`
     font-size: 20px;
@@ -310,7 +310,7 @@ export const ToolsTooltip = styled.span`
     ::after {
         content: " ";
         position: absolute;
-        bottom: 100%;  /* At the top of the tooltip */
+        bottom: 100%; /* At the top of the tooltip */
         left: 50%;
         margin-left: -5px;
         border-width: 5px;
@@ -322,7 +322,7 @@ export const ToolsTooltip = styled.span`
         opacity: 100%;
         visibility: visible;
     }
-`
+`;
 
 /*
  * CARDS
@@ -337,7 +337,7 @@ export const CardsContainer = styled.div`
         height: 700px;
         margin-bottom: 150px;
     }
-`
+`;
 
 export const CardList = styled.div`
     ${margins.full_margin}
@@ -351,7 +351,7 @@ export const CardList = styled.div`
         flex-direction: column;
         align-items: center;
     }
-`
+`;
 
 export const CardContainer = styled.div`
     width: 200px;
@@ -371,9 +371,9 @@ export const CardContainer = styled.div`
         width: 80%;
         padding: 40px;
     }
-`
+`;
 
 export const CardTitle = styled(P)`
     margin: 0;
     padding: 0;
-`
+`;
