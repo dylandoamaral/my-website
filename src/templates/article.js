@@ -24,6 +24,7 @@ import ProsCons from "../components/article/proscons/proscons";
 import Game from "../components/article/game/game";
 
 import info from "../configurations/info.json";
+import { websiteSchema, meSchema } from "../configurations/schema";
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
@@ -57,7 +58,7 @@ export default function Template({ data }) {
         "https://www.dylandoamaral.me" +
         frontmatter.featuredImage.childImageSharp.fixed.src;
     const dateArray = frontmatter.date.split("/");
-    const date = new Date(dateArray[2], dateArray[1], dateArray[0])
+    const date = new Date(dateArray[2], dateArray[1], dateArray[0]);
     return (
         <Layout page="articles">
             <Helmet
@@ -69,9 +70,10 @@ export default function Template({ data }) {
                 url={frontmatter.path}
                 image={image}
                 type="article"
-            >
-                <script type="application/ld+json">
-                    {JSON.stringify({
+                schemas={[
+                    websiteSchema,
+                    meSchema,
+                    {
                         "@content": frontmatter.path,
                         "@type": "BlogPosting",
                         headline: frontmatter.title,
@@ -79,10 +81,10 @@ export default function Template({ data }) {
                         author: info.author,
                         keywords: frontmatter.keywords,
                         image: image,
-                        datePublished: date.toISOString()
-                    })}
-                </script>
-            </Helmet>
+                        datePublished: date.toISOString(),
+                    },
+                ]}
+            />
             <Wrapper>
                 <Feature
                     fixed={frontmatter.featuredImage.childImageSharp.fixed}

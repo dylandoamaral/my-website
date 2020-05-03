@@ -50,6 +50,7 @@ import CV from "../assets/documents/cv.pdf";
 
 import toolsData from "../configurations/tools.json";
 import info from "../configurations/info.json";
+import { websiteSchema, meSchema } from "../configurations/schema";
 
 const Roles = () => (
     <RoleList>
@@ -209,6 +210,7 @@ export default () => (
             url="https://www.dylandoamaral.me/"
             image="http://www.dylandoamaral.me/index/taiwan.jpg"
             type="website"
+            schemas={[websiteSchema, meSchema]}
         />
         <Showcase />
         <Citation />
