@@ -10,7 +10,12 @@ import ArticleCard from "../components/article/article_card/article_card";
 
 import { addUniqueIdToArray } from "../utils/array";
 
-class Articles extends React.Component {
+import info from "../configurations/info.json";
+
+const description =
+    "Dans cette section, j'écris des articles sur des choses qui m'amusent, qui me divertissent toujours en rapport avec ma passion, la programmation.";
+
+    class Articles extends React.Component {
     render() {
         const articles = this.props.data.allMarkdownRemark.edges;
         const themes = this.props.data.themes.edges;
@@ -18,14 +23,17 @@ class Articles extends React.Component {
         return (
             <Layout page="articles">
                 <Wrapper>
-                    <Helmet />
+                    <Helmet
+                        author={info.author}
+                        description={description}
+                        keywords={info.keywords}
+                        url="https://www.dylandoamaral.me/articles"
+                        image="http://www.dylandoamaral.me/index/taiwan.jpg"
+                        type="website"
+                    />
                     <Preface>
                         <H1>Mes articles</H1>
-                        <Description>
-                            Dans cette section, j'écris des articles sur des
-                            choses qui m'amusent, qui me divertissent toujours
-                            en rapport avec ma passion, la programmation.
-                        </Description>
+                        <Description>{description}</Description>
                     </Preface>
                     <Cards>
                         {articles

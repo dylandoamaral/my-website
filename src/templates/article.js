@@ -23,6 +23,8 @@ import ProsCons from "../components/article/proscons/proscons";
 
 import Game from "../components/article/game/game";
 
+import info from "../configurations/info.json";
+
 const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: {
@@ -50,78 +52,36 @@ export default function Template({ data }) {
     const { markdownRemark } = data;
     const { frontmatter, htmlAst } = markdownRemark;
 
+    const title = `${frontmatter.title}|${info.author}`;
+    const image =
+        "https://www.dylandoamaral.me" +
+        frontmatter.featuredImage.childImageSharp.fixed.src;
+    const dateArray = frontmatter.data.split("/");
+    const date = new Date(dateArray[2], dateArray[1], dateArray[0])
     return (
         <Layout page="articles">
             <Helmet
-                title={
-                    frontmatter.subtitle.length > 0
-                        ? frontmatter.title +
-                          " | " +
-                          frontmatter.subtitle +
-                          " | Dylan Do Amaral"
-                        : frontmatter.title + " | Dylan Do Amaral"
-                }
+                title={title}
                 defer={false}
+                author={info.author}
+                description={frontmatter.description}
+                keywords={frontmatter.keywords}
+                url={frontmatter.path}
+                image={image}
+                type="article"
             >
-                
-                <meta
-                    name="title"
-                    property="og:title"
-                    content={
-                        frontmatter.subtitle.length > 0
-                            ? frontmatter.title +
-                              " | " +
-                              frontmatter.subtitle +
-                              " | Dylan Do Amaral"
-                            : frontmatter.title + " | Dylan Do Amaral"
-                    }
-                />
-                <meta property="og:type" content="article" />
-                <meta name="author" content="Dylan Do Amaral" />
-                <meta
-                    property="og:description"
-                    name="description"
-                    content={frontmatter.description}
-                />
-                <meta name="keywords" content={frontmatter.keywords} />
-
-                <meta
-                    name="image"
-                    property="og:image"
-                    content={
-                        "https://www.dylandoamaral.me" +
-                        frontmatter.featuredImage.childImageSharp.fixed.src
-                    }
-                />
-                <meta
-                    name="url"
-                    property="og:url"
-                    content={frontmatter.path}
-                />
-
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta
-                    name="twitter:title"
-                    content={
-                        frontmatter.subtitle.length > 0
-                            ? frontmatter.title +
-                              " | " +
-                              frontmatter.subtitle +
-                              " | Dylan Do Amaral"
-                            : frontmatter.title + " | Dylan Do Amaral"
-                    }
-                />
-                <meta
-                    name="twitter:description"
-                    content={frontmatter.description}
-                />
-                <meta
-                    name="twitter:image"
-                    content={
-                        "https://www.dylandoamaral.me" +
-                        frontmatter.featuredImage.childImageSharp.fixed.src
-                    }
-                />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@content": frontmatter.path,
+                        "@type": "BlogPosting",
+                        headline: frontmatter.title,
+                        about: frontmatter.description,
+                        author: info.author,
+                        keywords: frontmatter.keywords,
+                        image: image,
+                        datePublished: date.toISOString()
+                    })}
+                </script>
             </Helmet>
             <Wrapper>
                 <Feature

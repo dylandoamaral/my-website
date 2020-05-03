@@ -49,6 +49,7 @@ import CVIcon from "../assets/images/icons/cv.svg";
 import CV from "../assets/documents/cv.pdf";
 
 import toolsData from "../configurations/tools.json";
+import info from "../configurations/info.json";
 
 const Roles = () => (
     <RoleList>
@@ -201,31 +202,14 @@ const Cards = () => (
 
 export default () => (
     <Layout page="index">
-        <Helmet>
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "Person",
-                    url: "https://www.dylandoamaral.me/",
-                    givenName: "Dylan",
-                    familyName: "Do Amaral",
-                    image: "https://www.dylandoamaral.me/index/taiwan",
-                    jobTitle: "Data Engineer",
-                    gender: "https://schema.org/Male",
-                    hasOccupation: {
-                        "@type": "Occupation",
-                        educationRequirements: "bac +5",
-                        experienceRequirements: "data engineer degree",
-                        occupationLocation: "paris",
-                    },
-                    contactPoint: {
-                        "@type": "ContactPoint",
-                        telephone: "+336-51-07-66-14",
-                        contactType: "Numéro personnel",
-                    },
-                })}
-            </script>
-        </Helmet>
+        <Helmet
+            author={info.author}
+            description="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
+            keywords={info.keywords}
+            url="https://www.dylandoamaral.me/"
+            image="http://www.dylandoamaral.me/index/taiwan.jpg"
+            type="website"
+        />
         <Showcase />
         <Citation />
         <Description />

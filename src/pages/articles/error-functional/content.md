@@ -1,6 +1,6 @@
 ---
 path: "/articles/il_faut_traiter_les_erreurs_fonctionnellement"
-date: "2019-12-03"
+date: "2020-05-03"
 title: "Il faut traiter les erreurs fonctionnellement"
 subtitle: "Programmation fonctionnelle"
 description: "Pour mon nouveau projet, j'ai eu à faire à de la gestion d'erreurs. D'abord en impérative, j'ai vite refactorer le tout fonctionnellement et je vais vous expliquez comment et pourquoi."
@@ -11,7 +11,7 @@ tags:
     - github
 keywords: "nouveau projet, dylan do amaral, programmation, acp, add, commit, push, add-commit-push, typescript, articles, nodejs, cli, tool, erreur, erreurs, exception, exceptions, gérer, fonctionnelle, programmation fonctionnelle, either, getvalidation"
 source: "dylandoamaral"
-hide: true
+hide: false
 ---
 
 **Gérer les exceptions dans un programme est primordiale, il faut impérativement le faire pour éviter tout crash non désiré. Bon ça c’est déjà bien mais le faire fonctionnellement c’est mieux et on va voir une façon concrète de le faire.**
