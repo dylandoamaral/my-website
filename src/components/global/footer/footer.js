@@ -26,7 +26,7 @@ export default () => (
                 <CVIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
         </div>
-        <Span>
+        <Span style={{textAlign: "center"}}>
             Fait avec <span role="img" aria-label="amour">💛</span> par Dylan Do Amaral
         </Span>
         <Span>
