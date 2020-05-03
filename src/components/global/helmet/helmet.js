@@ -32,5 +32,7 @@ export default () => (
             name="twitter:image"
             content="http://www.dylandoamaral.me/index/forest.jpg"
         />
+        <meta http-equiv="content-language" content="fr-fr" />
+        <html lang="fr" />
     </Helmet>
 )
