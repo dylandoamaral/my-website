@@ -51,12 +51,6 @@ module.exports = {
             },
         },
         {
-            resolve: "gatsby-plugin-page-transitions",
-            options: {
-                transitionTime: 750,
-            },
-        },
-        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
