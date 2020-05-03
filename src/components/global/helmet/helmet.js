@@ -19,7 +19,7 @@ export default () => (
         <meta
             name="image"
             property="og:image"
-            content="https://www.dylandoamaral.me/index/forest.jpg"
+            content="https://www.dylandoamaral.me/index/taiwan.jpg"
         />
 
         <meta name="twitter:card" content="summary_large_image" />
@@ -30,7 +30,7 @@ export default () => (
         />
         <meta
             name="twitter:image"
-            content="http://www.dylandoamaral.me/index/forest.jpg"
+            content="http://www.dylandoamaral.me/index/taiwan.jpg"
         />
         <meta http-equiv="content-language" content="fr-fr" />
         <html lang="fr" />
