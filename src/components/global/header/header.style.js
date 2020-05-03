@@ -50,7 +50,6 @@ export const Navlink = styled(AniLink)`
  */
 export const BurgerNavigation = styled.nav`
     display: none;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
     margin: 0 -20px 20px -20px;
 
     ${resolutions.medias.phone} {
@@ -60,7 +59,7 @@ export const BurgerNavigation = styled.nav`
         flex-direction: column;
         align-items: center;
 
-        transition: height 0.5s ease-out;
+        transition: height 0.25s ease-out;
     }
 `;
 
