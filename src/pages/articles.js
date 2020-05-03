@@ -30,10 +30,9 @@ class Articles extends React.Component {
                     <Cards>
                         {articles.filter(article => article.node.frontmatter.hide !== true).map((article, index) => {
                             let articleData = article.node.frontmatter
-                            console.log(articleData)
                             return (
                                 <ArticleCard
-                                    key={articleData.uniqueId}
+                                    key={index}
                                     even={index % 2 === 1 ? "true" : "false"}
                                     title={articleData.title}
                                     subtitle={articleData.subtitle}
