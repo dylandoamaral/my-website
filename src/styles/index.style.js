@@ -303,6 +303,10 @@ export const ToolsTooltip = styled.span`
     z-index: 1;
     transition-duration: 0.25s;
 
+    ${resolutions.medias.phone} {
+        transition-duration: 0;
+    }
+
     ::after {
         content: " ";
         position: absolute;
