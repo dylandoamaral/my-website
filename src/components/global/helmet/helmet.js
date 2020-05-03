@@ -21,6 +21,11 @@ export default () => (
             property="og:image"
             content="https://www.dylandoamaral.me/index/taiwan.jpg"
         />
+        <meta
+            name="url"
+            property="og:url"
+            content="https://www.dylandoamaral.me/"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dylan Do Amaral" />
