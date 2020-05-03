@@ -63,6 +63,7 @@ export default function Template({ data }) {
                 }
                 defer={false}
             >
+                
                 <meta
                     name="title"
                     property="og:title"
@@ -91,6 +92,11 @@ export default function Template({ data }) {
                         "https://www.dylandoamaral.me" +
                         frontmatter.featuredImage.childImageSharp.fixed.src
                     }
+                />
+                <meta
+                    name="url"
+                    property="og:url"
+                    content={frontmatter.path}
                 />
 
                 <meta name="twitter:card" content="summary_large_image" />
