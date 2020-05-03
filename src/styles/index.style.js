@@ -24,7 +24,6 @@ export const Title = styled(H2)`
     }
 `
 
-
 export const Primary = styled.span`
     color: ${colors.primary};
 `
@@ -34,7 +33,7 @@ export const Secondary = styled.span`
 `
 
 export const Ippon = styled(OutboundLink)`
-    color: #F95353;
+    color: #f95353;
     text-decoration: none;
 `
 
@@ -232,7 +231,6 @@ export const DescriptionImage = styled.div`
         min-height: 300px;
         margin-right: 0;
         margin-bottom: 20px;
-
     }
 
     ${resolutions.medias.tablet_landscape} {
@@ -247,6 +245,76 @@ export const DescriptionText = styled(P)`
 
     ${resolutions.medias.tablet_portrait} {
         margin-left: 0;
+    }
+`
+
+/*
+ * TOOLS
+ */
+
+export const ToolsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+`
+
+export const ToolsImage = styled.div`
+    position: relative;
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+    background-image: url(${props => props.path});/*${props => props.path});*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    ${resolutions.medias.tablet_landscape} {
+        height: 90px;
+         width: 90px;
+    }
+
+    ${resolutions.medias.phone} {
+        height: 60px;
+         width: 60px;
+    }
+`
+
+export const ToolsTooltip = styled.span`
+    font-size: 20px;
+    opacity: 0%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
+
+    width: 120px;
+    top: 110%;
+    left: 50%;
+    margin-left: -60px;
+
+    border: 2px solid ${colors.secondary};
+    text-align: center;
+    background-color: white;
+    padding: 5px 2px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    transition-duration: 0.25s;
+
+    ::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;  /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent ${colors.secondary} transparent;
+    }
+
+    ${ToolsImage}:hover & {
+        opacity: 100%;
     }
 `
 
@@ -270,7 +338,7 @@ export const CardList = styled.div`
 
     display: flex;
     justify-content: space-between;
-    
+
     padding-top: 100px;
 
     ${resolutions.medias.phone} {

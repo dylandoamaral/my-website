@@ -28,6 +28,9 @@ import {
     DescriptionContainer,
     DescriptionImage,
     DescriptionText,
+    ToolsContainer,
+    ToolsImage,
+    ToolsTooltip,
     CardsContainer,
     CardList,
     CardContainer,
@@ -44,6 +47,8 @@ import GithubIcon from "../assets/images/icons/github.svg"
 import CVIcon from "../assets/images/icons/cv.svg"
 
 import CV from "../assets/documents/cv.pdf"
+
+import toolsData from "../configurations/tools.json"
 
 const Roles = () => (
     <RoleList>
@@ -105,17 +110,17 @@ const Description = () => (
         <DescriptionContainer>
             <DescriptionImage alt="landscape" />
             <div>
-            <DescriptionText>
-                Je suis un petit gars, étudiant de 5 ème année à {efrei()}{" "}
-                actuellement en stage à {ippon()} en tant que Data Engineer.
-                J'adore la programmation et suis fasciné par plein de domaines
-                variés tels que la programmation fonctionnelle, la génération
-                procédurale, l'IoT, le Big Data et j'en passe...
-            </DescriptionText>
-            <DescriptionText>
-                De nature organisé et perfectionniste, j'adore produire un code
-                propre, modulable et intelligent.
-            </DescriptionText>
+                <DescriptionText>
+                    Je suis un petit gars, étudiant de 5 ème année à {efrei()}{" "}
+                    actuellement en stage à {ippon()} en tant que Data Engineer.
+                    J'adore la programmation et suis fasciné par plein de
+                    domaines variés tels que la programmation fonctionnelle, la
+                    génération procédurale, l'IoT, le Big Data et j'en passe...
+                </DescriptionText>
+                <DescriptionText>
+                    De nature organisé et perfectionniste, j'adore produire un
+                    code propre, modulable et intelligent.
+                </DescriptionText>
             </div>
         </DescriptionContainer>
     </Container>
@@ -137,6 +142,23 @@ const ippon = () => {
     )
 }
 
+const ToolsElement = props => (
+    <ToolsImage path={`/index/${props.element.image}`} aria-label={props.element.name}>
+        <ToolsTooltip>{props.element.name}</ToolsTooltip>
+    </ToolsImage>
+)
+
+const Tools = () => (
+    <Container>
+        <Title>Mes outils du moment</Title>
+        <ToolsContainer>
+            {toolsData.elements.map((tool, index) => (
+                <ToolsElement element={tool} key={index} />
+            ))}
+        </ToolsContainer>
+    </Container>
+)
+
 const cardImageSize = "75px"
 const Cards = () => (
     <Container>
@@ -148,8 +170,8 @@ const Cards = () => (
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        La <Primary>programmation</Primary> est{" "}
-                        ma <Primary>passion</Primary>
+                        La <Primary>programmation</Primary> est ma{" "}
+                        <Primary>passion</Primary>
                     </CardTitle>
                 </CardContainer>
                 <CardContainer>
@@ -157,7 +179,8 @@ const Cards = () => (
                         style={{ width: cardImageSize, height: cardImageSize }}
                     />
                     <CardTitle>
-                        Je suis <Primary>investi</Primary> et <Primary>curieux</Primary>
+                        Je suis <Primary>investi</Primary> et{" "}
+                        <Primary>curieux</Primary>
                     </CardTitle>
                 </CardContainer>
                 <CardContainer>
@@ -179,6 +202,7 @@ export default () => (
         <Showcase />
         <Citation />
         <Description />
+        <Tools />
         <Cards />
     </Layout>
 )

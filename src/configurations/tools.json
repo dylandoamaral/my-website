@@ -1,0 +1,68 @@
+{
+    "elements": [
+        {
+            "name": "Scala",
+            "image": "scala.png"
+        },
+        {
+            "name": "Python",
+            "image": "python.png"
+        },
+        {
+            "name": "Docker",
+            "image": "docker.png"
+        },
+        {
+            "name": "Node js",
+            "image": "nodejs.png"
+        },
+        {
+            "name": "Aws",
+            "image": "aws.png"
+        },
+        {
+            "name": "Jest",
+            "image": "jest.png"
+        },
+        {
+            "name": "Terraform",
+            "image": "terraform.png"
+        },
+        {
+            "name": "Visual Studio Code",
+            "image": "visualstudio.png"
+        },
+        {
+            "name": "Kafka",
+            "image": "kafka.png"
+        },
+        {
+            "name": "Github",
+            "image": "github.png"
+        },
+        {
+            "name": "Typescript",
+            "image": "typescript.png"
+        },
+        {
+            "name": "Travis CI",
+            "image": "travisci.png"
+        },
+        {
+            "name": "Terragrunt",
+            "image": "terragrunt.png"
+        },
+        {
+            "name": "Slack",
+            "image": "slack.png"
+        },
+        {
+            "name": "Gatsby JS",
+            "image": "gatsby.png"
+        },
+        {
+            "name": "Spark",
+            "image": "spark.png"
+        }
+    ]
+}
