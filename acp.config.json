@@ -1,5 +1,5 @@
 {
-    "name": "dymoji",
+    "name": "dymoji-website",
     "contributors": ["dylandoamaral"],
     "actions": {
         "a": "add",
@@ -13,7 +13,8 @@
         "d": "📕",
         "t": "👓",
         "p": "💻",
-        "a": "📜"
+        "a": "📜",
+        "s": "👀"
     },
     "template": "<target> <action>: <message>"
 }
