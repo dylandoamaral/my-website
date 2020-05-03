@@ -1,8 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-export default () => (
+export default (props) => (
     <Helmet title="Dylan Do Amaral" defer={false}>
+        {props.children}
         <meta name="author" content="Dylan Do Amaral" />
         <meta property="og:type" content="website" />
         <meta name="title" property="og:title" content="Dylan Do Amaral" />
