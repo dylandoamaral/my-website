@@ -33,8 +33,9 @@ export const Emoji = styled(Span)`
     padding-bottom: 10px;
 
     ${resolutions.medias.tablet_landscape} {
-        padding-right: 10px;
-        padding-bottom: 0px;
+        padding: 0px;
+        font-size: 0px;
+        visibility: hidden;
     }
 `;
 
