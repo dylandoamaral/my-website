@@ -373,4 +373,6 @@ Bon c'est vrai je l'avoue...
 
 En réalité les fonctions liées à github et donc produisant des effets de bords devrait être des **IO<Either<NonEmptyArray<string>, void>>** mais je ne voulais pas aller trop vite dans ma compréhension de la chose. Une occasion future d'utiliser les IO monads dans un cas concret pour encore et toujours en apprendre plus sur la programmation fonctionnelle 👊.
 
-source du code: https://github.com/dylandoamaral/add-commit-push
+Source du code: https://github.com/dylandoamaral/add-commit-push.
+
+Photo par [Clark Young](https://unsplash.com/@cbyoung) venant du site [unsplash](https://unsplash.com/photos/fQxMGkYXqFU).
