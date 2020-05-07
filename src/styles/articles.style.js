@@ -18,6 +18,4 @@ export const Description = styled(P)`
 `;
 
 export const Cards = styled.div`
-    display: flex;
-    flex-wrap: wrap;
 `;
