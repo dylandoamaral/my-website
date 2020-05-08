@@ -5,7 +5,7 @@ import resolutions from "../../../configurations/resolutions.json";
 export const Wrapper = styled.aside`
     max-width: 330px;
     position: absolute;
-    right: 170px;
+    right: 150px;
 
     ${resolutions.medias.desktop} {
         max-width: 270px;
