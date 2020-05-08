@@ -9,7 +9,7 @@ export const Wrapper = styled.aside`
 
     ${resolutions.medias.desktop} {
         max-width: 270px;
-        right: 130px;
+        right: 110px;
     }
 
     ${resolutions.medias.tablet_landscape} {
