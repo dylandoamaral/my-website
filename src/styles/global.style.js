@@ -50,13 +50,8 @@ export const P = styled.p`
 `;
 
 export const A = styled.a`
-    color: ${colors.dark};
+    color: ${colors.secondary};
     font-size: ${fonts.sizes.normal};
-    transition: color 0.2s ease-in;
-
-    :hover {
-        color: ${colors.primary};
-    }
 `;
 
 export const Li = styled.li`

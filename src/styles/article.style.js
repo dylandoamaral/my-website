@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import colors from "../configurations/colors.json";
 import resolutions from "../configurations/resolutions.json";
@@ -15,8 +15,12 @@ export const Wrapper = styled.div`
 
 export const Feature = styled(Img)`
     width: 100% !important;
-    height: 270px !important;
+    height: 500px !important;
     border-radius: 10px;
+
+    @media (max-width: ${resolutions.medium}) {
+        height: 250px !important;
+    }
 `;
 
 export const Article = styled.div`
@@ -48,7 +52,7 @@ export const Content = styled.div`
     }
 `;
 
-export const Back = styled(Link)`
+export const Back = styled(AniLink)`
     color: ${colors.primary};
     text-align: right;
     display: block;

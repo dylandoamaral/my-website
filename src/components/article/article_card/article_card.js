@@ -16,13 +16,20 @@ import {
     Feature,
 } from "./article_card.style";
 
+import colors from "../../../configurations/colors.json";
+
 class ArticleCard extends React.Component {
     render() {
         return (
             <Wrapper even={this.props.even}>
                 {this.props.source === "dylandoamaral" ? (
                     //This is an article that come from inside
-                    <InnerClick to={this.props.path}>
+                    <InnerClick
+                        cover
+                        bg={colors.secondary}
+                        duration={0.8}
+                        to={this.props.path}
+                    >
                         <Content>
                             <Header>
                                 <Title>{this.props.title}</Title>

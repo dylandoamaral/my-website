@@ -25,6 +25,7 @@ import Game from "../components/article/game/game";
 
 import info from "../configurations/info.json";
 import { websiteSchema, meSchema } from "../configurations/schema";
+import colors from "../configurations/colors.json";
 
 const renderAst = new rehypeReact({
     createElement: React.createElement,
@@ -97,7 +98,9 @@ export default function Template({ data }) {
 
                 <Content>{renderAst(htmlAst)}</Content>
             </Article>
-            <Back to={"/articles/"}>Retour vers mes articles...</Back>
+            <Back cover bg={colors.secondary} duration={0.8} to={"/articles/"}>
+                Retour vers mes articles...
+            </Back>
         </Layout>
     );
 }
@@ -121,7 +124,7 @@ export const articleQuery = graphql`
                 date(formatString: "DD/MM/YYYY")
                 featuredImage {
                     childImageSharp {
-                        fixed(width: 1000) {
+                        fixed(width: 2000) {
                             ...GatsbyImageSharpFixed
                         }
                     }

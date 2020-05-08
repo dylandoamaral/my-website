@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 import Img from "gatsby-image";
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     background-color: ${props =>
         props.even === "false" ? colors.light : "none"};
 `;
-export const InnerClick = styled(Link)`
+export const InnerClick = styled(AniLink)`
     text-decoration: none;
     ${margins.full_margin}
 
