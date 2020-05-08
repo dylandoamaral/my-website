@@ -14,31 +14,31 @@ source: "dylandoamaral"
 hide: false
 ---
 
-**Gérer les exceptions dans un programme est primordial, il faut impérativement le faire pour éviter tous crash non désirés. Le faire est déjà très bien, mais le faire fonctionnellement c’est encore mieux et on va voir une façon concrète de le faire.**
+**Gérer les exceptions dans un programme est primordial, il faut impérativement le faire pour éviter tous crashs non désirés. Le faire est déjà très bien, mais le faire fonctionnellement c’est encore mieux et on va voir une façon concrète de le faire.**
 
 # Add-commit-push et sa gestion des erreurs post v0.2.0
 
 Pour vous remettre dans le contexte, j’écris cet article pendant le développement d’un petit CLI fait en typescript qui s'appelle [add-commit-push](https://www.npmjs.com/package/add-commit-push) visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour j’en avais marre de devoir écrire les mêmes lignes encore et encore.
 
-Un tel programme a bien évidement, comme tout programme, besoin de gérer des exceptions.
+Un tel programme a bien évidemment, comme tout programme, besoin de gérer des exceptions.
 
 -   On ne va pas push si le programme est déjà à jour.
 -   On ne va pas non plus push si le projet requiert un pull.
--   On ne vas pas non plus le faire si les arguments ne sont pas les bons.
+-   On ne va pas non plus le faire si les arguments ne sont pas les bons.
 
 Même avec un grand attrait pour le fonctionnel j’ai d’abord tout fait en impératif, y compris la gestion de ces erreurs car je voulais un prototype qui fonctionne et ceux très rapidement. 
 
-Alors à quoi ressemble t’elle cette gestion des erreurs? 
+Alors à quoi ressemble-t-elle cette gestion des erreurs? 
 
-Dans ce projet, au début, c’était assez simple. J'avais créé une fonction validation pour regarder si les arguments étaient bien renseignés et je levais des exceptions pour laisser les effets de bords faire le travail quand ça ne l'etait pas. Puis j'ai entouré le tout de tonnes de if et d'un try catch pour gérer tous les cas d'erreurs (rappelez vous je voulais une première version très rapidement).
+Dans ce projet, au début, c’était assez simple. J'avais créé une fonction validation pour regarder si les arguments étaient bien renseignés et je levais des exceptions pour laisser les effets de bord faire le travail quand ça ne l'était pas. Puis j'ai entouré le tout de tonnes de if et d'un try catch pour gérer tous les cas d'erreurs (rappelez-vous je voulais une première version très rapidement).
 
-Ça fonctionne, et pour un prototype c’était pas mal. Maintenant certaines choses me chiffonnaient et ce sont ces dernières qui m’ont poussées a passer à un code plus fonctionnel.
+Ça fonctionne, et pour un prototype c’était pas mal. Maintenant certaines choses me chiffonnaient et ce sont ces dernières qui m’ont poussées à passer à un code plus fonctionnel.
 
 -   Si par exemple, il y avait plusieurs arguments faux alors seul le premier détecté envoyait une erreur car on ne peut pas accumuler des erreurs de la sorte.
--   On alourdissait le process en l’englobant d’un try catch et en rajoutant plein de petit if pour traiter tout les cas.
--   On laisse place aux effets de bords et ces derniers peuvent être imprévisible nottament dans le cas des tests dans ma CI.
+-   On alourdissait le processus en l’englobant d’un try catch et en rajoutant plein de petit "if" pour traiter tous les cas.
+-   On laisse place aux effets de bord et ces derniers peuvent être imprévisibles notamment dans le cas des tests dans ma CI.
 
-Alors j’ai créé une branche et j’ai commencé à travailler sur une version fonctionnelle de mon programme. Pour ce faire j’ai utilisé la librairie [fp-ts](https://github.com/gcanti/fp-ts) qui permet de rajouter du fonctionnel au typescript. Plusieurs objectifs en tête à ce moment ci, pouvoir renseigner plusieurs erreurs et non une seule à la fois, rendre la gestion des erreurs plus modulable, réduire les effets de bords.
+Alors j’ai créé une branche et j’ai commencé à travailler sur une version fonctionnelle de mon programme. Pour ce faire j’ai utilisé la librairie [fp-ts](https://github.com/gcanti/fp-ts) qui permet de rajouter du fonctionnel au typescript. Plusieurs objectifs en tête à ce moment là, pouvoir renseigner plusieurs erreurs et non une seule à la fois, rendre la gestion des erreurs plus modulable, réduire les effets de bord.
 
 Regardons le code (simplifié) impératif et comment je suis arrivé à le transformer en une version fonctionnelle beaucoup plus propre et pratique.
 
@@ -111,26 +111,26 @@ try {
 }
 ```
 
-Donc en bref, je regardais d'abord les erreurs de type "github" avec la dose de if puis enfin les erreurs de types "validité" avec la fonction validate avant d'enfin executer la portion de code qui me permet d'add, commit et push en une seule ligne.
+Donc en bref, je regardais d'abord les erreurs de type "github" avec la dose de if puis enfin les erreurs de types "validité" avec la fonction validate avant d'enfin exécuter la portion de code qui me permet d'add, commit et push en une seule ligne.
 
 # Le chantier fonctionnel, de la théorie à la mise en pratique
 
-La première étape était de changer cette fonction validate pour qu’elle ne lève pas les erreurs mais les décrivent pour les traiter ulterieurement rendant ainsi la fonction pure. Lorsqu'il sagit de gérer les erreurs en programmation fonctionnelle, généralement, on prend un type ayant deux états, on renvoie l’un quand il y a une erreur et l’autre quand il n'y en a pas et on traite les deux cas par la suite. Je vous renvois sur cette article de François Sarradin pour en savoir plus https://blog.univalence.io/ne-faites-pas-cette-erreur/.
+La première étape était de changer cette fonction validate pour qu’elle ne lève pas les erreurs mais les décrivent pour les traiter ultérieurement rendant ainsi la fonction pure. Lorsqu'il sagit de gérer les erreurs en programmation fonctionnelle, généralement, on prend un type ayant deux états, on renvoie l’un quand il y a une erreur et l’autre quand il n'y en a pas et on traite les deux cas par la suite. Je vous renvoie sur cet article de François Sarradin pour en savoir plus: https://blog.univalence.io/ne-faites-pas-cette-erreur/.
 
-Des types on en a plein, on a le célèbre **Option** ou **Optional** qui se popularise beaucoup notamment depuis la version 8 de java. On a le **Try** présenté dans l’article ci dessus qui est fait pour gérer les erreurs et on en a encore d’autres.
+Des types on en a plein, on a le célèbre **Option** ou **Optional** qui se popularise beaucoup notamment depuis la version 8 de java. On a le **Try** présenté dans l’article ci-dessus qui est fait pour gérer les erreurs et on en a encore d’autres.
 
 On va en parcourir certain et dire ce qui ne va pas avec ces derniers dans notre cas de figure:
 - Le type **Option[A]** ne va bien évidemment pas puisqu’on ne peut pas renseigner l’erreur
-- Le type **Try[A]** ne va pas non plus car on veut séquencer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter et de toute façon il n'existe même pas dans fp-ts (mais remplacable par le type **Either[Error, E]**). 
-- Le type **Either[A, E]** qui renvoie soit un **Right[E]** qui contient la bonne réponse (the right answer) soit un **Left[A]** qui renvoie la mauvaise réponse et c'est ce que l'on recherche. Les lettres A et le E peuvent être remplacer par le type qu’on veut, un boolean, un int, un string etc. Ainsi un **Either[string, boolean]** renverrait un string dans le cas d’une mauvaise réponse et un boolean dans l’autre cas. Dans notre cas ça va être un peu plus qu’un type primaire, puisqu’a gauche on va avoir un array de string et à droite une structure spéciale regroupant toute les infos qu’on a besoin pour traiter la demande de l’utilisateur.
+- Le type **Try[A]** ne va pas non plus car on veut séquencer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter et de toute façon il n'existe même pas dans fp-ts (mais remplaçable par le type **Either[Error, E]**). 
+- Le type **Either[A, E]** qui renvoie soit un **Right[E]** qui contient la bonne réponse (the right answer) soit un **Left[A]** qui renvoie la mauvaise réponse et c'est ce que l'on recherche. Les lettres A et le E peuvent être remplacés par le type qu’on veut, un boolean, un int, un string etc. Ainsi un **Either[string, boolean]** renverrait un string dans le cas d’une mauvaise réponse et un boolean dans l’autre cas. Dans notre cas ça va être un peu plus qu’un type primaire, puisqu’à gauche on va avoir un array de string et à droite une structure spéciale regroupant toutes les infos dont a besoin pour traiter la demande de l’utilisateur.
 
-Je me suis énormément inspiré de cette article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja , alors n’hésitez pas à checker son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet et en français.
+Je me suis énormément inspiré de cette article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja , alors n’hésitez pas à aller voir son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet et en français.
 
 Dans la logique imperative, il faudrait donc partir sur un **Either[string[], Acp]** où Acp est une interface propre à mon programme contenant les arguments du cli et un preset. Cependant, nous allons, à la place de l'array de string, utiliser un NonEmptyArray[A] de la librairie fp-ts pour une raison très simple, ce dernier a une fonction getSemigroup qui crée un **Semigroup** à partir de ce type et on va voir besoin des caractéristiques d'un **Semigroup** pour composer nos erreurs en un array d'erreurs.
 
 Certains ne savent très certainement pas ce qu'est un **Semigroup**, voyez simplement ça comme une structure ayant une loi de composition qui permet à deux éléments d'un même type de fusionner en un seul. C'est très très simplement dit mais dans notre cas, voyez juste cette caractéristique à travers la concaténation de deux arrays pour en devenir un seul.
 
-Commencons déjà à refactorer notre code pour faire en sorte que chaque fonction retourne un **Either[string[], void]**. Ici on ne renvoit pas un Acp en cas de bonne réponse car on se sert juste de l'**Either** pour detecter les mauvaises réponses dans le bon cas, on ne va de toute façon rien changer à la valeur initiale:
+Commençons déjà à refactorer notre code pour faire en sorte que chaque fonction retourne un **Either[string[], void]**. Ici on ne renvoie pas un Acp en cas de bonne réponse car on se sert juste de l'**Either** pour detecter les mauvaises réponses dans le bon cas, on ne va de toute façon rien changer à la valeur initiale:
 
 ```typescript
 // throw an error if a sequence doesn't exist or exist more than once
@@ -160,7 +160,7 @@ const validate = (args: string[], preset: Preset): Either<string[], void> => {
 };
 ```
 
-J'ai fait qu'une des fonctions ci-dessus car les deux autres reposent sur le même principe. Maintenant, un problème se pause. Comment les composer?
+J'ai fait qu'une des fonctions ci-dessus car les deux autres reposent sur le même principe. Maintenant, un problème se pose. Comment les composer?
 
 Pour se faire on va avoir besoin de composer nos **Either** de la sorte:
 
@@ -171,7 +171,7 @@ Left(["error 1"]) && Right()           => Left(["error 1"])
 Left(["error 1"]) && Left(["error 2"]) => Left(["error 1", "error 2"])
 ```
 
-Heuresement pour nous, fp-ts nous permet de faire ça très aisément grâce à deux choses: une fonction de Either qui prend un semigroup et retourne une applicative appelée getValidation et une fonction sequenceT qui va composée des semigroups de gauche à droite grâce à cette applicative.
+Heureusement pour nous, fp-ts nous permet de faire ça très aisément grâce à deux choses: une fonction de Either qui prend un semigroup et retourne une applicative appelée getValidation et une fonction sequenceT qui va composer des semigroups de gauche à droite grâce à cette applicative.
 
 Ainsi on peut créer notre fonction validate de la sorte:
 
@@ -233,7 +233,7 @@ execute();
 par
 
 <aside-element>
-    <callout-element type="advice">Le "fold" appel show_error dans le cas où validate retourne un left et exécute la pipeline dans le cas où validate retourne un right.</callout-element>
+    <callout-element type="advice">Le "fold" appelle show_error dans le cas où validate retourne un left et exécute la pipeline dans le cas où validate retourne un right.</callout-element>
 </aside-element>
 
 ```typescript
@@ -243,7 +243,7 @@ pipe(
 );
 ```
 
-Cela peut vous sembler un peu ridicule et sans intérêt et pourtant on vient tout juste de supprimer les effets de bords, de rendre les erreurs composables et donc de pouvoir en renvoyer plusieurs erreurs au lieu d'une et sans le savoir, on a rendu notre système très modulable!
+Cela peut vous sembler un peu ridicule et sans intérêt et pourtant on vient tout juste de supprimer les effets de bord, de rendre les erreurs composables et donc de pouvoir en renvoyer plusieurs erreurs au lieu d'une et sans le savoir, on a rendu notre système très modulable!
 
 # La modularité d'une telle architecture
 
@@ -341,13 +341,13 @@ sequenceT(applicativeValidation)(
 
 Et c'est tout!
 
-C'est beaucoup plus lisible, beaucoup plus testable, beaucoup plus modulable, beaucoup plus propre, beaucoup moins sujette aux erreurs. On a plus d'effets de bords!
+C'est beaucoup plus lisible, beaucoup plus testable, beaucoup plus modulable, beaucoup plus propre, beaucoup moins sujette aux erreurs. On a plus d'effets de bord!
 
 Hein?
 
 Quoi?
 
-Il y en a encore car j'execute des commandes externes avec la fonction execSync?
+Il y en a encore car j'exécute des commandes externes avec la fonction execSync?
 
 Bon c'est vrai je l'avoue...
 
