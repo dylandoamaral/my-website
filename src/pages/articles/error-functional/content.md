@@ -9,16 +9,16 @@ tags:
     - typescript
     - fp-ts
     - github
-keywords: "nouveau projet, dylan do amaral, programmation, acp, add, commit, push, add-commit-push, typescript, articles, nodejs, cli, tool, erreur, erreurs, exception, exceptions, gérer, fonctionnelle, programmation fonctionnelle, either, getvalidation"
+keywords: "nouveau projet, dylan do amaral, programmation, qush, add, commit, push, qush, typescript, articles, nodejs, cli, tool, erreur, erreurs, exception, exceptions, gérer, fonctionnelle, programmation fonctionnelle, either, getvalidation"
 source: "dylandoamaral"
 hide: false
 ---
 
 **Gérer les exceptions dans un programme est primordial, il faut impérativement le faire pour éviter tous crashs non désirés. Le faire est déjà très bien, mais le faire fonctionnellement c’est encore mieux et on va voir une façon concrète de le faire.**
 
-# Add-commit-push et sa gestion des erreurs post v0.2.0
+# Qush et sa gestion des erreurs post v0.2.0
 
-Pour vous remettre dans le contexte, j’écris cet article pendant le développement d’un petit CLI fait en typescript qui s'appelle [add-commit-push](https://www.npmjs.com/package/add-commit-push) visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour j’en avais marre de devoir écrire les mêmes lignes encore et encore.
+Pour vous remettre dans le contexte, j’écris cet article pendant le développement d’un petit CLI fait en typescript qui s'appelle [qush](https://www.npmjs.com/package/qush) pour "quick push" visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour j’en avais marre de devoir écrire les mêmes lignes encore et encore.
 
 Un tel programme a bien évidemment, comme tout programme, besoin de gérer des exceptions.
 
@@ -126,11 +126,11 @@ On va en parcourir certain et dire ce qui ne va pas avec ces derniers dans notre
 
 Je me suis énormément inspiré de cette article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja , alors n’hésitez pas à aller voir son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet et en français.
 
-Dans la logique imperative, il faudrait donc partir sur un **Either[string[], Acp]** où Acp est une interface propre à mon programme contenant les arguments du cli et un preset. Cependant, nous allons, à la place de l'array de string, utiliser un NonEmptyArray[A] de la librairie fp-ts pour une raison très simple, ce dernier a une fonction getSemigroup qui crée un **Semigroup** à partir de ce type et on va voir besoin des caractéristiques d'un **Semigroup** pour composer nos erreurs en un array d'erreurs.
+Dans la logique imperative, il faudrait donc partir sur un **Either[string[], Qush]** où Qush est une interface propre à mon programme contenant les arguments du cli et un preset. Cependant, nous allons, à la place de l'array de string, utiliser un NonEmptyArray[A] de la librairie fp-ts pour une raison très simple, ce dernier a une fonction getSemigroup qui crée un **Semigroup** à partir de ce type et on va voir besoin des caractéristiques d'un **Semigroup** pour composer nos erreurs en un array d'erreurs.
 
 Certains ne savent très certainement pas ce qu'est un **Semigroup**, voyez simplement ça comme une structure ayant une loi de composition qui permet à deux éléments d'un même type de fusionner en un seul. C'est très très simplement dit mais dans notre cas, voyez juste cette caractéristique à travers la concaténation de deux arrays pour en devenir un seul.
 
-Commençons déjà à refactorer notre code pour faire en sorte que chaque fonction retourne un **Either[string[], void]**. Ici on ne renvoie pas un Acp en cas de bonne réponse car on se sert juste de l'**Either** pour detecter les mauvaises réponses dans le bon cas, on ne va de toute façon rien changer à la valeur initiale:
+Commençons déjà à refactorer notre code pour faire en sorte que chaque fonction retourne un **Either[string[], void]**. Ici on ne renvoie pas un Qush en cas de bonne réponse car on se sert juste de l'**Either** pour detecter les mauvaises réponses dans le bon cas, on ne va de toute façon rien changer à la valeur initiale:
 
 ```typescript
 // throw an error if a sequence doesn't exist or exist more than once
@@ -184,7 +184,7 @@ const applicativeValidation = getValidation(getSemigroup<string>());
 
 const validate = (args: string[], preset: Preset): Either<string[], void> => {
     switch (args.length) {
-        // case : acp <message>
+        // case : qush <message>
         case 1:
             return pipe(
                 sequenceT(applicativeValidation)(
@@ -194,7 +194,7 @@ const validate = (args: string[], preset: Preset): Either<string[], void> => {
                 ),
                 map(() => null)
             );
-        // case : acp <action> <message>
+        // case : qush <action> <message>
         case 2:
             return pipe(
                 sequenceT(applicativeValidation)(
@@ -205,7 +205,7 @@ const validate = (args: string[], preset: Preset): Either<string[], void> => {
                 ),
                 map(() => null)
             );
-        // case : acp <action> <target> <message>
+        // case : qush <action> <target> <message>
         case 3:
             return pipe(
                 sequenceT(applicativeValidation)(
@@ -239,7 +239,7 @@ par
 ```typescript
 pipe(
     validate(args, preset),
-    fold(show_error, () => execute(toAcp([args, preset])))
+    fold(show_error, () => execute(toQush([args, preset])))
 );
 ```
 
@@ -278,7 +278,7 @@ const validateNeedpull = (): Either<NonEmptyArray<string>, void> => // some comp
 const validatePreset = (
     args: string[],
     preset: Preset
-): Either<NonEmptyArray<string>, Acp> => {
+): Either<NonEmptyArray<string>, Qush> => {
     // done before
 };
 
@@ -290,14 +290,14 @@ const validatePreset = (
 const validate = (
     args: minimist.ParsedArgs,
     preset: Preset
-): Either<NonEmptyArray<string>, Acp> => {
+): Either<NonEmptyArray<string>, Qush> => {
     return pipe(
         sequenceT(applicativeValidation)(
             validateNotuptodate(),
             validateNeedpull(),
             validatePreset(args._, preset)
         ),
-        map(() => toAcp([args, preset]))
+        map(() => toQush([args, preset]))
     );
 };
 ```
@@ -312,7 +312,7 @@ if (args["H"] === true) {
 }
 ```
 
-Le fold est ici simplifié car notre fonction validate se charge de créer le acp lui-même et de renvoyer son résultat dans le container **Right** en cas de bonne réponse.
+Le fold est ici simplifié car notre fonction validate se charge de créer le qush lui-même et de renvoyer son résultat dans le container **Right** en cas de bonne réponse.
 
 Parmis les erreurs, j'avais aussi oublié de traiter le cas où la commande est lancée en dehors d'un repository git alors pour fixer ça rien de plus facile avec cette nouvelle structure:
 
@@ -320,7 +320,7 @@ On rajoute notre fonction validateIsrepo():
 
 ```typescript
 const validateIsrepo = (): Either<NonEmptyArray<string>, void> => {
-    if (process.env.ACP_TEST === "true") return right(null);
+    if (process.env.QUSH_TEST === "true") return right(null);
     return execSync("git rev-parse --is-inside-work-tree", {
         stdio: "ignore",
     }).toString() !== "true"
@@ -353,6 +353,6 @@ Bon c'est vrai je l'avoue...
 
 En réalité les fonctions liées à github et donc produisant des effets de bord devraient être des **IO[Either[NonEmptyArray[string], void]]** mais je ne voulais pas aller trop vite dans ma compréhension de la chose. Une occasion future d'utiliser les IO monads dans un cas concret pour encore et toujours en apprendre plus sur la programmation fonctionnelle 👊.
 
-Source du code: https://github.com/dylandoamaral/add-commit-push.
+Source du code: https://github.com/dylandoamaral/qush.
 
 Photo par [Jaromír Kavan](https://unsplash.com/@jerrykavan) sur [Unsplash](https://unsplash.com/photos/2UJNFZViRIk).
