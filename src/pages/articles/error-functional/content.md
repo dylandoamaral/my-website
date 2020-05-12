@@ -355,6 +355,6 @@ En réalité les fonctions liées à github et donc produisant des effets de bor
 
 Source du code: https://github.com/dylandoamaral/qush.
 
-Merci à [Romain Legoas](https://fr.linkedin.com/in/romain-le-goas-883b1a156) et Charlène Correia d'avoir relu cet article et corriger mes erreurs.
+Merci à [Romain Le Goas](https://fr.linkedin.com/in/romain-le-goas-883b1a156) et Charlène Correia d'avoir relu cet article et corrigé mes erreurs.
 
 Photo par [Jaromír Kavan](https://unsplash.com/@jerrykavan) sur [Unsplash](https://unsplash.com/photos/2UJNFZViRIk).
