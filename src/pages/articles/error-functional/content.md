@@ -14,11 +14,11 @@ source: "dylandoamaral"
 hide: false
 ---
 
-**Gérer les exceptions dans un programme est primordial, il faut impérativement le faire pour éviter tous crashs non désirés. Le faire est déjà très bien, mais le faire fonctionnellement c’est encore mieux et on va voir une façon concrète de le faire.**
+**Gérer les exceptions dans un programme est primordial, il faut impérativement le faire pour éviter tous crashs non désirés. Le faire est déjà très bien, mais le faire fonctionnellement est encore mieux et on va voir une façon concrète de le faire.**
 
 # Qush et sa gestion des erreurs post v0.2.0
 
-Pour vous remettre dans le contexte, j’écris cet article pendant le développement d’un petit CLI fait en typescript qui s'appelle [qush](https://www.npmjs.com/package/qush) pour "quick push" visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour j’en avais marre de devoir écrire les mêmes lignes encore et encore.
+Pour vous remettre dans le contexte, j’écris cet article pendant le développement d’un petit CLI fait en typescript qui s'appelle [qush](https://www.npmjs.com/package/qush) pour "quick push" visant à add, commit et push en une seule ligne de code. Tournant à environ 10 commits par jour, j’en avais marre de devoir écrire les mêmes lignes encore et encore.
 
 Un tel programme a bien évidemment, comme tout programme, besoin de gérer des exceptions.
 
@@ -26,13 +26,13 @@ Un tel programme a bien évidemment, comme tout programme, besoin de gérer des 
 -   On ne va pas non plus push si le projet requiert un pull.
 -   On ne va pas non plus le faire si les arguments ne sont pas les bons.
 
-Même avec un grand attrait pour le fonctionnel j’ai d’abord tout fait en impératif, y compris la gestion de ces erreurs car je voulais un prototype qui fonctionne et ceux très rapidement. 
+Même avec un grand attrait pour le fonctionnel j’ai d’abord tout fait en impératif, y compris la gestion de ces erreurs car je voulais un prototype qui fonctionne et ce très rapidement. 
 
 Alors à quoi ressemble-t-elle cette gestion des erreurs? 
 
-Dans ce projet, au début, c’était assez simple. J'avais créé une fonction validation pour regarder si les arguments étaient bien renseignés et je levais des exceptions pour laisser les effets de bord faire le travail quand ça ne l'était pas. Puis j'ai entouré le tout de tonnes de if et d'un try catch pour gérer tous les cas d'erreurs (rappelez-vous je voulais une première version très rapidement).
+Dans ce projet, au début, c’était assez simple. J'avais créé une fonction validation pour regarder si les arguments étaient bien renseignés et je levais des exceptions pour laisser les effets de bord faire le travail quand ça ne l'était pas. Puis j'ai entouré le tout de tonnes de if et d'un try catch pour gérer tous les cas d'erreurs (rappelez-vous, je voulais une première version très rapidement).
 
-Ça fonctionne, et pour un prototype c’était pas mal. Maintenant certaines choses me chiffonnaient et ce sont ces dernières qui m’ont poussées à passer à un code plus fonctionnel.
+Ça fonctionne, et pour un prototype c’était pas mal. Maintenant certaines choses me chiffonnaient, et ce sont ces dernières qui m’ont poussées à passer à un code plus fonctionnel.
 
 -   Si par exemple, il y avait plusieurs arguments faux alors seul le premier détecté envoyait une erreur car on ne peut pas accumuler des erreurs de la sorte.
 -   On alourdissait le processus en l’englobant d’un try catch et en rajoutant plein de petit "if" pour traiter tous les cas.
@@ -111,22 +111,22 @@ try {
 }
 ```
 
-Donc en bref, je regardais d'abord les erreurs de type "github" avec la dose de if puis enfin les erreurs de types "validité" avec la fonction validate avant d'enfin exécuter la portion de code qui me permet d'add, commit et push en une seule ligne.
+Donc en bref, je regardais d'abord les erreurs de type "git" avec la dose de if puis enfin les erreurs de type "validité" avec la fonction validate avant d'enfin exécuter la portion de code qui me permet d'add, commit et push en une seule ligne.
 
 # Le chantier fonctionnel, de la théorie à la mise en pratique
 
-La première étape était de changer cette fonction validate pour qu’elle ne lève pas les erreurs mais les décrivent pour les traiter ultérieurement rendant ainsi la fonction pure. Lorsqu'il sagit de gérer les erreurs en programmation fonctionnelle, généralement, on prend un type ayant deux états, on renvoie l’un quand il y a une erreur et l’autre quand il n'y en a pas et on traite les deux cas par la suite. Je vous renvoie sur cet article de François Sarradin pour en savoir plus: https://blog.univalence.io/ne-faites-pas-cette-erreur/.
+La première étape était de changer cette fonction validate pour qu’elle ne lève pas les erreurs mais les décrive pour les traiter ultérieurement rendant ainsi la fonction pure. Lorsqu'il sagit de gérer les erreurs en programmation fonctionnelle, généralement, on prend un type ayant deux états, on renvoie l’un quand il y a une erreur et l’autre quand il n'y en a pas et on traite les deux cas par la suite. Je vous renvoie sur cet article de François Sarradin pour en savoir plus: https://blog.univalence.io/ne-faites-pas-cette-erreur/.
 
 Des types on en a plein, on a le célèbre **Option** ou **Optional** qui se popularise beaucoup notamment depuis la version 8 de java. On a le **Try** présenté dans l’article ci-dessus qui est fait pour gérer les erreurs et on en a encore d’autres.
 
-On va en parcourir certain et dire ce qui ne va pas avec ces derniers dans notre cas de figure:
-- Le type **Option[A]** ne va bien évidemment pas puisqu’on ne peut pas renseigner l’erreur
-- Le type **Try[A]** ne va pas non plus car on veut séquencer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter et de toute façon il n'existe même pas dans fp-ts (mais remplaçable par le type **Either[Error, E]**). 
+On va en parcourir certain et dire ce qui va ou ne va pas avec ces derniers dans notre cas de figure:
+- Le type **Option[A]** ne va bien évidemment pas puisqu’on ne peut pas renseigner l’erreur.
+- Le type **Try[A]** (ou **Either[Error, A]** dans fp-ts). ne va pas non plus car on veut séquencer nos erreurs alors il va falloir que notre fonction renvoie soit la bonne réponse soit un array d’erreur que nous allons par la suite pouvoir interpréter. 
 - Le type **Either[A, E]** qui renvoie soit un **Right[E]** qui contient la bonne réponse (the right answer) soit un **Left[A]** qui renvoie la mauvaise réponse et c'est ce que l'on recherche. Les lettres A et le E peuvent être remplacés par le type qu’on veut, un boolean, un int, un string etc. Ainsi un **Either[string, boolean]** renverrait un string dans le cas d’une mauvaise réponse et un boolean dans l’autre cas. Dans notre cas ça va être un peu plus qu’un type primaire, puisqu’à gauche on va avoir un array de string et à droite une structure spéciale regroupant toutes les infos dont a besoin pour traiter la demande de l’utilisateur.
 
-Je me suis énormément inspiré de cette article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja , alors n’hésitez pas à aller voir son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet et en français.
+Je me suis énormément inspiré de cet article pour ma structuration: https://dev.to/gcanti/getting-started-with-fp-ts-either-vs-validation-5eja , alors n’hésitez pas à aller voir son article. Le mien n’est qu’une interprétation de ce dernier sur mon projet et en français.
 
-Dans la logique imperative, il faudrait donc partir sur un **Either[string[], Qush]** où Qush est une interface propre à mon programme contenant les arguments du cli et un preset. Cependant, nous allons, à la place de l'array de string, utiliser un NonEmptyArray[A] de la librairie fp-ts pour une raison très simple, ce dernier a une fonction getSemigroup qui crée un **Semigroup** à partir de ce type et on va voir besoin des caractéristiques d'un **Semigroup** pour composer nos erreurs en un array d'erreurs.
+Dans la logique imperative, il faudrait donc partir sur un **Either[string[], Qush]** où Qush est une interface propre à mon programme contenant nottament les arguments du cli. Cependant, nous allons, à la place de l'array de string, utiliser un NonEmptyArray[A] de la librairie fp-ts pour une raison très simple, ce dernier a une fonction getSemigroup qui crée un **Semigroup** à partir de ce type et on va voir besoin des caractéristiques d'un **Semigroup** pour composer nos erreurs en un array d'erreurs.
 
 Certains ne savent très certainement pas ce qu'est un **Semigroup**, voyez simplement ça comme une structure ayant une loi de composition qui permet à deux éléments d'un même type de fusionner en un seul. C'est très très simplement dit mais dans notre cas, voyez juste cette caractéristique à travers la concaténation de deux arrays pour en devenir un seul.
 
@@ -171,7 +171,7 @@ Left(["error 1"]) && Right()           => Left(["error 1"])
 Left(["error 1"]) && Left(["error 2"]) => Left(["error 1", "error 2"])
 ```
 
-Heureusement pour nous, fp-ts nous permet de faire ça très aisément grâce à deux choses: une fonction de Either qui prend un semigroup et retourne une applicative appelée getValidation et une fonction sequenceT qui va composer des semigroups de gauche à droite grâce à cette applicative.
+Heureusement pour nous, fp-ts nous permet de faire ça très aisément grâce à deux choses: une fonction de **Either** qui prend un **Semigroup** et retourne une applicative appelée getValidation et une fonction sequenceT qui va composer des **Semigroups** de gauche à droite grâce à cette applicative.
 
 Ainsi on peut créer notre fonction validate de la sorte:
 
@@ -243,11 +243,11 @@ pipe(
 );
 ```
 
-Cela peut vous sembler un peu ridicule et sans intérêt et pourtant on vient tout juste de supprimer les effets de bord, de rendre les erreurs composables et donc de pouvoir en renvoyer plusieurs erreurs au lieu d'une et sans le savoir, on a rendu notre système très modulable!
+Cela peut vous sembler un peu ridicule et sans intérêt, pourtant on vient tout juste de supprimer les effets de bord, de rendre les erreurs composables et donc de pouvoir en renvoyer plusieurs au lieu d'une et sans le savoir, on a rendu notre système très modulable!
 
 # La modularité d'une telle architecture
 
-La modularité, on va la voir avec la deuxième partie du problème. La gestion des erreurs github qui se trouve dans l'index.ts sous forme de conditions. On va ici tout bouger dans la fichier validator.ts renommé validate par validatePreset et créer notre fonction validate pour composer l'ensemble des erreurs ensemble.
+La modularité, on va la voir avec la deuxième partie du problème. La gestion des erreurs git qui se trouve dans l'index.ts sous forme de conditions. On va ici tout bouger dans la fichier validator.ts renommé validate par validatePreset et créer notre fonction validate pour composer l'ensemble des erreurs ensemble.
 
 ```typescript
 const applicativeValidation = getValidation(getSemigroup<string>());
@@ -302,7 +302,7 @@ const validate = (
 };
 ```
 
-Il n'a vraiment pas fallut coder beaucoup de choses pour rajouter de nouvelles erreurs et maintenant, notre index ressemble à ceci:
+Il n'a vraiment pas fallu coder beaucoup de choses pour rajouter de nouvelles erreurs et maintenant, notre script index ressemble à ceci:
 
 ```typescript
 if (args["H"] === true) {
@@ -354,5 +354,7 @@ Bon c'est vrai je l'avoue...
 En réalité les fonctions liées à github et donc produisant des effets de bord devraient être des **IO[Either[NonEmptyArray[string], void]]** mais je ne voulais pas aller trop vite dans ma compréhension de la chose. Une occasion future d'utiliser les IO monads dans un cas concret pour encore et toujours en apprendre plus sur la programmation fonctionnelle 👊.
 
 Source du code: https://github.com/dylandoamaral/qush.
+
+Merci à [Romain Legoas](https://fr.linkedin.com/in/romain-le-goas-883b1a156) et Charlène Correia d'avoir relu cet article et corriger mes erreurs.
 
 Photo par [Jaromír Kavan](https://unsplash.com/@jerrykavan) sur [Unsplash](https://unsplash.com/photos/2UJNFZViRIk).
