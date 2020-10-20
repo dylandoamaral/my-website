@@ -5,6 +5,10 @@
             "image": "scala.png"
         },
         {
+            "name": "ZIO",
+            "image": "zio.png"
+        },
+        {
             "name": "Python",
             "image": "python.png"
         },
@@ -13,56 +17,36 @@
             "image": "docker.png"
         },
         {
-            "name": "Node js",
-            "image": "nodejs.png"
-        },
-        {
             "name": "Aws",
             "image": "aws.png"
-        },
-        {
-            "name": "Jest",
-            "image": "jest.png"
-        },
-        {
-            "name": "Terraform",
-            "image": "terraform.png"
         },
         {
             "name": "Visual Studio Code",
             "image": "visualstudio.png"
         },
         {
-            "name": "Kafka",
-            "image": "kafka.png"
-        },
-        {
             "name": "Github",
             "image": "github.png"
         },
         {
-            "name": "Typescript",
-            "image": "typescript.png"
-        },
-        {
-            "name": "Travis CI",
-            "image": "travisci.png"
-        },
-        {
-            "name": "Terragrunt",
-            "image": "terragrunt.png"
+            "name": "Jenkins CI",
+            "image": "jenkinsci.png"
         },
         {
             "name": "Slack",
             "image": "slack.png"
         },
         {
-            "name": "Gatsby JS",
-            "image": "gatsby.png"
+            "name": "Jira",
+            "image": "jira.png"
         },
         {
-            "name": "Spark",
-            "image": "spark.png"
+            "name": "InfluxDB",
+            "image": "influxdb.png"
+        },
+        {
+            "name": "Aws Step Functions",
+            "image": "aws-stepfunctions.png"
         }
     ]
 }

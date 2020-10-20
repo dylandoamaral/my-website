@@ -113,9 +113,8 @@ const Description = () => (
             <DescriptionImage alt="landscape" />
             <div>
                 <DescriptionText>
-                    Je suis un petit gars, étudiant de 5 ème année à {efrei()}{" "}
-                    actuellement en stage à {ippon()} en tant que Data Engineer.
-                    J'adore la programmation et suis fasciné par plein de
+                    Je suis un passionné, actuellement Data Engineer à {ippon()}
+                    . J'adore la programmation et suis fasciné par plein de
                     domaines variés tels que la programmation fonctionnelle, la
                     génération procédurale, l'IoT, le Big Data et j'en passe...
                 </DescriptionText>
@@ -127,14 +126,6 @@ const Description = () => (
         </DescriptionContainer>
     </Container>
 );
-
-const efrei = () => {
-    return (
-        <OutboundLink href="https://www.efrei.fr/campus-ecole-ingenieur/?gclid=EAIaIQobChMIhafMrKCJ6QIV0kPTCh0iUQIOEAAYASAAEgKctvD_BwE">
-            Efrei
-        </OutboundLink>
-    );
-};
 
 const ippon = () => {
     return (
