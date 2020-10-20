@@ -16,7 +16,7 @@ import { websiteSchema, meSchema } from "../configurations/schema";
 const description =
     "Dans cette section, j'écris des articles sur des choses qui m'amusent, qui me divertissent toujours en rapport avec ma passion, la programmation.";
 
-    class Articles extends React.Component {
+class Articles extends React.Component {
     render() {
         const articles = this.props.data.allMarkdownRemark.edges;
         const themes = this.props.data.themes.edges;
@@ -28,8 +28,8 @@ const description =
                         author={info.author}
                         description={description}
                         keywords={info.keywords}
-                        url="https://www.dylandoamaral.me/articles"
-                        image="http://www.dylandoamaral.me/index/taiwan.jpg"
+                        url="https://www.dylan.doamaral.dev/articles"
+                        image="http://www.dylan.doamaral.dev/index/taiwan.jpg"
                         type="website"
                         schemas={[websiteSchema, meSchema]}
                     />

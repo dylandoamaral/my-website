@@ -10,7 +10,7 @@ const gatsby_remark_image_wrapper = `
 
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.dylandoamaral.me`,
+        siteUrl: `https://www.dylan.doamaral.dev`,
     },
     plugins: [
         {

@@ -56,7 +56,7 @@ export default function Template({ data }) {
 
     const title = `${frontmatter.title} | ${info.author}`;
     const image =
-        "https://www.dylandoamaral.me" +
+        "https://www.dylan.doamaral.dev" +
         frontmatter.featuredImage.childImageSharp.fixed.src;
 
     const dateArray = frontmatter.date.split("/");

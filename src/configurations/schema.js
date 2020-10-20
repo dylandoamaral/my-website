@@ -1,5 +1,5 @@
 export const websiteSchema = {
-    "@content": "https://www.dylandoamaral.me/",
+    "@content": "https://www.dylan.doamaral.dev/",
     "@type": "WebPage",
     headline: "Dylan DO AMARAL",
 };
@@ -7,10 +7,10 @@ export const websiteSchema = {
 export const meSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    url: "https://www.dylandoamaral.me/",
+    url: "https://www.dylan.doamaral.dev/",
     givenName: "Dylan",
     familyName: "Do Amaral",
-    image: "https://www.dylandoamaral.me/index/taiwan",
+    image: "https://www.dylan.doamaral.dev/index/taiwan",
     jobTitle: "Data Engineer",
     gender: "https://schema.org/Male",
     contactPoint: {

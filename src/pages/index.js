@@ -198,8 +198,8 @@ export default () => (
             author={info.author}
             description="Bonjour je m'appelle Dylan Do Amaral et bienvenue sur mon site personnel dans lequel on va parler programmation orientée data et autres"
             keywords={info.keywords}
-            url="https://www.dylandoamaral.me/"
-            image="http://www.dylandoamaral.me/index/taiwan.jpg"
+            url="https://www.dylan.doamaral.dev/"
+            image="http://www.dylan.doamaral.dev/index/taiwan.jpg"
             type="website"
             schemas={[websiteSchema, meSchema]}
         />
