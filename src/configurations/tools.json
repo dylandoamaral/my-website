@@ -45,8 +45,12 @@
             "image": "influxdb.png"
         },
         {
-            "name": "Aws Step Functions",
-            "image": "aws-stepfunctions.png"
+            "name": "Home Assistant",
+            "image": "homeassistant.png"
+        },
+        {
+            "name": "Arduino",
+            "image": "arduino.png"
         }
     ]
 }

@@ -1,7 +1,7 @@
 ---
 path: "/articles/la_recette_pour_avoir_un_serveur_influxdb2_en_https"
 date: "2021-02-03"
-title: "La recette pour avoir un serveur influxDB2 en HTTPS"
+title: "La recette pour avoir un serveur InfluxDB2 en HTTPS"
 subtitle: "DevOps"
 description: "Après avoir galérer deux heures à setup ma base de donnée en HTTPS, ce serait dommage que ceci arrive à d'autres personnes."
 featuredImage: "feature.jpg"

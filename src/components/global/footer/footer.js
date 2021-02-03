@@ -33,6 +33,6 @@ export default () => (
             </span>{" "}
             par Dylan Do Amaral
         </Span>
-        <Span>Mis à jour en Octobre 2020</Span>
+        <Span>Mis à jour en Février 2021</Span>
     </Footer>
 );
