@@ -81,5 +81,13 @@ module.exports = {
                 ],
             },
         },
+        {
+            resolve: `gatsby-plugin-s3`,
+            options: {
+              bucketName: "dylan.doamaral.dev",
+              protocol: "https",
+              hostname: "dylan.doamaral.dev",
+            },
+          },
     ],
 };
