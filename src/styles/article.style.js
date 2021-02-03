@@ -43,12 +43,19 @@ export const Content = styled.div`
         margin: 0 40px;
         border-radius: 5px;
         color: white;
-        font-size: 16px;
+        font-size: 20px;
         font-family: cormorant;
 
         @media (max-width: ${resolutions.medium}) {
             margin: 0;
         }
+    }
+
+    code:not(pre code) {
+        color: ${colors.dark};
+        background-color: rgba(0, 0, 0, .08);
+        padding: 3px;
+        border-radius: 5px;
     }
 `;
 
