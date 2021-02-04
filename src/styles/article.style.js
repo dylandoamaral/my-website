@@ -43,15 +43,21 @@ export const Content = styled.div`
         margin: 0 40px;
         border-radius: 5px;
         color: white;
-        font-size: 20px;
-        font-family: cormorant;
+        font-size: 16px;
 
         @media (max-width: ${resolutions.medium}) {
             margin: 0;
         }
     }
 
+    pre span {
+        font-size: 16px;
+        letter-spacing: 0.1em;
+    }
+
     code:not(pre code) {
+        font-size: 16px;
+        letter-spacing: 0.1em;
         color: ${colors.dark};
         background-color: rgba(0, 0, 0, .08);
         padding: 3px;
