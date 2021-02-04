@@ -80,6 +80,7 @@ module.exports = {
             options: {
                 plugins: 
                 [
+                    `gatsby-remark-reading-time`,
                     {
                         resolve: `gatsby-remark-images`,
                         options: {

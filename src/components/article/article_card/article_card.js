@@ -20,6 +20,9 @@ import colors from "../../../configurations/colors.json";
 
 class ArticleCard extends React.Component {
     render() {
+        const minutes = Math.round(this.props.minutes)
+        const readingTime = `${minutes} minute${minutes > 1 ? "s" : ""} de lecture.`
+
         return (
             <Wrapper even={this.props.even}>
                 {this.props.source === "dylandoamaral" ? (
@@ -37,7 +40,7 @@ class ArticleCard extends React.Component {
                             </Header>
                             <Description>{this.props.description}</Description>
                             <Footer>
-                                <Date>{this.props.date}</Date>
+                                <Date>{this.props.date} - {readingTime}</Date>
                                 <Themes>
                                     {this.props.themesImage.map(theme => (
                                         <Theme
@@ -63,7 +66,7 @@ class ArticleCard extends React.Component {
                             </Header>
                             <Description>{this.props.description}</Description>
                             <Footer>
-                                <Date>{this.props.date}</Date>
+                                <Date>{this.props.date} - 10 minutes de lecture.</Date>
                                 <Themes>
                                     {this.props.themesImage.map(theme => (
                                         <Theme

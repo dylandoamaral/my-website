@@ -56,6 +56,7 @@ class Articles extends React.Component {
                                         description={articleData.description}
                                         path={articleData.path}
                                         date={articleData.date}
+                                        minutes={article.node.fields.readingTime.minutes}
                                         source={articleData.source}
                                         featuredImage={
                                             articleData.featuredImage
@@ -113,6 +114,11 @@ export const articlesQuery = graphql`
                         }
                         tags
                         hide
+                    }
+                    fields {
+                        readingTime {
+                            minutes
+                        }
                     }
                 }
             }
