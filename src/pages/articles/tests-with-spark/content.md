@@ -9,7 +9,6 @@ tags:
     - univalence
     - spark
     - scala
-    - sparktools
 keywords: ""
 source: "univalence"
 ---
