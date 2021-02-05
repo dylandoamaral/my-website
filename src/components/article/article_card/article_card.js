@@ -21,7 +21,7 @@ import colors from "../../../configurations/colors.json";
 class ArticleCard extends React.Component {
     render() {
         const minutes = Math.round(this.props.minutes)
-        const readingTime = `${minutes} minute${minutes > 1 ? "s" : ""} de lecture.`
+        const icon = <span role="img" aria-label="clock">🕒</span>
 
         return (
             <Wrapper even={this.props.even}>
@@ -40,7 +40,7 @@ class ArticleCard extends React.Component {
                             </Header>
                             <Description>{this.props.description}</Description>
                             <Footer>
-                                <Date>{this.props.date} - {readingTime}</Date>
+                                <Date>{icon} {minutes} min - {this.props.date}</Date>
                                 <Themes>
                                     {this.props.themesImage.map(theme => (
                                         <Theme
@@ -66,7 +66,7 @@ class ArticleCard extends React.Component {
                             </Header>
                             <Description>{this.props.description}</Description>
                             <Footer>
-                                <Date>{this.props.date} - 10 minutes de lecture.</Date>
+                                <Date>{icon} 10 min - {this.props.date}</Date>
                                 <Themes>
                                     {this.props.themesImage.map(theme => (
                                         <Theme
