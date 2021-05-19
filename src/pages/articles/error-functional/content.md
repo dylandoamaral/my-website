@@ -175,9 +175,9 @@ Heureusement pour nous, fp-ts nous permet de faire ça très aisément grâce à
 
 Ainsi on peut créer notre fonction validate de la sorte :
 
-<aside-element>
+<!-- <aside-element>
     <callout-element type="advice">La fonction "pipe" permet de chaine les transformations.</callout-element>
-</aside-element>
+</aside-element> -->
 
 ```typescript
 const applicativeValidation = getValidation(getSemigroup<string>());
@@ -232,9 +232,9 @@ execute();
 
 par
 
-<aside-element>
+<!-- <aside-element>
     <callout-element type="advice">Le "fold" appelle show_error dans le cas où validate retourne un left et exécute la pipeline dans le cas où validate retourne un right.</callout-element>
-</aside-element>
+</aside-element> -->
 
 ```typescript
 pipe(

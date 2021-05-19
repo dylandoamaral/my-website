@@ -1,12 +1,10 @@
 /* Some stuff come from https://github.com/csstools/sanitize.css/blob/master/sanitize.css */
 @font-face {
     font-family: futura;
-    src: url("../assets/fonts/futura/futuraMedium.ttf")
-        format("truetype");
+    src: url("../assets/fonts/futura/futuraMedium.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
-
 
 * {
     box-sizing: border-box;
@@ -16,7 +14,7 @@ html,
 body {
     margin: 0px;
     padding: 0px;
-    
+
     cursor: default;
     line-height: 1.5;
     -moz-tab-size: 4;
@@ -58,5 +56,5 @@ strong {
 }
 
 a {
-    color: #51845A
+    color: #51845a;
 }

@@ -92,10 +92,8 @@ export default function Template({ data }) {
                     alt="feature image"
                 />
             </Wrapper>
+            <Title>{frontmatter.title}</Title>
             <Article>
-                <Title>{frontmatter.title}</Title>
-                <Subtitle>{frontmatter.subtitle}</Subtitle>
-
                 <Content>{renderAst(htmlAst)}</Content>
             </Article>
             <Back cover bg={colors.secondary} duration={0.8} to={"/articles/"}>

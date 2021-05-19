@@ -24,11 +24,11 @@ export const Feature = styled(Img)`
 `;
 
 export const Article = styled.div`
-    ${margins.article_margin}
 `;
 
 export const Title = styled(H1)`
-    text-align: left;
+    text-align: center;
+    font-size: 60px;
 `;
 
 export const Subtitle = styled(H2)`
@@ -40,7 +40,7 @@ export const Content = styled.div`
     pre {
         background-color: ${colors.dark};
         padding: 20px 20px;
-        margin: 0 40px;
+        margin: 0 80px;
         border-radius: 5px;
         color: white;
         font-size: 16px;
@@ -62,6 +62,24 @@ export const Content = styled.div`
         background-color: rgba(0, 0, 0, .08);
         padding: 3px;
         border-radius: 5px;
+    }
+
+    a {
+        color: black;
+        background-color: #A8E9B3;
+        border-bottom: solid #51845a;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: #81FF97;
+        border-bottom: solid #81D38F;
+    }
+
+    h2::before {
+        content: '#';
+        margin-right: 10px;
+        color: #51845a;
     }
 `;
 
