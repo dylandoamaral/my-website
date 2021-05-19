@@ -7,6 +7,7 @@ import TwitterIcon from "../../../assets/images/icons/twitter.svg";
 import LinkedinIcon from "../../../assets/images/icons/linkedin.svg";
 import GithubIcon from "../../../assets/images/icons/github.svg";
 import CVIcon from "../../../assets/images/icons/cv.svg";
+import BuyMeACoffeeIcon from "../../../assets/images/icons/buymeacoffee.svg";
 
 import CV from "../../../assets/documents/cv.pdf";
 
@@ -18,6 +19,9 @@ export default () => (
             </FooterLink>
             <FooterLink href="https://github.com/dylandoamaral">
                 <GithubIcon style={{ width: "40px", height: "40px" }} />
+            </FooterLink>
+            <FooterLink href="https://www.buymeacoffee.com/dylandoamaral">
+                <BuyMeACoffeeIcon style={{ width: "40px", height: "40px" }} />
             </FooterLink>
             <FooterLink href="https://twitter.com/dylandmrl">
                 <TwitterIcon style={{ width: "40px", height: "40px" }} />
@@ -33,6 +37,6 @@ export default () => (
             </span>{" "}
             par Dylan Do Amaral
         </Span>
-        <Span>Mis à jour en Février 2021</Span>
+        <Span>Mise à jour en Mai 2021</Span>
     </Footer>
 );
