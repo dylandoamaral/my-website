@@ -8,7 +8,6 @@ import {
     Feature,
     Article,
     Title,
-    Subtitle,
     Content,
     Back,
 } from "../styles/article.style";

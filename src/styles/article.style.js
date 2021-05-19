@@ -23,6 +23,11 @@ export const Feature = styled(Img)`
 `;
 
 export const Article = styled.div`
+    margin: 0 100px;
+
+    @media (max-width: ${resolutions.medium}) {
+        margin: 0;
+    }
 `;
 
 export const Title = styled(H1)`
@@ -50,7 +55,7 @@ export const Content = styled.div`
 
         @media (max-width: ${resolutions.medium}) {
             margin: 0;
-        }
+        }        
     }
 
     pre span {
