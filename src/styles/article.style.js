@@ -4,7 +4,6 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import colors from "../configurations/colors.json";
 import resolutions from "../configurations/resolutions.json";
-import margins from "../configurations/margins";
 import fonts from "../configurations/fonts.json";
 
 import { H1, H2 } from "../styles/global.style";
@@ -29,6 +28,10 @@ export const Article = styled.div`
 export const Title = styled(H1)`
     text-align: center;
     font-size: 60px;
+
+    @media (max-width: ${resolutions.medium}) {
+        font-size: 40px;
+    }
 `;
 
 export const Subtitle = styled(H2)`
