@@ -168,25 +168,25 @@ export const CitationText = styled.p`
 
 export const CitationTextOne = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 15.00vw;
+        font-size: 14.8vw;
     }
 `;
 
 export const CitationTextTwo = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 13.85vw;
+        font-size: 13.7vw;
     }
 `;
 
 export const CitationTextThree = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 11.45vw;
+        font-size: 11.3vw;
     }
 `;
 
 export const CitationTextFour = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 14.60vw;
+        font-size: 14.35vw;
     }
 `;
 
