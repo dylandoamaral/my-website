@@ -1,5 +1,5 @@
 ---
-path: "https://blog.univalence.io/la-data-quality-notre-amie-pour-la-vie/"
+path: "https://univalence.io/blog/articles/la-data-quality-notre-amie-pour-la-vie/"
 date: "2019-09-10"
 title: "La data quality, notre amie pour la vie"
 subtitle: "Écrit pour Univalence"

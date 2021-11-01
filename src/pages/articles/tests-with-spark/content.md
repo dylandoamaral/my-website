@@ -1,5 +1,5 @@
 ---
-path: "https://blog.univalence.io/les-tests-avec-spark-sortir-la-tete-de-leau/"
+path: "https://univalence.io/blog/articles/les-tests-avec-spark-sortir-la-tete-de-l-eau/"
 date: "2019-07-09"
 title: "Les tests avec Spark : sortir la tête de l'eau"
 subtitle: "Écrit pour Univalence"
