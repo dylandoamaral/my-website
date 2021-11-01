@@ -168,7 +168,7 @@ export const CitationText = styled.p`
 
 export const CitationTextOne = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 14.8vw;
+        font-size: 14.75vw;
     }
 `;
 
@@ -186,7 +186,7 @@ export const CitationTextThree = styled(CitationText)`
 
 export const CitationTextFour = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 14.35vw;
+        font-size: 14.25vw;
     }
 `;
 
