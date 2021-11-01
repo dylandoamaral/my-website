@@ -1,5 +1,4 @@
 import React from "react";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 import Helmet from "../components/global/helmet/helmet";
 import Layout from "../components/global/layout/layout";
