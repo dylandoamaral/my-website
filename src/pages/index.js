@@ -9,7 +9,6 @@ import {
     Title,
     Primary,
     Secondary,
-    Ippon,
     RoleList,
     Role,
     Social,
@@ -88,19 +87,20 @@ const Showcase = () => (
     </ShowcaseContainer>
 );
 
+
 const Citation = () => (
     <CitationContainer>
         <CitationContent>
-            <CitationTextOne>Actuellement</CitationTextOne>
+            <CitationTextOne>Jeune <Secondary>Data</Secondary></CitationTextOne>
             <CitationTextTwo>
-                <Secondary>Data Engineer</Secondary>
+                <Secondary>Engineer</Secondary> et
             </CitationTextTwo>
             <CitationBr />
-            <CitationTextThree right={"true"}>
-                pour <Ippon href="https://fr.ippon.tech/">Ippon</Ippon>
+            <CitationTextThree>
+                <Primary>Dog Person</Primary> à
             </CitationTextThree>
-            <CitationTextFour right={"true"}>
-                <Ippon href="https://fr.ippon.tech/">Technologies</Ippon>
+            <CitationTextFour>
+                temps plein
             </CitationTextFour>
         </CitationContent>
     </CitationContainer>
@@ -113,27 +113,20 @@ const Description = () => (
             <DescriptionImage alt="landscape" />
             <div>
                 <DescriptionText>
-                    Je suis un passionné, actuellement Data Engineer à {ippon()}
-                    . J'adore la programmation et suis fasciné par plein de
+                    J'adore la programmation et suis fasciné par plein de
                     domaines variés tels que la programmation fonctionnelle, la
-                    génération procédurale, l'IoT, le Big Data et j'en passe...
+                    génération procédurale, l'IoT, le Big Data et j'en passe.
                 </DescriptionText>
                 <DescriptionText>
                     De nature organisé et perfectionniste, j'adore produire un
-                    code propre, modulable et intelligent.
+                    code propre, modulable et intelligent. J'accorde beaucoup
+                    d'importance à la qualité du code, à son automatisation et
+                    à la couverture de tests.
                 </DescriptionText>
             </div>
         </DescriptionContainer>
     </Container>
 );
-
-const ippon = () => {
-    return (
-        <OutboundLink href="https://fr.ippon.tech/">
-            Ippon Technologies
-        </OutboundLink>
-    );
-};
 
 const ToolsElement = props => (
     <ToolsImage

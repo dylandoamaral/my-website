@@ -32,11 +32,6 @@ export const Secondary = styled.span`
     color: ${colors.secondary};
 `;
 
-export const Ippon = styled(OutboundLink)`
-    color: #f95353;
-    text-decoration: none;
-`;
-
 /*
  * SHOWCASE
  */
@@ -129,8 +124,8 @@ export const ShowcaseImage = styled.img`
     }
 
     ${resolutions.medias.phone} {
-        height: 450px;
-        right: -140px;
+        height: 550px;
+        right: -190px;
     }
 `;
 
@@ -173,25 +168,25 @@ export const CitationText = styled.p`
 
 export const CitationTextOne = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 11.25vw;
+        font-size: 15.00vw;
     }
 `;
 
 export const CitationTextTwo = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 10.85vw;
+        font-size: 13.85vw;
     }
 `;
 
 export const CitationTextThree = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 13.65vw;
+        font-size: 11.45vw;
     }
 `;
 
 export const CitationTextFour = styled(CitationText)`
     ${resolutions.medias.phone} {
-        font-size: 10.75vw;
+        font-size: 14.60vw;
     }
 `;
 
